@@ -1,9 +1,16 @@
 Package: pairwiserhat
-Title: What the Package Does (One Line, Title Case)
+Title: Pairwise R-Hat Diagnostics for Multimodal MCMC Output
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    c(
+person(“Cici Chen”, “Gu”, email = “chen,gu@it.uu.se”, role = c(“aut”, “cre”),
+comment = c(ORCID = “0009-0008-1998-6486”)),
+person(“Sara”, “Hamis”,email = “sara.hamis@it.uu.se”, role = c(“aut”, “cre”),
+comment = c(ORCID = “0000-0002-1105-8078”))
+person(“Eszter”, “Lakatos”, role = “aut”,
+comment = c(ORCID = “0000-0002-7221-6850”)),
+)
+Description: Computes pairwise R-hat diagnostics from MCMC output by comparing chains two at a time. The package takes posterior draws arranged by chains and iterations, manually computes pairwise R-hat values, and returns both the pairwise diagnostic matrix and a graph-based summary of chain agreement. Chains are represented as nodes, and edges are added between chains whose pairwise R-hat values fall below a chosen threshold. The resulting graph can be used to identify groups of chains that appear to explore the same posterior region, as well as isolated chains and other patterns of chain disagreement.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
