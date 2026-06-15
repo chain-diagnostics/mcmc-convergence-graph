@@ -3,6 +3,8 @@
 # for each pair, it return the chain indices and the corresponding numberic draw values
 # function got two input: draws and paramter
 # give all combinations of 2 chains from n_chains
+#k is the number of the pair for example k=1 means pair (1,2) k=2 means pair (1,3)
+#chain i means the first chain of this pair,chian j means the second chain of this pair
 
 get_chain_pair <- function(draws, parameters) {
   if (!is.array(draws) || length(dim(draws)) != 3) {
@@ -16,14 +18,14 @@ get_chain_pair <- function(draws, parameters) {
     stop("`draws` must contain at least 2 chains.", call. = FALSE)
   }
   pairs <- utils::combn(n_chains, 2)
-  lapply(seq_len(ncol(pairs)), function(k) {
-    chain_i <- pairs[1, k]
-    chain_j <- pairs[2, k]
+  lapply(seq_len(ncol(pairs)), function(pair_id) {
+    chain_i <- pairs[1, pair_id]
+    chain_j <- pairs[2, pair_id]
     list(
       chain_i_index = chain_i,
       chain_j_index = chain_j,
-      chain_i = draws[, chain_i, parameter],
-      chain_j = draws[, chain_j, parameter]
+      chain_i_draws = draws[, chain_i, parameter],
+      chain_j_draws = draws[, chain_j, parameter]
     )
   })
 }
