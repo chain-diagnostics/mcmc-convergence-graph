@@ -11,8 +11,7 @@ person(“Eszter”, “Lakatos”, role = “aut”,
 comment = c(ORCID = “0000-0002-7221-6850”)),
 )
 Description: Computes pairwise R-hat diagnostics from MCMC output by comparing chains two at a time. The package takes posterior draws arranged by chains and iterations, manually computes pairwise R-hat values, and returns both the pairwise diagnostic matrix and a graph-based summary of chain agreement. Chains are represented as nodes, and edges are added between chains whose pairwise R-hat values fall below a chosen threshold. The resulting graph can be used to identify groups of chains that appear to explore the same posterior region, as well as isolated chains and other patterns of chain disagreement.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: `use_mit_license()`
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0
