@@ -1,24 +1,33 @@
 pairwise_rhat_clusters <- function(graph) {
   components <- igraph::components(graph)
+
   membership <- components$membership
+
   chain_names <- igraph::V(graph)$name
-  clusters <- split(
+
+  all_components <- split(
     chain_names,
     membership
   )
-  clusters <- unname(clusters)
-  isolated_chains <- clusters[
-    lengths(clusters) == 1
+
+  all_components <- unname(all_components)
+
+  multi_chain_clusters <- all_components[
+    lengths(all_components) > 1
   ]
+
   isolated_chains <- unlist(
-    isolated_chains,
+    all_components[lengths(all_components) == 1],
     use.names = FALSE
   )
+
   list(
-    clusters = clusters,
-    n_clusters = length(clusters),
+    clusters = multi_chain_clusters,
+    n_clusters = length(multi_chain_clusters),
     isolated_chains = isolated_chains,
     n_isolated = length(isolated_chains),
+    all_components = all_components,
+    n_components = length(all_components),
     membership = membership
   )
 }
