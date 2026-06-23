@@ -9,7 +9,7 @@
 #' @return A numeric vector of rank-normalized values with the same length as 'x'
 #'
 #' @keywords internal
-#'
+
 rank_normalize <- function(x) {
   n <- length(x)
   ranks <- rank(x, ties.method = "average")
