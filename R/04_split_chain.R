@@ -13,7 +13,7 @@
 
 split_chain <- function(x) {
   if (!is.numeric(x)) {
-    stop("'x' must be a numberic vector.", call. = FALSE)
+    stop("'x' must be a numeric vector.", call. = FALSE)
   }
   n <- length(x)
   if (n < 2) {
