@@ -1,6 +1,19 @@
-# convert input x into draws array
-# if x is already an array, use it directly, if not, convert it to an array
-# inherits is a class check function
+#' Convert input to a draws array
+#'
+#' Converts an input object to the three-dimensional draws array format used by
+#' the package. If 'x' is already a three-dimensional array, it is used directly.
+#' If 'x' is an rstan 'stanfit' object, posterior draws are extracted with chains
+#' preserved.
+#'
+#' @param x A three-dimensional array of posterior draws, or an rstan 'stanfit
+#' object
+#' @param parameter Optional character vector of parameter names to extract when
+#' 'x' is a 'stanfit' object. If 'Null', all parameters are extracted.
+#'
+#' @returns A checked three-dimensional array of posterior draws with dimensions
+#' iteration by chains by parameters.
+#'
+#' @keywords internal
 
 as_draws_array <- function(x, parameter = NULL) {
   if (is.array(x) && length(dim(x)) == 3) {
