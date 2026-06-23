@@ -1,9 +1,15 @@
-# create a function called split-chain, and the function take one input called x
-# x is one chain of MCMC draws for one parameter
-# counts how many values in x, the number of draws in this chain (parameter value)
-# floor : rounds down
-# draw =sampled value
-
+#' Split a chain into two halves
+#'
+#' Split a numeric vector of MCMC draws into two equal halves. If the number of
+#' draws is odd, the final draw is discarded so that both halves have the same
+#' length.
+#'
+#' @param x A numberical vector of draws from one chain for one parameter.
+#'
+#' @return A list with two numberic vectors: 'first', the first half of the chain,
+#' and the 'second', the second half of the chain.
+#'
+#' @keywords internal
 
 split_chain <- function(x) {
   if (!is.numeric(x)) {
