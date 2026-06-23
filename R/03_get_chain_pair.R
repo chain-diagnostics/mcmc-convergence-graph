@@ -1,14 +1,19 @@
-# The function takes a full MCMC draws array.
-# It finds all unique chain pairs.
-# For each pair, it returns the chain indices and the corresponding numeric draw values.
-# The function has two inputs: draws and parameter.
-# `draws` should be a 3-dimensional array: iteration x chain x parameter.
-# `parameter` should be one parameter name from dimnames(draws)[[3]].
-# `pairs` gives all combinations of 2 chains from n_chains.
-# `pair_id` is the number of the pair, for example:
-#  pair_id = 1 means pair (1, 2), pair_id = 2 means pair (1, 3), etc.
-# `chain_i` means the first chain in this pair.
-# `chain_j` means the second chain in this pair.
+#' Get all chain pairs for one parameter
+#'
+#' Extracts all unique pairs of chains for a selected parameter from a
+#' 'three dimensional draws array. For each pair, the function returns the chain
+#' indices and the corresponding posterior draws
+#'
+#' @param draws A three dimensional array of posterior draws with dimensions
+#' iterations by chains by parameters.
+#' @para parameter A single parameter name. The name must be present in the
+#' third dimension of 'draws'. This argument can not be 'NULL'.
+#'
+#' @returns A list of chain-pair objects. Each element contains the index of the
+#' first chain, the index of the second chian and the corresponding draws for the
+#' selected parameter.
+#'
+#' @keywords internal
 
 get_chain_pairs <- function(draws, parameter) {
   check_draws_array(draws)
@@ -18,7 +23,7 @@ get_chain_pairs <- function(draws, parameter) {
   if (!parameter %in% parameter_names) {
     stop("`parameter` must be one of the parameter names in `draws`.", call. = FALSE)
   }
-  pairs <- utils::combn(n_chains, 2)
+  pairs <- utils::combn(n_chains, 2)  #create all unique pair of chains
   lapply(seq_len(ncol(pairs)), function(pair_id) {
     chain_i <- pairs[1, pair_id]
 
@@ -27,7 +32,7 @@ get_chain_pairs <- function(draws, parameter) {
     list(
       chain_i_index = chain_i,
       chain_j_index = chain_j,
-      chain_i_draws = draws[, chain_i, parameter],
+      chain_i_draws = draws[, chain_i, parameter], #eg: all iterations from chain 1 for alpha*
       chain_j_draws = draws[, chain_j, parameter]
     )
   })
