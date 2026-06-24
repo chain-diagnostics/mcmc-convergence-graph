@@ -1,3 +1,23 @@
+#' PLot a combined pairwise R hat graph
+#'
+#' Plots a combined pairwise R hat graph created by
+#' 'pairwise_rhat_combined_graph()' . Chains are shown as nodes, and edges are
+#' colored and labeled according to the parameters that support each connection.
+#'
+#' @param graph A 'igraph' object created by 'pairwise_rhat_combined_graph()'
+#' @param show_edge_labels If True, edge labels show the parameters.
+#' @param show_legend If True, a legend showing parameter colors is added to the
+#' plot.
+#' @param layout_matrix  Optional numeric matrix giving node position.
+#' if NULL, the function computes the layout automatically.
+#' @param main Character string giving the plot title.
+#'
+#' @returns Invisible returns the layout matrix used for the plot
+#'
+#' @export
+
+
+
 plot_pairwise_rhat_combined_graph <- function(
     graph,
     show_edge_labels = TRUE,

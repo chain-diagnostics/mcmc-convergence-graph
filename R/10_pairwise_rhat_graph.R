@@ -1,3 +1,19 @@
+#' Convert a pairwise R-hat matrix to a graph
+#'
+#' Converts a pairwsie R-hat matrix into an undirected graph. Each chain is a
+#' node and an edge is added between two chains where their pairwise R-hat value
+#' is less than or equal to 'rho'.
+#'
+#' @param rhat_matrix A square numeric matrix of pairwise R-hat values.
+#' @param rho Numeric threshold used to decide whether two chains are connected.
+#'
+#' @returns An undirected 'igraph' object whose nodes represent chains and whose
+#' edges represent chain pairs with pairwise R-hat value below the threshold.
+#'
+#' @keywords internal
+
+
+
 pairwise_rhat_graph <- function(rhat_matrix, rho = 1.01) {
   adjacency_matrix <- rhat_matrix <= rho
   diag(adjacency_matrix) <- FALSE

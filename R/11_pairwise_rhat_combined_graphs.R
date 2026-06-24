@@ -1,10 +1,31 @@
-#get chain/node name
-#list all the possible chain pairs
-# check whether each chain pair appears as edge in each parameter graph
-# store the result in an edge table
-# turn that edge table into an igraph object
-#add color widths labels
-#V=vertices E=deges
+#'Build a combined pairwise R-hat graph across parameters
+#'
+#'Builds a combined graph from parameter-specific pairwsie R-hat graphs. Each
+#'chain is represented as a node. An edge is added between two chains if at least
+#'one parameter has a pairwise R-hat value less than or equal to 'rho' for that
+#'chain pair. Edge labels record which parameters support each edge, and edge
+#'widths increase with the number of supporting parameters.
+#'
+#'@param draws A three-dimensional array of posterior draws with dimensions
+#'iterations by chains by parameter.
+#'@param parameters Optional character vector of parameter names. If 'NULL',
+#'all parameters in 'draws' are used.
+#'@param rho Numeric threshold used to decide whether two chains are connectedx.
+#'
+#'@returns An undirected 'igrpah' ovject. Nodes represent chains. Edges represent
+#'chain pairs connected in at least one parameter-specific graph.
+#'
+#'@export
+
+# Compute pairwise R-hat matrices for selected parameters.
+# Convert each matrix into a parameter-specific graph.
+# Use the first graph to get chain names.
+# List all possible chain pairs.
+# For each chain pair, check which parameter graphs contain that edge.
+# Store supported edges in an edge table.
+# Convert the edge table into one combined igraph object.
+# Add edge colors, widths, and labels.
+# Store parameter colors and rho as graph attributes.
 
 
 pairwise_rhat_combined_graph <- function(draws, parameters = NULL, rho = 1.01) {

@@ -9,7 +9,7 @@
 #'
 #' @returns A single numeric value giving the pairwise R-hat between two chains.
 #'
-#' @keywords internal
+#' @export
 
 
 pairwise_rhat <- function(chain_i_draws, chain_j_draws) {

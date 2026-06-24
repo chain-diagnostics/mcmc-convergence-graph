@@ -1,3 +1,22 @@
+#' Compute a pairwise R-hat matrix for one parameter
+#'
+#' Compute pairwise R-hat value for all unique pairs of chains for one selected
+#' parameter. The result is a square matrix whose rows and columns correspond to
+#' chains.
+#'
+#' @param draws A three-dimensional array of posterior draws with dimensions
+#' iterations by chains by parameters.
+#' @param parameter A single parameter name. The name must be present in the
+#' third dimension of `draws`.
+#'
+#' @returns A square numeric matrix of pairwise R-hat values. The diagonal is set
+#' to 1, and the off-diagonal entries contain pairwise R-hat values between
+#' chains.
+#'
+#' @export
+
+
+
 pairwise_rhat_matrix <- function(draws, parameter) {
   check_draws_array(draws)
   n_chains <- dim(draws)[2]
