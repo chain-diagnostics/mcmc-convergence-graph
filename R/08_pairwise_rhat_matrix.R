@@ -38,5 +38,12 @@ pairwise_rhat_matrix <- function(draws, parameter) {
     rhat_matrix[chain_j, chain_i] <- rhat_value
   }
   chain_names <- dimnames(draws)[[2]]
+
+  if (is.null(chain_names)) {
+    chain_names <- paste0("chain", seq_len(n_chains))
+  }
+
+  rownames(rhat_matrix) <- chain_names
+  colnames(rhat_matrix) <- chain_names
   rhat_matrix
 }

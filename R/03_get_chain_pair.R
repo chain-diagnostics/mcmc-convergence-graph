@@ -6,7 +6,7 @@
 #'
 #' @param draws A three dimensional array of posterior draws with dimensions
 #' iterations by chains by parameters.
-#' @para parameter A single parameter name. The name must be present in the
+#' @param parameter A single parameter name. The name must be present in the
 #' third dimension of 'draws'. This argument can not be 'NULL'.
 #'
 #' @returns A list of chain-pair objects. Each element contains the index of the

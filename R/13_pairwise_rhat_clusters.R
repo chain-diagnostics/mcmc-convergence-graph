@@ -1,7 +1,7 @@
 #' Summarize clusters in a pairwise R-hat graph
 #'
 #' Finds connected components in a pairwise R-hat graph adn separates them into
-#' muti-chain clusters and isolated chains. In this diagnostic, single chain
+#' multi-chain clusters and isolated chains. In this diagnostic, single chain
 #' components are counted as isolated chains rather than as clusters.
 #'
 #' @param graph An 'igraph' object

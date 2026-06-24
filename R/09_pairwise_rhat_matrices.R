@@ -9,7 +9,7 @@
 #' @param parameters Optional character vector of parameter names. If `NULL`,
 #'   all parameters in `draws` are used.
 #'
-#' @returns A named list of square numeric matrices. Each matrix contains
+#' @returns A named list of square numeric matrices.?paor Each matrix contains
 #' pairwise R-hat values for one parameter.
 #'
 #' @keywords internal
