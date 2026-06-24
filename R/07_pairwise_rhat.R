@@ -1,3 +1,17 @@
+#' Compute pairwise R-hat for two chains
+#'
+#' Computes the pairwise rank-normalized split R-hat statistic for two chains of
+#' posterior draws from one parameter. The function also computes the folded
+#' split R-hat and returns the larger of the rank-normalized and folded values.
+#'
+#' @param chain_i_draws A numeric vector of posterior draws from the first chain.
+#' @param chain_j_draws A numeric vector of posterior draws from the second chain.
+#'
+#' @returns A single numeric value giving the pairwise R-hat between two chains.
+#'
+#' @keywords internal
+
+
 pairwise_rhat <- function(chain_i_draws, chain_j_draws) {
   n_iter_i <- length(chain_i_draws)
   n_iter_j <- length(chain_j_draws)

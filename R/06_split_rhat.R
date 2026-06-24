@@ -2,7 +2,8 @@
 #'
 #' Computes the split R-hat statistic from a matrix of split-chain draws. Each
 #' column is treated as one split chain, and each tow corresponds to one draw
-#' within the split chain.
+#' within the split chain. This function calculates how different are the split
+#' chains from each other, compared with how variable each split chain is internally
 #'
 #' @param split_draws A numeric matrix of split-chain draws. Rows correspond to
 #'  draws and columns correspond to split chains.
