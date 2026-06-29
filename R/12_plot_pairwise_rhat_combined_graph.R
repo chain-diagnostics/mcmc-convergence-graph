@@ -2,11 +2,11 @@
 #'
 #' Plots a combined pairwise R-hat graph created by
 #' `pairwise_rhat_combined_graph()`. Chains are shown as nodes, and edges are
-#' colored and labeled according to the parameters that support each connection.
+#' colored according to the parameters that support each connection.
 #'
 #' @param graph An `igraph` object created by `pairwise_rhat_combined_graph()`.
 #' @param show_edge_labels Logical. If `TRUE`, edge labels show the parameters
-#'   supporting each edge.
+#'   supporting each edge. The default is `FALSE`.
 #' @param show_legend Logical. If `TRUE`, a legend showing parameter colors is
 #'   added to the plot.
 #' @param layout_matrix Optional numeric matrix giving node positions. If `NULL`,
@@ -21,23 +21,26 @@
 #' @param edge_curved Numeric value controlling edge curvature.
 #' @param legend_position Character string giving the legend position.
 #' @param legend_cex Numeric value controlling legend text size.
+#' @param show_node_note Logical. If `TRUE`, adds a note saying that node labels
+#'   represent chain indices.
 #'
 #' @returns Invisibly returns the layout matrix used for the plot.
 #'
 #' @export
 plot_pairwise_rhat_combined_graph <- function(
     graph,
-    show_edge_labels = TRUE,
+    show_edge_labels = FALSE,
     show_legend = TRUE,
     layout_matrix = NULL,
     layout_type = c("grid", "fr", "kk", "nicely", "circle", "random", "tree", "drl"),
     main = "Combined pairwise R-hat graph",
-    vertex_size = 30,
-    vertex_label_cex = 1,
-    edge_label_cex = 0.7,
-    edge_curved = 0.2,
-    legend_position = "topleft",
-    legend_cex = 0.8
+    vertex_size = 10,
+    vertex_label_cex = 0.8,
+    edge_label_cex = 0.8,
+    edge_curved = 0.1,
+    legend_position = "top",
+    legend_cex = 0.8,
+    show_node_note = TRUE
 ) {
   layout_type <- match.arg(layout_type)
 
@@ -55,6 +58,15 @@ plot_pairwise_rhat_combined_graph <- function(
     )
   }
 
+  vertex_labels <- igraph::V(graph)$name
+  vertex_labels_clean <- gsub("[^0-9]", "", vertex_labels)
+
+  if (any(vertex_labels_clean == "")) {
+    vertex_labels_clean <- as.character(seq_along(vertex_labels))
+  }
+
+  vertex_labels <- vertex_labels_clean
+
   edge_labels <- NA
 
   if (show_edge_labels) {
@@ -65,7 +77,8 @@ plot_pairwise_rhat_combined_graph <- function(
   on.exit(graphics::par(old_par), add = TRUE)
 
   graphics::par(
-    mar = c(1, 1, 3, 1)
+    mar = c(5, 1, 7, 1),
+    xpd = NA
   )
 
   plot(
@@ -74,6 +87,7 @@ plot_pairwise_rhat_combined_graph <- function(
     vertex.size = vertex_size,
     vertex.color = igraph::V(graph)$color,
     vertex.frame.color = "grey30",
+    vertex.label = vertex_labels,
     vertex.label.color = "black",
     vertex.label.cex = vertex_label_cex,
     edge.color = igraph::E(graph)$color,
@@ -85,6 +99,16 @@ plot_pairwise_rhat_combined_graph <- function(
     main = main,
     asp = 0
   )
+
+  if (show_node_note) {
+    graphics::mtext(
+      "Node labels indicate chain indices.",
+      side = 1,
+      line = 3,
+      adj = 0,
+      cex = 0.8
+    )
+  }
 
   parameter_colors <- igraph::graph_attr(
     graph,
@@ -115,14 +139,26 @@ plot_pairwise_rhat_combined_graph <- function(
       )
     }
 
-    graphics::legend(
-      legend_position,
-      legend = legend_labels,
-      col = legend_colors,
-      lwd = 2,
-      bty = "n",
-      cex = legend_cex
-    )
+    if (legend_position == "top") {
+      graphics::legend(
+        "top",
+        inset = c(0, -0.12),
+        legend = legend_labels,
+        col = legend_colors,
+        lwd = 2,
+        bty = "n",
+        cex = legend_cex
+      )
+    } else {
+      graphics::legend(
+        legend_position,
+        legend = legend_labels,
+        col = legend_colors,
+        lwd = 2,
+        bty = "n",
+        cex = legend_cex
+      )
+    }
   }
 
   invisible(layout_matrix)
