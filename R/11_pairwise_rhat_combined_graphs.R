@@ -1,21 +1,21 @@
-#'Build a combined pairwise R-hat graph across parameters
+#' Build a combined pairwise R-hat graph across parameters
 #'
-#'Builds a combined graph from parameter-specific pairwsie R-hat graphs. Each
-#'chain is represented as a node. An edge is added between two chains if at least
-#'one parameter has a pairwise R-hat value less than or equal to 'rho' for that
-#'chain pair. Edge labels record which parameters support each edge, and edge
-#'widths increase with the number of supporting parameters.
+#' Builds a combined graph from parameter-specific pairwsie R-hat graphs. Each
+#' chain is represented as a node. An edge is added between two chains if at least
+#' one parameter has a pairwise R-hat value less than or equal to 'rho' for that
+#' chain pair. Edge labels record which parameters support each edge, and edge
+#' widths increase with the number of supporting parameters.
 #'
-#'@param draws A three-dimensional array of posterior draws with dimensions
-#'iterations by chains by parameter.
-#'@param parameters Optional character vector of parameter names. If 'NULL',
-#'all parameters in 'draws' are used.
-#'@param rho Numeric threshold used to decide whether two chains are connectedx.
+#' @param draws A three-dimensional array of posterior draws with dimensions
+#' iterations by chains by parameter.
+#' @param parameters Optional character vector of parameter names. If 'NULL',
+#' all parameters in 'draws' are used.
+#' @param rho Numeric threshold used to decide whether two chains are connectedx.
 #'
-#'@returns An undirected 'igrpah' ovject. Nodes represent chains. Edges represent
-#'chain pairs connected in at least one parameter-specific graph.
+#' @returns An undirected 'igrpah' ovject. Nodes represent chains. Edges represent
+#' chain pairs connected in at least one parameter-specific graph.
 #'
-#'@export
+#' @export
 
 # Compute pairwise R-hat matrices for selected parameters.
 # Convert each matrix into a parameter-specific graph.

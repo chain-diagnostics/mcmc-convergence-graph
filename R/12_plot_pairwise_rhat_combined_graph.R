@@ -28,25 +28,24 @@
 #'
 #' @export
 plot_pairwise_rhat_combined_graph <- function(
-    graph,
-    show_edge_labels = FALSE,
-    show_legend = TRUE,
-    layout_matrix = NULL,
-    layout_type = c("grid", "fr", "kk", "nicely", "circle", "random", "tree", "drl"),
-    main = "Combined pairwise R-hat graph",
-    vertex_size = 10,
-    vertex_label_cex = 0.8,
-    edge_label_cex = 0.8,
-    edge_curved = 0.1,
-    legend_position = "top",
-    legend_cex = 0.8,
-    show_node_note = TRUE
+  graph,
+  show_edge_labels = FALSE,
+  show_legend = TRUE,
+  layout_matrix = NULL,
+  layout_type = c("grid", "fr", "kk", "nicely", "circle", "random", "tree", "drl"),
+  main = "Combined pairwise R-hat graph",
+  vertex_size = 10,
+  vertex_label_cex = 0.8,
+  edge_label_cex = 0.8,
+  edge_curved = 0.1,
+  legend_position = "top",
+  legend_cex = 0.8,
+  show_node_note = TRUE
 ) {
   layout_type <- match.arg(layout_type)
 
   if (is.null(layout_matrix)) {
-    layout_matrix <- switch(
-      layout_type,
+    layout_matrix <- switch(layout_type,
       grid = igraph::layout_on_grid(graph),
       fr = igraph::layout_with_fr(graph),
       kk = igraph::layout_with_kk(graph),

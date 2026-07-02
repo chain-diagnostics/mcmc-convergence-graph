@@ -13,7 +13,6 @@
 #' @keywords internal
 
 
-
 pairwise_rhat_graph <- function(rhat_matrix, rho = 1.01) {
   adjacency_matrix <- rhat_matrix <= rho
   diag(adjacency_matrix) <- FALSE
@@ -27,7 +26,7 @@ pairwise_rhat_graph <- function(rhat_matrix, rho = 1.01) {
   rownames(adjacency_matrix) <- chain_names
   colnames(adjacency_matrix) <- chain_names
   graph <- igraph::graph_from_adjacency_matrix(
-  adjacency_matrix,
+    adjacency_matrix,
     mode = "undirected"
   )
   graph

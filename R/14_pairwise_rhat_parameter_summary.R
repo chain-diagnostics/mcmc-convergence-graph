@@ -42,12 +42,12 @@
 
 
 pairwise_rhat_parameter_summary <- function(
-    draws,
-    parameters = NULL,
-    rho = 1.01,
-    save_csv = FALSE,
-    output_dir = NULL,
-    pairwise_display_n = 10
+  draws,
+  parameters = NULL,
+  rho = 1.01,
+  save_csv = FALSE,
+  output_dir = NULL,
+  pairwise_display_n = 10
 ) {
   rhat_matrices <- pairwise_rhat_matrices(
     draws,

@@ -23,7 +23,7 @@ get_chain_pairs <- function(draws, parameter) {
   if (!parameter %in% parameter_names) {
     stop("`parameter` must be one of the parameter names in `draws`.", call. = FALSE)
   }
-  pairs <- utils::combn(n_chains, 2)  #create all unique pair of chains
+  pairs <- utils::combn(n_chains, 2) # create all unique pair of chains
   lapply(seq_len(ncol(pairs)), function(pair_id) {
     chain_i <- pairs[1, pair_id]
 
@@ -32,7 +32,7 @@ get_chain_pairs <- function(draws, parameter) {
     list(
       chain_i_index = chain_i,
       chain_j_index = chain_j,
-      chain_i_draws = draws[, chain_i, parameter], #eg: all iterations from chain 1 for alpha*
+      chain_i_draws = draws[, chain_i, parameter], # eg: all iterations from chain 1 for alpha*
       chain_j_draws = draws[, chain_j, parameter]
     )
   })

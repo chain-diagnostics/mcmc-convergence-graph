@@ -16,7 +16,6 @@
 #' @export
 
 
-
 pairwise_rhat_matrix <- function(draws, parameter) {
   check_draws_array(draws)
   n_chains <- dim(draws)[2]
