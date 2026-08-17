@@ -1,2 +1,6 @@
 ^pairwiserhat\.Rproj$
 ^\.Rproj\.user$
+^dev$
+^LICENSE\.md$
+^test_outputs$
+^experiments$

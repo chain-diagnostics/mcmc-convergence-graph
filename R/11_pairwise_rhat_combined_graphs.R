@@ -1,46 +1,33 @@
-#' Build a combined pairwise R-hat graph across parameters
+#' Build a combined pairwise R-hat graph from parameter graphs
 #'
-#' Builds a combined graph from parameter-specific pairwsie R-hat graphs. Each
-#' chain is represented as a node. An edge is added between two chains if at least
-#' one parameter has a pairwise R-hat value less than or equal to 'rho' for that
-#' chain pair. Edge labels record which parameters support each edge, and edge
-#' widths increase with the number of supporting parameters.
+#' Internal helper that constructs a combined graph from a named list of
+#' parameter-specific pairwise R-hat graphs. Used by
+#' [pairwise_rhat_combined_graph()] and [pairwise_rhat_parameter_summary()].
 #'
-#' @param draws A three-dimensional array of posterior draws with dimensions
-#' iterations by chains by parameter.
-#' @param parameters Optional character vector of parameter names. If 'NULL',
-#' all parameters in 'draws' are used.
-#' @param rho Numeric threshold used to decide whether two chains are connectedx.
+#' Two combined graphs are supported. With `mode = "union"`, an edge is
+#' included whenever it is present in at least one parameter graph
+#' (`G_union`). With `mode = "intersection"`, an edge is included only
+#' when it is present in every parameter graph (`G_intersection`).
 #'
-#' @returns An undirected 'igrpah' ovject. Nodes represent chains. Edges represent
-#' chain pairs connected in at least one parameter-specific graph.
+#' @param parameter_graphs A named list of `igraph` objects, one per parameter,
+#'   each built with [pairwise_rhat_graph()].
+#' @param rho Numeric threshold used to build the parameter graphs. Stored on
+#'   the returned graph as a graph attribute.
+#' @param mode Character string. Either `"union"` (default) or `"intersection"`,
+#'   selecting how the parameter graphs are combined.
 #'
-#' @export
+#' @returns An undirected `igraph` object with edge attributes `parameters`,
+#'   `n_parameters`, `color`, `width`, `label`, vertex attribute `color`, and
+#'   graph attributes `parameter_colors`, `rho`, and `mode`.
+#'
+#' @keywords internal
+build_combined_graph <- function(parameter_graphs,
+                                 rho,
+                                 mode = c("union", "intersection")) {
+  mode <- match.arg(mode)
 
-# Compute pairwise R-hat matrices for selected parameters.
-# Convert each matrix into a parameter-specific graph.
-# Use the first graph to get chain names.
-# List all possible chain pairs.
-# For each chain pair, check which parameter graphs contain that edge.
-# Store supported edges in an edge table.
-# Convert the edge table into one combined igraph object.
-# Add edge colors, widths, and labels.
-# Store parameter colors and rho as graph attributes.
-
-
-pairwise_rhat_combined_graph <- function(draws, parameters = NULL, rho = 1.01) {
-  rhat_matrices <- pairwise_rhat_matrices(
-    draws,
-    parameters = parameters
-  )
-
-  parameter_names <- names(rhat_matrices)
-
-  parameter_graphs <- lapply(rhat_matrices, function(rhat_matrix) {
-    pairwise_rhat_graph(rhat_matrix, rho = rho)
-  })
-
-  names(parameter_graphs) <- parameter_names
+  parameter_names <- names(parameter_graphs)
+  n_all_parameters <- length(parameter_names)
 
   first_graph <- parameter_graphs[[1]]
 
@@ -76,7 +63,13 @@ pairwise_rhat_combined_graph <- function(draws, parameters = NULL, rho = 1.01) {
       }
     }
 
-    if (length(edge_parameters) > 0) {
+    include_edge <- switch(
+      mode,
+      union = length(edge_parameters) > 0,
+      intersection = length(edge_parameters) == n_all_parameters
+    )
+
+    if (include_edge) {
       edge_list <- rbind(
         edge_list,
         data.frame(
@@ -135,5 +128,87 @@ pairwise_rhat_combined_graph <- function(draws, parameters = NULL, rho = 1.01) {
     rho
   )
 
+  combined_graph <- igraph::set_graph_attr(
+    combined_graph,
+    "mode",
+    mode
+  )
+
   combined_graph
+}
+
+#' Build a combined pairwise R-hat graph across parameters
+#'
+#' Builds a combined graph from parameter-specific pairwise R-hat graphs. Each
+#' chain is represented as a node. The way edges are combined across parameters
+#' is controlled by `mode`. With `mode = "union"` (default), an edge is added
+#' between two chains if at least one parameter has a pairwise R-hat value less
+#' than or equal to `rho` for that chain pair, corresponding to `G_union` in
+#' the multivariate MCMC convergence graph formulation. With
+#' `mode = "intersection"`, an edge is added only if every parameter has a
+#' pairwise R-hat value less than or equal to `rho` for that chain pair,
+#' corresponding to `G_intersection`. Edge labels record which parameters
+#' support each edge, and edge widths increase with the number of supporting
+#' parameters.
+#'
+#' @param draws A three-dimensional array of posterior draws with dimensions
+#' iterations by chains by parameter, or an rstan `stanfit` object.
+#' @param parameters Optional character vector of parameter names. If `NULL`,
+#' all parameters in `draws` are used.
+#' @param rho Numeric threshold used to decide whether two chains are connected.
+#' @param mode Character string. Either `"union"` (default) or `"intersection"`,
+#'   selecting how the parameter graphs are combined.
+#'
+#' @returns An undirected `igraph` object. Nodes represent chains. Edges
+#' represent chain pairs connected in at least one (`mode = "union"`) or every
+#' (`mode = "intersection"`) parameter-specific graph.
+#'
+#' @export
+#'
+#' @examples
+#' set.seed(1)
+#'
+#' draws <- array(
+#'   rnorm(100 * 4 * 2),
+#'   dim = c(100, 4, 2)
+#' )
+#'
+#' dimnames(draws) <- list(
+#'   NULL,
+#'   paste0("chain", 1:4),
+#'   c("alpha", "beta")
+#' )
+#'
+#' graph_union <- pairwise_rhat_combined_graph(
+#'   draws = draws,
+#'   parameters = c("alpha", "beta"),
+#'   rho = 1.015
+#' )
+#'
+#' graph_intersection <- pairwise_rhat_combined_graph(
+#'   draws = draws,
+#'   parameters = c("alpha", "beta"),
+#'   rho = 1.015,
+#'   mode = "intersection"
+#' )
+pairwise_rhat_combined_graph <- function(draws,
+                                         parameters = NULL,
+                                         rho = 1.01,
+                                         mode = c("union", "intersection")) {
+  mode <- match.arg(mode)
+
+  rhat_matrices <- pairwise_rhat_matrices(
+    draws,
+    parameters = parameters
+  )
+
+  parameter_names <- names(rhat_matrices)
+
+  parameter_graphs <- lapply(rhat_matrices, function(rhat_matrix) {
+    pairwise_rhat_graph(rhat_matrix, rho = rho)
+  })
+
+  names(parameter_graphs) <- parameter_names
+
+  build_combined_graph(parameter_graphs, rho = rho, mode = mode)
 }

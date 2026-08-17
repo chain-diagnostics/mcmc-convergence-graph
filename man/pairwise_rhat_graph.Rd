@@ -20,4 +20,25 @@ Converts a pairwsie R-hat matrix into an undirected graph. Each chain is a
 node and an edge is added between two chains where their pairwise R-hat valuep
 is less than or equal to 'rho'.
 }
-\keyword{internal}
+\examples{
+rhat_matrix <- matrix(
+  c(
+    1.000, 1.010, 1.020,
+    1.010, 1.000, 1.025,
+    1.020, 1.025, 1.000
+  ),
+  nrow = 3,
+  byrow = TRUE
+)
+
+rownames(rhat_matrix) <- paste0("chain", 1:3)
+colnames(rhat_matrix) <- paste0("chain", 1:3)
+
+graph <- pairwise_rhat_graph(
+  rhat_matrix = rhat_matrix,
+  rho = 1.015
+)
+
+graph
+igraph::E(graph)
+}

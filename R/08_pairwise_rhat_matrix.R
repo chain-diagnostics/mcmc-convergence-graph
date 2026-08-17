@@ -14,8 +14,25 @@
 #' chains.
 #'
 #' @export
-
-
+#'
+#' @examples
+#' set.seed(1)
+#'
+#' draws <- array(
+#'   rnorm(100 * 4 * 1),
+#'   dim = c(100, 4, 1)
+#' )
+#'
+#' dimnames(draws) <- list(
+#'   NULL,
+#'   paste0("chain", 1:4),
+#'   "alpha"
+#' )
+#'
+#' pairwise_rhat_matrix(
+#'   draws = draws,
+#'   parameter = "alpha"
+#' )
 pairwise_rhat_matrix <- function(draws, parameter) {
   check_draws_array(draws)
   n_chains <- dim(draws)[2]
@@ -29,7 +46,7 @@ pairwise_rhat_matrix <- function(draws, parameter) {
   for (pair in chain_pairs) {
     chain_i <- pair$chain_i_index
     chain_j <- pair$chain_j_index
-    rhat_value <- pairwise_rhat(
+    rhat_value <- pairwise_rhat_calculation(
       pair$chain_i_draws,
       pair$chain_j_draws
     )

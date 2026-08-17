@@ -5,37 +5,78 @@
 #' extracted with chains preserved. If `x` is already a three-dimensional array,
 #' it is used directly.
 #'
-#' @param x A three-dimensional array of posterior draws, or an rstan `stanfit`
-#'   object.
-#' @param parameter Optional character vector of parameter names to extract when
-#'   `x` is a `stanfit` object. If `NULL`, all parameters are extracted.
+#' @param x A three-dimensional array of posterior draws, or an rstan
+#'   `stanfit` object.
+#' @param parameter Optional character vector of parameter names to retain.
+#'   If `NULL`, all model parameters are used (excluding Stan's `lp__`).
 #'
 #' @returns A checked three-dimensional array of posterior draws with dimensions
-#'   iterations by chains by parameters.
+#' iterations × chains × parameters.
 #'
 #' @keywords internal
 as_draws_array <- function(x, parameter = NULL) {
+
   if (inherits(x, "stanfit")) {
-    if (is.null(parameter)) {
-      draws <- rstan::extract(
-        x,
-        permuted = FALSE
-      )
-    } else {
-      draws <- rstan::extract(
-        x,
-        pars = parameter,
-        permuted = FALSE
+
+    if (!requireNamespace("rstan", quietly = TRUE)) {
+      stop(
+        "Package 'rstan' is required to convert a stanfit object.",
+        call. = FALSE
       )
     }
+
+    draws <- rstan::extract(
+      x,
+      permuted = FALSE
+    )
+
   } else if (is.array(x) && length(dim(x)) == 3) {
+
     draws <- x
+
   } else {
+
     stop(
-      "`x` must be either a 3-dimensional draws array or an rstan `stanfit` object.",
+      "`x` must be either a 3-dimensional draws array or an rstan stanfit object.",
       call. = FALSE
     )
+
   }
+
+  parameter_names <- dimnames(draws)[[3]]
+
+  if (!is.null(parameter_names)) {
+
+    ## Remove Stan log-posterior
+    keep <- parameter_names != "lp__"
+
+    draws <- draws[, , keep, drop = FALSE]
+
+    parameter_names <- dimnames(draws)[[3]]
+
+    ## Keep selected parameters if requested
+    if (!is.null(parameter)) {
+
+      missing_parameters <- setdiff(
+        parameter,
+        parameter_names
+      )
+
+      if (length(missing_parameters) > 0) {
+        stop(
+          "Unknown parameter(s): ",
+          paste(missing_parameters, collapse = ", "),
+          call. = FALSE
+        )
+      }
+
+      draws <- draws[, , parameter, drop = FALSE]
+
+    }
+
+  }
+
   check_draws_array(draws)
+
   draws
 }

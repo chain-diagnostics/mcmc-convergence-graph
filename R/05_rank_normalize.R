@@ -11,15 +11,6 @@
 #' @keywords internal
 
 rank_normalize <- function(x) {
-  if (!is.numeric(x)) {
-    stop("`x` must be a numeric vector.", call. = FALSE)
-  }
-  if (length(x) < 2) {
-    stop("`x` must contain at least 2 draws.", call. = FALSE)
-  }
-  if (anyNA(x)) {
-    stop("`x` must not contain missing values.", call. = FALSE)
-  }
   n <- length(x)
   ranks <- rank(x, ties.method = "average")
   stats::qnorm(

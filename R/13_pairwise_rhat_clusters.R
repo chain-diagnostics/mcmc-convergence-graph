@@ -1,19 +1,28 @@
 #' Summarize clusters in a pairwise R-hat graph
 #'
-#' Finds connected components in a pairwise R-hat graph adn separates them into
-#' multi-chain clusters and isolated chains. In this diagnostic, single chain
+#' Finds connected components in a pairwise R-hat graph and separates them into
+#' multi-chain clusters and isolated chains. In this diagnostic, single-chain
 #' components are counted as isolated chains rather than as clusters.
 #'
-#' @param graph An 'igraph' object
+#' @param graph An `igraph` object.
 #'
-#' @returns A list containing multi-chain clusters. the number of multi-chain
-#' clusters, isolated chains, the number of isolated chains, all connected
-#' components, the total number of connected components, and the component
-#' membership vector.
+#' @return A list containing multi-chain clusters, the number of multi-chain
+#'   clusters, isolated chains, the number of isolated chains, all connected
+#'   components, the total number of connected components, and the component
+#'   membership vector.
 #'
 #' @export
-
-
+#'
+#' @examples
+#' graph <- igraph::make_graph(
+#'   edges = c(
+#'     "chain1", "chain2",
+#'     "chain3", "chain4"
+#'   ),
+#'   directed = FALSE
+#' )
+#'
+#' pairwise_rhat_clusters(graph)
 pairwise_rhat_clusters <- function(graph) {
   components <- igraph::components(graph)
 

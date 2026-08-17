@@ -8,18 +8,35 @@ pairwise_rhat_matrices(draws, parameters = NULL)
 }
 \arguments{
 \item{draws}{A three-dimensional array of posterior draws with dimensions
-iterations by chains by parameters.}
+iterations by chains by parameters, or an rstan \code{stanfit} object.}
 
 \item{parameters}{Optional character vector of parameter names. If \code{NULL},
 all parameters in \code{draws} are used.}
 }
 \value{
-A named list of square numeric matrices.?paor Each matrix contains
+A named list of square numeric matrices. Each matrix contains
 pairwise R-hat values for one parameter.
 }
 \description{
-Computes pairwise R-hat matrices for a set of parameters in a
-three-dimensional draws array. If no parameters are specified, matrices are
-computed for all parameters in the draws array.
+Computes pairwise R-hat matrices for a set of parameters. If no parameters
+are specified, matrices are computed for all parameters in the input.
 }
-\keyword{internal}
+\examples{
+set.seed(1)
+
+draws <- array(
+  rnorm(1000 * 4 * 2),
+  dim = c(1000, 4, 2)
+)
+
+dimnames(draws) <- list(
+  NULL,
+  paste0("chain", 1:4),
+  c("alpha", "beta")
+)
+
+pairwise_rhat_matrices(
+  draws = draws,
+  parameters = c("alpha", "beta")
+)
+}

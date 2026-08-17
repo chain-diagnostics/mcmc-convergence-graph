@@ -10,9 +10,29 @@
 #' @returns An undirected 'igraph' object whose nodes represent chains and whose
 #' edges represent chain pairs with pairwise R-hat value below the threshold.
 #'
-#' @keywords internal
-
-
+#' @export
+#'
+#' @examples
+#' rhat_matrix <- matrix(
+#'   c(
+#'     1.000, 1.010, 1.020,
+#'     1.010, 1.000, 1.025,
+#'     1.020, 1.025, 1.000
+#'   ),
+#'   nrow = 3,
+#'   byrow = TRUE
+#' )
+#'
+#' rownames(rhat_matrix) <- paste0("chain", 1:3)
+#' colnames(rhat_matrix) <- paste0("chain", 1:3)
+#'
+#' graph <- pairwise_rhat_graph(
+#'   rhat_matrix = rhat_matrix,
+#'   rho = 1.015
+#' )
+#'
+#' graph
+#' igraph::E(graph)
 pairwise_rhat_graph <- function(rhat_matrix, rho = 1.01) {
   adjacency_matrix <- rhat_matrix <= rho
   diag(adjacency_matrix) <- FALSE

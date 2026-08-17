@@ -12,13 +12,7 @@
 #' @keywords internal
 
 split_chain <- function(x) {
-  if (!is.numeric(x)) {
-    stop("'x' must be a numeric vector.", call. = FALSE)
-  }
   n <- length(x)
-  if (n < 2) {
-    stop("'x' must contain at least 2 draws.", call. = FALSE)
-  }
   half_n <- floor(n / 2)
   list(
     first = x[seq_len(half_n)],

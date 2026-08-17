@@ -7,15 +7,15 @@
 as_draws_array(x, parameter = NULL)
 }
 \arguments{
-\item{x}{A three-dimensional array of posterior draws, or an rstan \code{stanfit}
-object.}
+\item{x}{A three-dimensional array of posterior draws, or an rstan
+\code{stanfit} object.}
 
-\item{parameter}{Optional character vector of parameter names to extract when
-\code{x} is a \code{stanfit} object. If \code{NULL}, all parameters are extracted.}
+\item{parameter}{Optional character vector of parameter names to retain.
+If \code{NULL}, all model parameters are used (excluding Stan's \code{lp__}).}
 }
 \value{
 A checked three-dimensional array of posterior draws with dimensions
-iterations by chains by parameters.
+iterations × chains × parameters.
 }
 \description{
 Converts an input object to the three-dimensional draws array format used by

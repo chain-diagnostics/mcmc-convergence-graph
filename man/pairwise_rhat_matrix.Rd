@@ -23,3 +23,22 @@ Compute pairwise R-hat value for all unique pairs of chains for one selected
 parameter. The result is a square matrix whose rows and columns correspond to
 chains.
 }
+\examples{
+set.seed(1)
+
+draws <- array(
+  rnorm(100 * 4 * 1),
+  dim = c(100, 4, 1)
+)
+
+dimnames(draws) <- list(
+  NULL,
+  paste0("chain", 1:4),
+  "alpha"
+)
+
+pairwise_rhat_matrix(
+  draws = draws,
+  parameter = "alpha"
+)
+}

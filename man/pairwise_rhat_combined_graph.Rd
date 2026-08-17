@@ -4,25 +4,67 @@
 \alias{pairwise_rhat_combined_graph}
 \title{Build a combined pairwise R-hat graph across parameters}
 \usage{
-pairwise_rhat_combined_graph(draws, parameters = NULL, rho = 1.01)
+pairwise_rhat_combined_graph(
+  draws,
+  parameters = NULL,
+  rho = 1.01,
+  mode = c("union", "intersection")
+)
 }
 \arguments{
 \item{draws}{A three-dimensional array of posterior draws with dimensions
-iterations by chains by parameter.}
+iterations by chains by parameter, or an rstan \code{stanfit} object.}
 
-\item{parameters}{Optional character vector of parameter names. If 'NULL',
-all parameters in 'draws' are used.}
+\item{parameters}{Optional character vector of parameter names. If \code{NULL},
+all parameters in \code{draws} are used.}
 
-\item{rho}{Numeric threshold used to decide whether two chains are connectedx.}
+\item{rho}{Numeric threshold used to decide whether two chains are connected.}
+
+\item{mode}{Character string. Either \code{"union"} (default) or \code{"intersection"},
+selecting how the parameter graphs are combined.}
 }
 \value{
-An undirected 'igrpah' ovject. Nodes represent chains. Edges represent
-chain pairs connected in at least one parameter-specific graph.
+An undirected \code{igraph} object. Nodes represent chains. Edges
+represent chain pairs connected in at least one (\code{mode = "union"}) or every
+(\code{mode = "intersection"}) parameter-specific graph.
 }
 \description{
-Builds a combined graph from parameter-specific pairwsie R-hat graphs. Each
-chain is represented as a node. An edge is added between two chains if at least
-one parameter has a pairwise R-hat value less than or equal to 'rho' for that
-chain pair. Edge labels record which parameters support each edge, and edge
-widths increase with the number of supporting parameters.
+Builds a combined graph from parameter-specific pairwise R-hat graphs. Each
+chain is represented as a node. The way edges are combined across parameters
+is controlled by \code{mode}. With \code{mode = "union"} (default), an edge is added
+between two chains if at least one parameter has a pairwise R-hat value less
+than or equal to \code{rho} for that chain pair, corresponding to \code{G_union} in
+the multivariate MCMC convergence graph formulation. With
+\code{mode = "intersection"}, an edge is added only if every parameter has a
+pairwise R-hat value less than or equal to \code{rho} for that chain pair,
+corresponding to \code{G_intersection}. Edge labels record which parameters
+support each edge, and edge widths increase with the number of supporting
+parameters.
+}
+\examples{
+set.seed(1)
+
+draws <- array(
+  rnorm(100 * 4 * 2),
+  dim = c(100, 4, 2)
+)
+
+dimnames(draws) <- list(
+  NULL,
+  paste0("chain", 1:4),
+  c("alpha", "beta")
+)
+
+graph_union <- pairwise_rhat_combined_graph(
+  draws = draws,
+  parameters = c("alpha", "beta"),
+  rho = 1.015
+)
+
+graph_intersection <- pairwise_rhat_combined_graph(
+  draws = draws,
+  parameters = c("alpha", "beta"),
+  rho = 1.015,
+  mode = "intersection"
+)
 }

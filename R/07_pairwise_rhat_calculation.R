@@ -7,12 +7,18 @@
 #' @param chain_i_draws A numeric vector of posterior draws from the first chain.
 #' @param chain_j_draws A numeric vector of posterior draws from the second chain.
 #'
-#' @returns A single numeric value giving the pairwise R-hat between two chains.
+#' @return A single numeric value giving the pairwise R-hat between two chains.
 #'
 #' @export
-
-
-pairwise_rhat <- function(chain_i_draws, chain_j_draws) {
+#'
+#' @examples
+#' set.seed(1)
+#'
+#' chain_1 <- rnorm(100)
+#' chain_2 <- rnorm(100)
+#'
+#' pairwise_rhat_calculation(chain_1, chain_2)
+pairwise_rhat_calculation <- function(chain_i_draws, chain_j_draws) {
   n_iter_i <- length(chain_i_draws)
   n_iter_j <- length(chain_j_draws)
   if (n_iter_i != n_iter_j) {

@@ -1,10 +1,10 @@
 #' Plot a combined pairwise R-hat graph
 #'
 #' Plots a combined pairwise R-hat graph created by
-#' `pairwise_rhat_combined_graph()`. Chains are shown as nodes, and edges are
+#' [pairwise_rhat_combined_graph()]. Chains are shown as nodes, and edges are
 #' colored according to the parameters that support each connection.
 #'
-#' @param graph An `igraph` object created by `pairwise_rhat_combined_graph()`.
+#' @param graph An `igraph` object created by [pairwise_rhat_combined_graph()].
 #' @param show_edge_labels Logical. If `TRUE`, edge labels show the parameters
 #'   supporting each edge. The default is `FALSE`.
 #' @param show_legend Logical. If `TRUE`, a legend showing parameter colors is
@@ -24,9 +24,34 @@
 #' @param show_node_note Logical. If `TRUE`, adds a note saying that node labels
 #'   represent chain indices.
 #'
-#' @returns Invisibly returns the layout matrix used for the plot.
+#' @return Invisibly returns the layout matrix used for the plot.
 #'
 #' @export
+#'
+#' @examples
+#' set.seed(1)
+#'
+#' draws <- array(
+#'   rnorm(100 * 4 * 2),
+#'   dim = c(100, 4, 2)
+#' )
+#'
+#' dimnames(draws) <- list(
+#'   NULL,
+#'   paste0("chain", 1:4),
+#'   c("alpha", "beta")
+#' )
+#'
+#' graph <- pairwise_rhat_combined_graph(
+#'   draws = draws,
+#'   parameters = c("alpha", "beta"),
+#'   rho = 1.015
+#' )
+#'
+#' plot_pairwise_rhat_combined_graph(
+#'   graph,
+#'   layout_type = "grid"
+#' )
 plot_pairwise_rhat_combined_graph <- function(
   graph,
   show_edge_labels = FALSE,
@@ -40,7 +65,7 @@ plot_pairwise_rhat_combined_graph <- function(
   edge_curved = 0.1,
   legend_position = "top",
   legend_cex = 0.8,
-  show_node_note = TRUE
+  show_node_note = FALSE
 ) {
   layout_type <- match.arg(layout_type)
 
@@ -76,7 +101,7 @@ plot_pairwise_rhat_combined_graph <- function(
   on.exit(graphics::par(old_par), add = TRUE)
 
   graphics::par(
-    mar = c(5, 1, 7, 1),
+    mar = c(3, 1, 4, 1),
     xpd = NA
   )
 
@@ -96,6 +121,7 @@ plot_pairwise_rhat_combined_graph <- function(
     edge.label.cex = edge_label_cex,
     edge.label.color = "black",
     main = main,
+    ylim = c(-1.15, 1.15),
     asp = 0
   )
 
@@ -138,24 +164,28 @@ plot_pairwise_rhat_combined_graph <- function(
       )
     }
 
+    horizontal_legend <- legend_position %in% c("top", "bottom")
+
     if (legend_position == "top") {
       graphics::legend(
         "top",
-        inset = c(0, -0.12),
+        inset  = c(0, -0.02),
         legend = legend_labels,
-        col = legend_colors,
-        lwd = 2,
-        bty = "n",
-        cex = legend_cex
+        col    = legend_colors,
+        lwd    = 2,
+        horiz  = horizontal_legend,
+        bty    = "n",
+        cex    = legend_cex
       )
     } else {
       graphics::legend(
         legend_position,
         legend = legend_labels,
-        col = legend_colors,
-        lwd = 2,
-        bty = "n",
-        cex = legend_cex
+        col    = legend_colors,
+        lwd    = 2,
+        horiz  = horizontal_legend,
+        bty    = "n",
+        cex    = legend_cex
       )
     }
   }

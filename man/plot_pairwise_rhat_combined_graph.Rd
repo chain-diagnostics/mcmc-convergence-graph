@@ -17,11 +17,11 @@ plot_pairwise_rhat_combined_graph(
   edge_curved = 0.1,
   legend_position = "top",
   legend_cex = 0.8,
-  show_node_note = TRUE
+  show_node_note = FALSE
 )
 }
 \arguments{
-\item{graph}{An \code{igraph} object created by \code{pairwise_rhat_combined_graph()}.}
+\item{graph}{An \code{igraph} object created by \code{\link[=pairwise_rhat_combined_graph]{pairwise_rhat_combined_graph()}}.}
 
 \item{show_edge_labels}{Logical. If \code{TRUE}, edge labels show the parameters
 supporting each edge. The default is \code{FALSE}.}
@@ -58,6 +58,31 @@ Invisibly returns the layout matrix used for the plot.
 }
 \description{
 Plots a combined pairwise R-hat graph created by
-\code{pairwise_rhat_combined_graph()}. Chains are shown as nodes, and edges are
+\code{\link[=pairwise_rhat_combined_graph]{pairwise_rhat_combined_graph()}}. Chains are shown as nodes, and edges are
 colored according to the parameters that support each connection.
+}
+\examples{
+set.seed(1)
+
+draws <- array(
+  rnorm(100 * 4 * 2),
+  dim = c(100, 4, 2)
+)
+
+dimnames(draws) <- list(
+  NULL,
+  paste0("chain", 1:4),
+  c("alpha", "beta")
+)
+
+graph <- pairwise_rhat_combined_graph(
+  draws = draws,
+  parameters = c("alpha", "beta"),
+  rho = 1.015
+)
+
+plot_pairwise_rhat_combined_graph(
+  graph,
+  layout_type = "grid"
+)
 }

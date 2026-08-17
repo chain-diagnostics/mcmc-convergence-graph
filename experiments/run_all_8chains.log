@@ -1,0 +1,3023 @@
+=== Installing pairwiserhat from local source ===
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/baseline_rhat/uniform.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 2e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.2 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 0.000106 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 1.06 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 5).
+Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 4: 
+Chain 4: Gradient evaluation took 3.6e-05 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.36 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 5: 
+Chain 5: Gradient evaluation took 0.000124 seconds
+Chain 5: 1000 transitions using 10 leapfrog steps per transition would take 1.24 seconds.
+Chain 5: Adjust your expectations accordingly!
+Chain 5: 
+Chain 5: 
+Chain 5: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 5: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 3: 
+Chain 3: Gradient evaluation took 0.000106 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 1.06 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 5: Iteration:  400 / 2000 [ 20%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 6).
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 7).
+Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 6: 
+Chain 6: Gradient evaluation took 1.8e-05 seconds
+Chain 6: 1000 transitions using 10 leapfrog steps per transition would take 0.18 seconds.
+Chain 6: Adjust your expectations accordingly!
+Chain 6: 
+Chain 6: 
+Chain 6: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.017 seconds (Warm-up)
+Chain 1:                0.011 seconds (Sampling)
+Chain 1:                0.028 seconds (Total)
+Chain 1: 
+Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.018 seconds (Warm-up)
+Chain 2:                0.007 seconds (Sampling)
+Chain 2:                0.025 seconds (Total)
+Chain 2: Chain 
+7: 
+Chain 7: Gradient evaluation took 5.1e-05 seconds
+Chain 7: 1000 transitions using 10 leapfrog steps per transition would take 0.51 seconds.
+Chain 7: Adjust your expectations accordingly!
+Chain 7: 
+Chain 7: 
+Chain 7: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 5: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 6: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 5: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 7: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 6: Iteration:  400 / 2000 [ 20%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 8).
+Chain 5: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 5: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 7: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 8: 
+Chain 8: Gradient evaluation took 9e-06 seconds
+Chain 8: 1000 transitions using 10 leapfrog steps per transition would take 0.09 seconds.
+Chain 8: Adjust your expectations accordingly!
+Chain 8: 
+Chain 8: 
+Chain 8: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 5: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 6: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 7: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 8: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 6: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 7: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 5: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 8: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 7: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 7: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 6: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 6: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 0.02 seconds (Warm-up)
+Chain 4:                0.016 seconds (Sampling)
+Chain 4:                0.036 seconds (Total)
+Chain 4: 
+Chain 8: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 5: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 7: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 6: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 7: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 6: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 5: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 7: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 6: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 7: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 8: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 6: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 5: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 5: 
+Chain 5:  Elapsed Time: 0.019 seconds (Warm-up)
+Chain 5:                0.024 seconds (Sampling)
+Chain 5:                0.043 seconds (Total)
+Chain 5: 
+Chain 7: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 7: 
+Chain 7:  Elapsed Time: 0.019 seconds (Warm-up)
+Chain 7:                0.013 seconds (Sampling)
+Chain 7:                0.032 seconds (Total)
+Chain 7: 
+Chain 6: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 6: 
+Chain 6:  Elapsed Time: 0.022 seconds (Warm-up)
+Chain 6:                0.014 seconds (Sampling)
+Chain 6:                0.036 seconds (Total)
+Chain 6: 
+Chain 8: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 0.022 seconds (Warm-up)
+Chain 3:                0.017 seconds (Sampling)
+Chain 3:                0.039 seconds (Total)
+Chain 3: 
+Chain 8: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 8: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 8: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 8: 
+Chain 8:  Elapsed Time: 0.021 seconds (Warm-up)
+Chain 8:                0.02 seconds (Sampling)
+Chain 8:                0.041 seconds (Total)
+Chain 8: 
+Warning messages:
+1: There were 1033 divergent transitions after warmup. See
+https://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup
+to find out why this is a problem and how to eliminate them. 
+2: Examine the pairs() plot to diagnose sampling problems
+ 
+3: The largest R-hat is 1.13, indicating chains have not mixed.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#r-hat 
+4: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess 
+5: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess 
+           mean se_mean     sd    2.5%     25%    50%    75%  97.5%    n_eff
+theta[1] 0.0688  0.0980 1.2191 -1.9439 -0.9979 0.0605 1.1890 1.9250 154.7042
+theta[2] 0.1085  0.1063 1.2289 -1.9362 -0.9536 0.1046 1.1790 2.0624 133.5377
+lp__     7.7183  0.0950 0.3927  6.2642  7.8236 7.8238 7.8239 7.8240  17.0945
+           Rhat
+theta[1] 1.0651
+theta[2] 1.0844
+lp__     1.9798
+Finished in 0.09 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/baseline_rhat/gaussian_ball.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 9e-06 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.09 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 2: 
+Chain 2: Gradient evaluation took 7e-06 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.07 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 3: 
+Chain 3: Gradient evaluation took 9e-06 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.09 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.004 seconds (Warm-up)
+Chain 1:                0.003 seconds (Sampling)
+Chain 1:                0.007 seconds (Total)
+Chain 1: 
+Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 4: 
+Chain 4: Gradient evaluation took 1.3e-05 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.13 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.004 seconds (Warm-up)
+Chain 2:                0.003 seconds (Sampling)
+Chain 2:                0.007 seconds (Total)
+Chain 2: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 5).
+Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 5: 
+Chain 5: Gradient evaluation took 1e-05 seconds
+Chain 5: 1000 transitions using 10 leapfrog steps per transition would take 0.1 seconds.
+Chain 5: Adjust your expectations accordingly!
+Chain 5: 
+Chain 5: 
+Chain 5: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 6).
+Chain 5: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 5: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 6: 
+Chain 6: Gradient evaluation took 8e-06 seconds
+Chain 6: 1000 transitions using 10 leapfrog steps per transition would take 0.08 seconds.
+Chain 6: Adjust your expectations accordingly!
+Chain 3Chain 6: 
+Chain 6: 
+: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 0.004 seconds (Warm-up)
+Chain 3:                0.004 seconds (Sampling)
+Chain 3:                0.008 seconds (Total)
+Chain 3: 
+Chain 6: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 7).
+Chain 5: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 7: 
+Chain 7: Gradient evaluation took 6e-06 seconds
+Chain 7: 1000 transitions using 10 leapfrog steps per transition would take 0.06 seconds.
+Chain 7: Adjust your expectations accordingly!
+Chain 7: 
+Chain 7: 
+Chain 7: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 6: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 5: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 0.004 seconds (Warm-up)
+Chain 4:                0.003 seconds (Sampling)
+Chain 4:                0.007 seconds (Total)
+Chain 4: 
+Chain 5: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 6: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 5: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 7: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 7: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 6: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 5: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 6: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 7: Iteration:  600 / 2000 [ 30%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 8).
+Chain 5: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 7: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 6: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 6: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 5: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 8: 
+Chain 8: Gradient evaluation took 7e-06 seconds
+Chain 8: 1000 transitions using 10 leapfrog steps per transition would take 0.07 seconds.
+Chain 8: Adjust your expectations accordingly!
+Chain 8: 
+Chain 8: 
+Chain 8: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 7: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 7: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 6: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 5: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 7: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 6: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 7: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 8: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 5: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 6: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 5: 
+Chain 5:  Elapsed Time: 0.004 seconds (Warm-up)
+Chain 5:                0.004 seconds (Sampling)
+Chain 5:                0.008 seconds (Total)
+Chain 5: 
+Chain 7: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 6: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 7: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 6: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 6: 
+Chain 6:  Elapsed Time: 0.004 seconds (Warm-up)
+Chain 6:                0.003 seconds (Sampling)
+Chain 6:                0.007 seconds (Total)
+Chain 6: 
+Chain 8: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 7: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 7: 
+Chain 7:  Elapsed Time: 0.004 seconds (Warm-up)
+Chain 7:                0.003 seconds (Sampling)
+Chain 7:                0.007 seconds (Total)
+Chain 7: 
+Chain 8: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 8: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 8: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 8: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 8: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 8: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 8: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 8: 
+Chain 8:  Elapsed Time: 0.005 seconds (Warm-up)
+Chain 8:                0.003 seconds (Sampling)
+Chain 8:                0.008 seconds (Total)
+Chain 8: 
+            mean se_mean     sd    2.5%     25%     50%    75%  97.5%    n_eff
+theta[1] -0.0060  0.0121 1.0054 -1.9800 -0.6637 -0.0117 0.6494 2.0361 6850.559
+theta[2] -0.0268  0.0125 1.0235 -2.0189 -0.7191 -0.0244 0.6613 1.9587 6678.299
+lp__      6.7943  0.0173 1.0308  4.0701  6.3878  7.1094 7.5359 7.7987 3535.936
+           Rhat
+theta[1] 1.0006
+theta[2] 0.9998
+lp__     1.0010
+Finished in 0.05 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/baseline_rhat/three_cluster.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+hash mismatch so recompiling; make sure Stan code ends with a blank line
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 1: 
+Chain 1: Gradient evaluation took 2.1e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.21 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 2: 
+Chain 2: Gradient evaluation took 9e-06 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.09 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 3: 
+Chain 3: Gradient evaluation took 1.7e-05 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.17 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 4: 
+Chain 4: Gradient evaluation took 1.6e-05 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.16 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 5).
+Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 5: 
+Chain 5: Gradient evaluation took 1.7e-05 seconds
+Chain 5: 1000 transitions using 10 leapfrog steps per transition would take 0.17 seconds.
+Chain 5: Adjust your expectations accordingly!
+Chain 5: 
+Chain 5: 
+Chain 5: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 6).
+Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 7).
+Chain 6: 
+Chain 6: Gradient evaluation took 1.6e-05 seconds
+Chain 6: 1000 transitions using 10 leapfrog steps per transition would take 0.16 seconds.
+Chain 6: Adjust your expectations accordingly!
+Chain 6: 
+Chain 6: 
+Chain 6: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 5: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 7: 
+Chain 7: Gradient evaluation took 1.3e-05 seconds
+Chain 7: 1000 transitions using 10 leapfrog steps per transition would take 0.13 seconds.
+Chain 7: Adjust your expectations accordingly!
+Chain 7: 
+Chain 7: 
+Chain 7: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 6: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 5: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 2: 
+Chain 2: Chain  Elapsed Time: 0.004 seconds (Warm-up)3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+
+Chain 2:                0.004 seconds (Sampling)
+Chain 2: Chain                0.008 seconds (Total)3
+: Chain Iteration: 1001 / 2000 [ 50%]  (Sampling)2
+: 
+Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.004 seconds (Warm-up)
+Chain 1:                0.005 seconds (Sampling)
+Chain 1:                0.009 seconds (Total)
+Chain 1: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 8).
+Chain 7: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 6: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 8: 
+Chain 8: Gradient evaluation took 2.3e-05 seconds
+Chain 8: 1000 transitions using 10 leapfrog steps per transition would take 0.23 seconds.
+Chain 8: Adjust your expectations accordingly!
+Chain 8: 
+Chain 8: 
+Chain 8: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 5: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 7: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 6: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 5: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 8: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 7: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 6: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 5: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain Chain 85: : Iteration:  400 / 2000 [ 20%]  (Warmup)Iteration: 1001 / 2000 [ 50%]  (Sampling)
+
+Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 7: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 6: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 6: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 5: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 7: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 7: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 8: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 6: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 0.005 seconds (Warm-up)
+Chain 3:                0.004 seconds (Sampling)
+Chain 3:                0.009 seconds (Total)
+Chain 3: 
+Chain 5: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 7: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 8: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 6: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 7: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 5: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 8: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 8: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 0.005 seconds (Warm-up)
+Chain 4:                0.005 seconds (Sampling)
+Chain 4:                0.01 seconds (Total)
+Chain 4: 
+Chain 6: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 8: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 7: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 5: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 6: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 7: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 5: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 5: 
+Chain 5:  Elapsed Time: 0.005 seconds (Warm-up)
+Chain 5:                0.005 seconds (Sampling)
+Chain 5:                0.01 seconds (Total)
+Chain 5: 
+Chain 6: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 6: 
+Chain 6:  Elapsed Time: 0.005 seconds (Warm-up)
+Chain 6:                0.005 seconds (Sampling)
+Chain 6:                0.01 seconds (Total)
+Chain 6: 
+Chain 8: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 7: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 7: 
+Chain 7:  Elapsed Time: 0.005 seconds (Warm-up)
+Chain 7:                0.005 seconds (Sampling)
+Chain 7:                0.01 seconds (Total)
+Chain 7: 
+Chain 8: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 8: 
+Chain 8:  Elapsed Time: 0.005 seconds (Warm-up)
+Chain 8:                0.004 seconds (Sampling)
+Chain 8:                0.009 seconds (Total)
+Chain 8: 
+Warning messages:
+1: The largest R-hat is 2.11, indicating chains have not mixed.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#r-hat 
+2: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess 
+3: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess 
+            mean se_mean     sd    2.5%     25%     50%     75%   97.5%
+theta[1] -0.6162  1.4924 3.0258 -5.5935 -2.3389 -0.1216  0.4459  5.3909
+theta[2]  3.1068  1.2073 2.4631 -0.7548  0.2178  4.5498  5.0955  5.8601
+lp__     -2.7230  0.0179 1.0336 -5.5019 -3.1335 -2.4086 -1.9751 -1.6990
+             n_eff   Rhat
+theta[1]    4.1108 6.0587
+theta[2]    4.1623 5.0089
+lp__     3335.1760 1.0018
+Finished in 0.76 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/baseline_rhat/funnel.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 1.3e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.13 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+Chain 2: 
+Chain 2: Gradient evaluation took 1.9e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.19 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 3: 
+Chain 3: Gradient evaluation took 1.3e-05 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.13 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 5).
+Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 4: 
+Chain 4: Gradient evaluation took 1.2e-05 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.12 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 5: 
+Chain 5: Gradient evaluation took 1.4e-05 seconds
+Chain 5: 1000 transitions using 10 leapfrog steps per transition would take 0.14 seconds.
+Chain 5: Adjust your expectations accordingly!
+Chain 5: 
+Chain 5: 
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 6).
+Chain 5: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 7).
+Chain 6: 
+Chain 6: Gradient evaluation took 1.3e-05 seconds
+Chain 3: Chain Iteration:  200 / 2000 [ 10%]  (Warmup)6: 1000 transitions using 10 leapfrog steps per transition would take 0.13 seconds.
+
+Chain 6: Adjust your expectations accordingly!
+Chain 6: 
+Chain 6: 
+Chain 6: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 7: 
+Chain 7: Gradient evaluation took 1e-05 seconds
+Chain 7: 1000 transitions using 10 leapfrog steps per transition would take 0.1 seconds.
+Chain 7: Adjust your expectations accordingly!
+Chain 7: 
+Chain 7: 
+Chain 7: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 8).
+Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 5: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 6: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 8: 
+Chain 8: Gradient evaluation took 1e-05 seconds
+Chain 8: 1000 transitions using 10 leapfrog steps per transition would take 0.1 seconds.
+Chain 8: Adjust your expectations accordingly!
+Chain 8: 
+Chain 8: 
+Chain 8: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 7: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 5: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 6: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 8: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 5: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 7: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 6: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 5: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 7: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.01 seconds (Warm-up)
+Chain 1:                0.009 seconds (Sampling)
+Chain 1:                0.019 seconds (Total)
+Chain 1: 
+Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 8: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 5: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 5: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 6: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 5: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 7: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 5: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 8: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 6: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 6: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 5: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 5: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 5: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 5: 
+Chain 5:  Elapsed Time: 0.011 seconds (Warm-up)
+Chain 5:                0.004 seconds (Sampling)
+Chain 5:                0.015 seconds (Total)
+Chain 5: 
+Chain 7: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 7: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 8: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 8: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 6: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 8: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 6: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.011 seconds (Warm-up)
+Chain 2:                0.01 seconds (Sampling)
+Chain 2:                0.021 seconds (Total)
+Chain 2: 
+Chain 6: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 7: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 0.011 seconds (Warm-up)
+Chain 4:                0.01 seconds (Sampling)
+Chain 4:                0.021 seconds (Total)
+Chain 4: 
+Chain 8: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 6: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 6: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 6: 
+Chain 6:  Elapsed Time: 0.012 seconds (Warm-up)
+Chain 6:                0.01 seconds (Sampling)
+Chain 6:                0.022 seconds (Total)
+Chain 6: 
+Chain 7: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 8: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 0.011 seconds (Warm-up)
+Chain 3:                0.016 seconds (Sampling)
+Chain 3:                0.027 seconds (Total)
+Chain 3: 
+Chain 7: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 8: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 8: 
+Chain 8:  Elapsed Time: 0.012 seconds (Warm-up)
+Chain 8:                0.013 seconds (Sampling)
+Chain 8:                0.025 seconds (Total)
+Chain 8: 
+Chain 7: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 7: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 7: 
+Chain 7:  Elapsed Time: 0.013 seconds (Warm-up)
+Chain 7:                0.019 seconds (Sampling)
+Chain 7:                0.032 seconds (Total)
+Chain 7: 
+Warning messages:
+1: There were 583 divergent transitions after warmup. See
+https://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup
+to find out why this is a problem and how to eliminate them. 
+2: Examine the pairs() plot to diagnose sampling problems
+ 
+3: The largest R-hat is 1.2, indicating chains have not mixed.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#r-hat 
+4: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess 
+5: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess 
+        mean se_mean     sd     2.5%     25%     50%    75%   97.5%     n_eff
+v     1.2160  0.3908 2.3570  -2.4752 -0.4886  0.9991 2.6854  6.4728   36.3797
+x[1] -0.2705  0.2196 8.6550 -15.0978 -1.1097 -0.0354 0.9811 12.3876 1552.7045
+x[2]  0.0329  0.1645 8.4855 -11.7904 -0.9473 -0.0013 0.9920 14.2681 2660.4743
+lp__  7.2754  0.4776 3.2334  -0.5916  5.6144  7.8043 9.5222 11.8777   45.8419
+       Rhat
+v    1.1471
+x[1] 1.0022
+x[2] 1.0008
+lp__ 1.1222
+Finished in 0.05 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/baseline_rhat/linear_with_noise.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 0.000149 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.49 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 1e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.1 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 3: 
+Chain 3: Gradient evaluation took 4.1e-05 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.41 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 4: 
+Chain 4: Gradient evaluation took 9e-06 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.09 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 5).
+Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 5: 
+Chain 5: Gradient evaluation took 6e-06 seconds
+Chain 5: 1000 transitions using 10 leapfrog steps per transition would take 0.06 seconds.
+Chain 5: Adjust your expectations accordingly!
+Chain 5: 
+Chain 5: 
+Chain 5: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 6).
+Chain 6: 
+Chain 6: Gradient evaluation took 6e-06 seconds
+Chain 6
+: 1000 transitions using 10 leapfrog steps per transition would take 0.06 seconds.SAMPLING
+ FOR MODEL 'anon_model' NOW (CHAIN 7).
+Chain 6: Adjust your expectations accordingly!
+Chain 6: 
+Chain 6: 
+Chain 6: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 8).
+Chain 7: 
+Chain 7Chain : 5Gradient evaluation took 7e-06 seconds: 
+Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 7: 1000 transitions using 10 leapfrog steps per transition would take 0.07 seconds.
+Chain 7: Adjust your expectations accordingly!
+Chain 7: 
+Chain 7: 
+Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 7: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 8: 
+Chain 8: Gradient evaluation took 6e-06 seconds
+Chain 8: 1000 transitions using 10 leapfrog steps per transition would take 0.06 seconds.
+Chain 8: Adjust your expectations accordingly!
+Chain 8: 
+Chain 8: 
+Chain 8: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 5: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 6: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 7: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 5: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 8: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 6: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 7: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 5: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 6: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 7: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 5: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 5: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 8: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 7: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 6: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 5: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 8: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 7: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 7: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 6: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 6: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.011 seconds (Warm-up)
+Chain 1:                0.009 seconds (Sampling)
+Chain 1:                0.02 seconds (Total)
+Chain 1: 
+Chain 8: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 5: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 6: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 7: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 0.011 seconds (Warm-up)
+Chain 3:                0.009 seconds (Sampling)
+Chain 3:                0.02 seconds (Total)
+Chain 3: 
+Chain 8: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 8: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 5: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.011 seconds (Warm-up)
+Chain 2:                0.011 seconds (Sampling)
+Chain 2:                0.022 seconds (Total)
+Chain 2: 
+Chain 6: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 7: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 5: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 6: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 7: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 5: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 5: 
+Chain 5:  Elapsed Time: 0.012 seconds (Warm-up)
+Chain 5:                0.01 seconds (Sampling)
+Chain 5:                0.022 seconds (Total)
+Chain 5: 
+Chain 8: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 0.013 seconds (Warm-up)
+Chain 4:                0.011 seconds (Sampling)
+Chain 4:                0.024 seconds (Total)
+Chain 4: 
+Chain 6: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 7: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 6: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 6: 
+Chain 6:  Elapsed Time: 0.011 seconds (Warm-up)
+Chain 6:                0.01 seconds (Sampling)
+Chain 6:                0.021 seconds (Total)
+Chain 6: 
+Chain 7: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 7: 
+Chain 7:  Elapsed Time: 0.011 seconds (Warm-up)
+Chain 7:                0.011 seconds (Sampling)
+Chain 7:                0.022 seconds (Total)
+Chain 7: 
+Chain 8: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 8: 
+Chain 8:  Elapsed Time: 0.013 seconds (Warm-up)
+Chain 8:                0.011 seconds (Sampling)
+Chain 8:                0.024 seconds (Total)
+Chain 8: 
+         mean se_mean     sd    2.5%     25%     50%     75%   97.5%    n_eff
+a      1.4624  0.0006 0.0530  1.3601  1.4270  1.4619  1.4978  1.5679 7274.640
+b      0.5386  0.0007 0.0611  0.4172  0.4985  0.5390  0.5788  0.6593 6714.495
+sigma  0.4606  0.0006 0.0437  0.3848  0.4291  0.4568  0.4884  0.5564 5884.505
+lp__  21.0362  0.0205 1.2646 17.7615 20.4668 21.3730 21.9548 22.4555 3822.673
+        Rhat
+a     0.9999
+b     1.0002
+sigma 1.0003
+lp__  1.0021
+Finished in 0.05 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/baseline_rhat/same_slope_diff_intercept.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 1: 
+Chain 1: Gradient evaluation took 3.9e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.39 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 2: 
+Chain 2: Gradient evaluation took 1.9e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.19 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 3: 
+Chain 3: Gradient evaluation took 3.3e-05 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.33 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 5).
+Chain 4: 
+Chain 4: Gradient evaluation took 4e-05 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.4 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 5: 
+Chain 5: Gradient evaluation took 3.1e-05 seconds
+Chain 5: 1000 transitions using 10 leapfrog steps per transition would take 0.31 seconds.
+Chain 5: Adjust your expectations accordingly!
+Chain 5: 
+Chain 5: 
+Chain 5: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 6).
+Chain 6: 
+Chain 6: Gradient evaluation took 3.5e-05 seconds
+Chain 6: 1000 transitions using 10 leapfrog steps per transition would take 0.35 seconds.
+Chain 6: Adjust your expectations accordingly!
+Chain 6: 
+Chain 6: 
+Chain 6: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 7).
+Chain 7: 
+Chain 7: Gradient evaluation took 2.3e-05 seconds
+Chain 7: 1000 transitions using 10 leapfrog steps per transition would take 0.23 seconds.
+Chain 7: Adjust your expectations accordingly!
+Chain 7: 
+Chain 7: 
+Chain 7: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 8).
+Chain 8: 
+Chain 8: Gradient evaluation took 1.8e-05 seconds
+Chain 8: 1000 transitions using 10 leapfrog steps per transition would take 0.18 seconds.
+Chain 8: Adjust your expectations accordingly!
+Chain 8: 
+Chain 8: 
+Chain 8: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 6: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 7: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 8: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 5: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 6: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 7: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 8: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 5: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 6: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 7: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 8: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 5: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 6: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 7: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 8: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 5: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 6: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 6: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 7: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 7: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 8: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 8: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 5: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 5: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 6: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 8: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 7: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 5: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 6: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 8: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 7: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 6: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 5: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 7: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.065 seconds (Warm-up)
+Chain 2:                0.045 seconds (Sampling)
+Chain 2:                0.11 seconds (Total)
+Chain 2: 
+Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 0.066 seconds (Warm-up)
+Chain 4:                0.043 seconds (Sampling)
+Chain 4:                0.109 seconds (Total)
+Chain 4: 
+Chain 6: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 0.065 seconds (Warm-up)
+Chain 3:                0.046 seconds (Sampling)
+Chain 3:                0.111 seconds (Total)
+Chain 3: 
+Chain 5: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 8: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.075 seconds (Warm-up)
+Chain 1:                0.044 seconds (Sampling)
+Chain 1:                0.119 seconds (Total)
+Chain 1: 
+Chain 7: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 6: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 6: 
+Chain 6:  Elapsed Time: 0.069 seconds (Warm-up)
+Chain 6:                0.045 seconds (Sampling)
+Chain 6:                0.114 seconds (Total)
+Chain 6: 
+Chain 8: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 8: 
+Chain 8:  Elapsed Time: 0.068 seconds (Warm-up)
+Chain 8:                0.046 seconds (Sampling)
+Chain 8:                0.114 seconds (Total)
+Chain 8: 
+Chain 5: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 7: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 7: 
+Chain 7:  Elapsed Time: 0.068 seconds (Warm-up)
+Chain 7:                0.053 seconds (Sampling)
+Chain 7:                0.121 seconds (Total)
+Chain 7: 
+Chain 5: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 5: 
+Chain 5:  Elapsed Time: 0.081 seconds (Warm-up)
+Chain 5:                0.049 seconds (Sampling)
+Chain 5:                0.13 seconds (Total)
+Chain 5: 
+Warning messages:
+1: The largest R-hat is 1.64, indicating chains have not mixed.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#r-hat 
+2: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess 
+3: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess 
+          mean se_mean     sd     2.5%      25%      50%      75%    97.5%
+a       0.9762  0.0002 0.0219   0.9331   0.9615   0.9762   0.9909   1.0188
+b1      3.3727  1.0994 2.1999   0.4573   0.5570   5.0341   5.0879   5.1662
+b2      2.2369  1.0995 2.2000   0.4447   0.5204   0.5764   5.0553   5.1544
+sigma   0.2773  0.0003 0.0269   0.2307   0.2583   0.2752   0.2939   0.3364
+lp__  -43.5872  0.0249 1.4893 -47.3761 -44.2953 -43.2536 -42.4952 -41.7433
+         n_eff    Rhat
+a     9986.825  1.0000
+b1       4.004 44.1153
+b2       4.004 44.3943
+sigma 6160.658  1.0006
+lp__  3583.369  1.0010
+Finished in 0.05 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/baseline_rhat/diff_slope_same_intercept.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 3.2e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.32 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 2: 
+Chain 2: Gradient evaluation took 6e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.6 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 3: 
+Chain 3: Gradient evaluation took 3e-05 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.3 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+Chain 4: 
+Chain 4: Gradient evaluation took 2.2e-05 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.22 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 5).
+Chain 5: 
+Chain 5: Gradient evaluation took 2.1e-05 seconds
+Chain 5: 1000 transitions using 10 leapfrog steps per transition would take 0.21 seconds.
+Chain 5: Adjust your expectations accordingly!
+Chain 5: 
+Chain 5: 
+Chain 5: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 6).
+Chain 6: 
+Chain 6: Gradient evaluation took 2.3e-05 seconds
+Chain 6: 1000 transitions using 10 leapfrog steps per transition would take 0.23 seconds.
+Chain 6: Adjust your expectations accordingly!
+Chain 6: 
+Chain 6: 
+Chain 6: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 7).
+Chain 7: 
+Chain 7: Gradient evaluation took 2e-05 seconds
+Chain 7: 1000 transitions using 10 leapfrog steps per transition would take 0.2 seconds.
+Chain 7: Adjust your expectations accordingly!
+Chain 7: 
+Chain 7: 
+Chain 7: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 8).
+Chain 8: 
+Chain 8: Gradient evaluation took 3e-05 seconds
+Chain 8: 1000 transitions using 10 leapfrog steps per transition would take 0.3 seconds.
+Chain 8: Adjust your expectations accordingly!
+Chain 8: 
+Chain 8: 
+Chain 8: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 7: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 6: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 5: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 8: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 6: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 7: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 5: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 8: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 6: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 5: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 7: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 8: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 6: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 5: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 7: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 8: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 6: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 6: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 5: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 5: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 7: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 7: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 8: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 8: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 6: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 5: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 7: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 8: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 6: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 7: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 5: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 8: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 6: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 7: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 5: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 6: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 7: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.053 seconds (Warm-up)
+Chain 2:                0.051 seconds (Sampling)
+Chain 2:                0.104 seconds (Total)
+Chain 2: 
+Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.06 seconds (Warm-up)
+Chain 1:                0.048 seconds (Sampling)
+Chain 1:                0.108 seconds (Total)
+Chain 1: 
+Chain 5: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 0.056 seconds (Warm-up)
+Chain 3:                0.051 seconds (Sampling)
+Chain 3:                0.107 seconds (Total)
+Chain 3: 
+Chain 6: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 6: 
+Chain 6:  Elapsed Time: 0.06 seconds (Warm-up)
+Chain 6:                0.043 seconds (Sampling)
+Chain 6:                0.103 seconds (Total)
+Chain 6: 
+Chain 8: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 0.059 seconds (Warm-up)
+Chain 4:                0.049 seconds (Sampling)
+Chain 4:                0.108 seconds (Total)
+Chain 4: 
+Chain 7: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 7: 
+Chain 7:  Elapsed Time: 0.06 seconds (Warm-up)
+Chain 7:                0.047 seconds (Sampling)
+Chain 7:                0.107 seconds (Total)
+Chain 7: 
+Chain 5: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 5: 
+Chain 5:  Elapsed Time: 0.061 seconds (Warm-up)
+Chain 5:                0.052 seconds (Sampling)
+Chain 5:                0.113 seconds (Total)
+Chain 5: 
+Chain 8: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 8: 
+Chain 8:  Elapsed Time: 0.063 seconds (Warm-up)
+Chain 8:                0.048 seconds (Sampling)
+Chain 8:                0.111 seconds (Total)
+Chain 8: 
+Warning messages:
+1: The largest R-hat is 1.64, indicating chains have not mixed.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#r-hat 
+2: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess 
+3: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess 
+          mean se_mean     sd     2.5%      25%      50%      75%    97.5%
+a1      0.8625  0.4264 0.8536   0.1426   0.1943   0.2291   1.9507   2.0082
+a2      1.3042  0.4261 0.8529   0.1576   0.2165   1.9386   1.9721   2.0190
+b       1.0440  0.0004 0.0399   0.9629   1.0175   1.0439   1.0706   1.1229
+sigma   0.2859  0.0004 0.0297   0.2342   0.2657   0.2833   0.3035   0.3532
+lp__  -39.3696  0.0271 1.5161 -43.2081 -40.0927 -39.0124 -38.2655 -37.5207
+          n_eff    Rhat
+a1       4.0072 27.2018
+a2       4.0069 28.0316
+b     8040.5632  0.9999
+sigma 5091.3158  1.0004
+lp__  3128.8208  1.0022
+Finished in 0.05 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/baseline_rhat/diff_slope_diff_intercept.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+Chain 1: 
+Chain 1: Gradient evaluation took 1.6e-05 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.16 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+Chain 2: 
+Chain 2: Gradient evaluation took 3.1e-05 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.31 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 5).
+Chain 4: 
+Chain 4: Gradient evaluation took 3.7e-05 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.37 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 5: 
+Chain 5: Gradient evaluation took 2.7e-05 seconds
+Chain 5: 1000 transitions using 10 leapfrog steps per transition would take 0.27 seconds.
+Chain 5: Adjust your expectations accordingly!
+Chain 5: 
+Chain 5: 
+Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 5: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+Chain 3: 
+Chain 3: Gradient evaluation took 5.5e-05 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.55 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 6).
+Chain 6: 
+Chain 6: Gradient evaluation took 3.2e-05 seconds
+Chain 6: 1000 transitions using 10 leapfrog steps per transition would take 0.32 seconds.
+Chain 6: Adjust your expectations accordingly!
+Chain 6: 
+Chain 6: 
+Chain 6: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 7).
+Chain 7: 
+Chain 7: Gradient evaluation took 2.1e-05 seconds
+Chain 7: 1000 transitions using 10 leapfrog steps per transition would take 0.21 seconds.
+Chain 7: Adjust your expectations accordingly!
+Chain 7: 
+Chain 7: 
+Chain 7: Iteration:    1 / 2000 [  0%]  (Warmup)
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 8).
+Chain 8: 
+Chain 8: Gradient evaluation took 2.4e-05 seconds
+Chain 8: 1000 transitions using 10 leapfrog steps per transition would take 0.24 seconds.
+Chain 8: Adjust your expectations accordingly!
+Chain 8: 
+Chain 8: 
+Chain 8: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 5: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 6: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 7: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 5: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 8: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 6: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 7: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 5: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 8: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 6: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 5: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 7: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 8: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 6: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 5: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 5: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 7: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 8: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 6: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 6: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 7: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 7: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 5: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 8: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 8: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 6: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 7: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 5: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 8: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 6: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 7: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 5: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 6: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 7: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 5: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 0.056 seconds (Warm-up)
+Chain 2:                0.045 seconds (Sampling)
+Chain 2:                0.101 seconds (Total)
+Chain 2: 
+Chain 8: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 7: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 6: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 0.063 seconds (Warm-up)
+Chain 1:                0.049 seconds (Sampling)
+Chain 1:                0.112 seconds (Total)
+Chain 1: 
+Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 0.058 seconds (Warm-up)
+Chain 4:                0.046 seconds (Sampling)
+Chain 4:                0.104 seconds (Total)
+Chain 4: 
+Chain 5: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 5: 
+Chain 5:  Elapsed Time: 0.058 seconds (Warm-up)
+Chain 5:                0.049 seconds (Sampling)
+Chain 5:                0.107 seconds (Total)
+Chain 5: 
+Chain 8: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 7: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 7: 
+Chain 7:  Elapsed Time: 0.059 seconds (Warm-up)
+Chain 7:                0.044 seconds (Sampling)
+Chain 7:                0.103 seconds (Total)
+Chain 7: 
+Chain 6: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 6: 
+Chain 6:  Elapsed Time: 0.057 seconds (Warm-up)
+Chain 6:                0.048 seconds (Sampling)
+Chain 6:                0.105 seconds (Total)
+Chain 6: 
+Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 0.063 seconds (Warm-up)
+Chain 3:                0.048 seconds (Sampling)
+Chain 3:                0.111 seconds (Total)
+Chain 3: 
+Chain 8: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 8: 
+Chain 8:  Elapsed Time: 0.061 seconds (Warm-up)
+Chain 8:                0.049 seconds (Sampling)
+Chain 8:                0.11 seconds (Total)
+Chain 8: 
+Warning messages:
+1: The largest R-hat is 1.64, indicating chains have not mixed.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#r-hat 
+2: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess 
+3: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess 
+          mean se_mean     sd     2.5%      25%      50%      75%    97.5%
+a1      1.2983  0.4246 0.8499   0.1489   0.2172   1.9303   1.9641   2.0108
+a2      0.8602  0.4242 0.8492   0.1415   0.1942   0.2319   1.9438   1.9995
+b1     -1.1427  1.3986 2.7984  -4.8336  -4.7318   0.9800   1.0372   1.1168
+b2     -2.5868  1.3983 2.7978  -4.8455  -4.7667  -4.7101   1.0009   1.1071
+sigma   0.2838  0.0003 0.0277   0.2353   0.2647   0.2820   0.3005   0.3447
+lp__  -41.5649  0.0264 1.6350 -45.6662 -42.4179 -41.2120 -40.3742 -39.4108
+          n_eff    Rhat
+a1       4.0073 26.8178
+a2       4.0074 26.6155
+b1       4.0033 55.0535
+b2       4.0033 53.7716
+sigma 6883.2546  1.0001
+lp__  3834.1682  1.0002
+Finished in 0.05 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/baseline_rhat/three_compartment_pk.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 1).
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 2).
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 3).
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 4).
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 5).
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 6).
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 7).
+
+SAMPLING FOR MODEL 'anon_model' NOW (CHAIN 8).
+Chain 3: 
+Chain 3: Gradient evaluation took 0.17047 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 1704.7 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 4: 
+Chain 4: Gradient evaluation took 0.175022 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 1750.22 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 2: 
+Chain 2: Gradient evaluation took 0.181755 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 1817.55 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 6: 
+Chain 6: Gradient evaluation took 0.193701 seconds
+Chain 6: 1000 transitions using 10 leapfrog steps per transition would take 1937.01 seconds.
+Chain 6: Adjust your expectations accordingly!
+Chain 6: 
+Chain 6: 
+Chain 1: 
+Chain 1: Gradient evaluation took 0.211373 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 2113.73 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 5: 
+Chain 5: Gradient evaluation took 0.228821 seconds
+Chain 5: 1000 transitions using 10 leapfrog steps per transition would take 2288.21 seconds.
+Chain 5: Adjust your expectations accordingly!
+Chain 5: 
+Chain 5: 
+Chain 8: 
+Chain 8: Gradient evaluation took 0.235051 seconds
+Chain 8: 1000 transitions using 10 leapfrog steps per transition would take 2350.51 seconds.
+Chain 8: Adjust your expectations accordingly!
+Chain 8: 
+Chain 8: 
+Chain 7: 
+Chain 7: Gradient evaluation took 0.243076 seconds
+Chain 7: 1000 transitions using 10 leapfrog steps per transition would take 2430.76 seconds.
+Chain 7: Adjust your expectations accordingly!
+Chain 7: 
+Chain 7: 
+Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 8: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 7: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 5: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 6: Iteration:    1 / 2000 [  0%]  (Warmup)
+Chain 6: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 7: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 6: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 5: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 7: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 8: Iteration:  200 / 2000 [ 10%]  (Warmup)
+Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 6: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 5: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 7: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 8: Iteration:  400 / 2000 [ 20%]  (Warmup)
+Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 6: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 7: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 5: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 8: Iteration:  600 / 2000 [ 30%]  (Warmup)
+Chain 6: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 6: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 5: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 7: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 7: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 8: Iteration:  800 / 2000 [ 40%]  (Warmup)
+Chain 6: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 5: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 5: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 7: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 8: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+Chain 8: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+Chain 6: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 5: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 8: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+Chain 7: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 6: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 5: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 8: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 7: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 6: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 5: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 8: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 7: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 6: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 6: 
+Chain 6:  Elapsed Time: 3618.28 seconds (Warm-up)
+Chain 6:                2835.83 seconds (Sampling)
+Chain 6:                6454.11 seconds (Total)
+Chain 6: 
+Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 3779.24 seconds (Warm-up)
+Chain 4:                2835.57 seconds (Sampling)
+Chain 4:                6614.8 seconds (Total)
+Chain 4: 
+Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 3977.89 seconds (Warm-up)
+Chain 3:                2643.83 seconds (Sampling)
+Chain 3:                6621.72 seconds (Total)
+Chain 3: 
+Chain 5: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 8: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 3977.88 seconds (Warm-up)
+Chain 2:                2937.39 seconds (Sampling)
+Chain 2:                6915.27 seconds (Total)
+Chain 2: 
+Chain 7: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 7: 
+Chain 7:  Elapsed Time: 3950.86 seconds (Warm-up)
+Chain 7:                2972.99 seconds (Sampling)
+Chain 7:                6923.86 seconds (Total)
+Chain 7: 
+Chain 5: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 5: 
+Chain 5:  Elapsed Time: 4480.43 seconds (Warm-up)
+Chain 5:                2740.71 seconds (Sampling)
+Chain 5:                7221.14 seconds (Total)
+Chain 5: 
+Chain 8: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 8: 
+Chain 8:  Elapsed Time: 4579.09 seconds (Warm-up)
+Chain 8:                2685.55 seconds (Sampling)
+Chain 8:                7264.64 seconds (Total)
+Chain 8: 
+Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 4206.81 seconds (Warm-up)
+Chain 1:                3123.71 seconds (Sampling)
+Chain 1:                7330.52 seconds (Total)
+Chain 1: 
+Warning messages:
+1: The largest R-hat is 1.64, indicating chains have not mixed.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#r-hat 
+2: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#bulk-ess 
+3: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
+Running the chains for more iterations may help. See
+https://mc-stan.org/misc/warnings.html#tail-ess 
+                 mean se_mean     sd       2.5%        25%        50%
+k10            0.3267  0.0000 0.0025     0.3218     0.3250     0.3267
+k12            0.0632  0.0333 0.0668     0.0103     0.0113     0.0122
+k21            0.0632  0.0324 0.0648     0.0096     0.0125     0.0146
+k13            0.0977  0.0334 0.0669     0.0104     0.0118     0.1445
+k31            0.0967  0.0324 0.0649     0.0102     0.0139     0.1432
+sigma_add      0.0425  0.0001 0.0078     0.0278     0.0371     0.0423
+sigma_prop     0.3079  0.0001 0.0062     0.2957     0.3038     0.3078
+lp__       -3328.9033  0.0338 1.8946 -3333.3201 -3329.9443 -3328.5721
+                  75%      97.5%     n_eff    Rhat
+k10            0.3284     0.3318 4713.3218  1.0001
+k12            0.1465     0.1589    4.0136 18.5140
+k21            0.1448     0.1537    4.0109 21.1042
+k13            0.1506     0.1602    4.0202 14.7729
+k31            0.1478     0.1549    4.0141 18.1228
+sigma_add      0.0475     0.0581 6948.7490  0.9999
+sigma_prop     0.3120     0.3205 6402.9905  0.9998
+lp__       -3327.5015 -3326.2239 3135.6109  1.0010
+Finished in 122.27 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/pairwise_rhat/uniform.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+Warning message:
+Fewer colours (6) than chains (8); recycling the palette. 
+Pairwise R-hat result (rho = 1.015)
+
+1. Pairwise R-hat matrices
+--------------------------
+
+$`theta[1]`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.2226  1.0030  1.0025  1.0043  1.0007  1.0105  1.0095
+chain:2  1.2226  1.0000  1.1967  1.2301  1.1783  1.2252  1.1900  1.1763
+chain:3  1.0030  1.1967  1.0000  1.0043  1.0018  1.0030  1.0067  1.0048
+chain:4  1.0025  1.2301  1.0043  1.0000  1.0054  1.0033  1.0123  1.0100
+chain:5  1.0043  1.1783  1.0018  1.0054  1.0000  1.0043  1.0072  1.0024
+chain:6  1.0007  1.2252  1.0030  1.0033  1.0043  1.0000  1.0105  1.0088
+chain:7  1.0105  1.1900  1.0067  1.0123  1.0072  1.0105  1.0000  1.0071
+chain:8  1.0095  1.1763  1.0048  1.0100  1.0024  1.0088  1.0071  1.0000
+
+$`theta[2]`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.4400  1.0068  1.0053  1.0011  1.0041  1.0043  1.0080
+chain:2  1.4400  1.0000  1.4476  1.4400  1.4285  1.4429  1.4456  1.4268
+chain:3  1.0068  1.4476  1.0000  1.0035  1.0074  1.0036  1.0014  1.0016
+chain:4  1.0053  1.4400  1.0035  1.0000  1.0032  1.0053  1.0045  1.0048
+chain:5  1.0011  1.4285  1.0074  1.0032  1.0000  1.0035  1.0049  1.0086
+chain:6  1.0041  1.4429  1.0036  1.0053  1.0035  1.0000  1.0092  1.0046
+chain:7  1.0043  1.4456  1.0014  1.0045  1.0049  1.0092  1.0000  1.0030
+chain:8  1.0080  1.4268  1.0016  1.0048  1.0086  1.0046  1.0030  1.0000
+
+2. Top 10 largest pairwise R-hat values
+------------------------------------
+   parameter chain_i chain_j pairwise_rhat
+1   theta[2]       2       3      1.447601
+2   theta[2]       2       7      1.445578
+3   theta[2]       2       6      1.442897
+4   theta[2]       2       4      1.440034
+5   theta[2]       1       2      1.440034
+6   theta[2]       2       5      1.428481
+7   theta[2]       2       8      1.426767
+8   theta[1]       2       4      1.230110
+9   theta[1]       2       6      1.225246
+10  theta[1]       1       2      1.222599
+
+3. Parameter summary
+--------------------
+  parameter n_clusters n_isolated isolated_chains              clusters
+1  theta[1]          1          1               2 (1, 3, 4, 5, 6, 7, 8)
+2  theta[2]          1          1               2 (1, 3, 4, 5, 6, 7, 8)
+  pairwise_rhat_value
+1            1.012286
+2            1.009224
+Finished in 0.09 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/pairwise_rhat/gaussian_ball.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+Warning message:
+Fewer colours (6) than chains (8); recycling the palette. 
+Pairwise R-hat result (rho = 1.015)
+
+1. Pairwise R-hat matrices
+--------------------------
+
+$`theta[1]`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0030  1.0021  1.0034  1.0049  1.0027  1.0023  1.0023
+chain:2  1.0030  1.0000  1.0023  1.0015  1.0028  1.0015  1.0018  1.0018
+chain:3  1.0021  1.0023  1.0000  1.0008  1.0016  0.9997  1.0012  1.0015
+chain:4  1.0034  1.0015  1.0008  1.0000  1.0039  0.9993  1.0005  1.0021
+chain:5  1.0049  1.0028  1.0016  1.0039  1.0000  1.0029  1.0018  1.0016
+chain:6  1.0027  1.0015  0.9997  0.9993  1.0029  1.0000  0.9998  1.0007
+chain:7  1.0023  1.0018  1.0012  1.0005  1.0018  0.9998  1.0000  0.9996
+chain:8  1.0023  1.0018  1.0015  1.0021  1.0016  1.0007  0.9996  1.0000
+
+$`theta[2]`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0084  1.0000  0.9997  1.0003  0.9998  0.9999  0.9995
+chain:2  1.0084  1.0000  1.0049  1.0108  1.0065  1.0061  1.0076  1.0065
+chain:3  1.0000  1.0049  1.0000  1.0013  1.0004  0.9993  1.0000  0.9994
+chain:4  0.9997  1.0108  1.0013  1.0000  1.0008  1.0009  1.0005  1.0005
+chain:5  1.0003  1.0065  1.0004  1.0008  1.0000  1.0005  1.0012  1.0005
+chain:6  0.9998  1.0061  0.9993  1.0009  1.0005  1.0000  0.9998  0.9994
+chain:7  0.9999  1.0076  1.0000  1.0005  1.0012  0.9998  1.0000  1.0005
+chain:8  0.9995  1.0065  0.9994  1.0005  1.0005  0.9994  1.0005  1.0000
+
+2. Top 10 largest pairwise R-hat values
+------------------------------------
+   parameter chain_i chain_j pairwise_rhat
+1   theta[2]       2       4      1.010796
+2   theta[2]       1       2      1.008400
+3   theta[2]       2       7      1.007633
+4   theta[2]       2       8      1.006513
+5   theta[2]       2       5      1.006491
+6   theta[2]       2       6      1.006056
+7   theta[2]       2       3      1.004924
+8   theta[1]       1       5      1.004889
+9   theta[1]       4       5      1.003901
+10  theta[1]       1       4      1.003435
+
+3. Parameter summary
+--------------------
+  parameter n_clusters n_isolated isolated_chains                 clusters
+1  theta[1]          1          0                 (1, 2, 3, 4, 5, 6, 7, 8)
+2  theta[2]          1          0                 (1, 2, 3, 4, 5, 6, 7, 8)
+  pairwise_rhat_value
+1            1.004889
+2            1.010796
+Finished in 0.04 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/pairwise_rhat/three_cluster.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+Warning message:
+Fewer colours (6) than chains (8); recycling the palette. 
+Pairwise R-hat result (rho = 1.015)
+
+1. Pairwise R-hat matrices
+--------------------------
+
+$`theta[1]`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0008  1.8269  1.0003  1.0014  1.8272  1.8310  0.9995
+chain:2  1.0008  1.0000  1.8267  1.0014  1.0028  1.8270  1.8311  1.0008
+chain:3  1.8269  1.8267  1.0000  1.8267  1.8267  1.0007  1.8310  1.8271
+chain:4  1.0003  1.0014  1.8267  1.0000  1.0024  1.8270  1.8310  1.0004
+chain:5  1.0014  1.0028  1.8267  1.0024  1.0000  1.8269  1.8326  1.0017
+chain:6  1.8272  1.8270  1.0007  1.8270  1.8269  1.0000  1.8312  1.8274
+chain:7  1.8310  1.8311  1.8310  1.8310  1.8326  1.8312  1.0000  1.8311
+chain:8  0.9995  1.0008  1.8271  1.0004  1.0017  1.8274  1.8311  1.0000
+
+$`theta[2]`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0005  1.8267  0.9993  1.0023  1.8271  1.8267  1.0024
+chain:2  1.0005  1.0000  1.8268  0.9997  1.0002  1.8272  1.8267  0.9997
+chain:3  1.8267  1.8268  1.0000  1.8267  1.8275  1.0038  1.0035  1.8269
+chain:4  0.9993  0.9997  1.8267  1.0000  1.0014  1.8271  1.8266  1.0012
+chain:5  1.0023  1.0002  1.8275  1.0014  1.0000  1.8280  1.8275  1.0005
+chain:6  1.8271  1.8272  1.0038  1.8271  1.8280  1.0000  1.0002  1.8273
+chain:7  1.8267  1.8267  1.0035  1.8266  1.8275  1.0002  1.0000  1.8268
+chain:8  1.0024  0.9997  1.8269  1.0012  1.0005  1.8273  1.8268  1.0000
+
+2. Top 10 largest pairwise R-hat values
+------------------------------------
+   parameter chain_i chain_j pairwise_rhat
+1   theta[1]       5       7      1.832623
+2   theta[1]       6       7      1.831242
+3   theta[1]       7       8      1.831135
+4   theta[1]       2       7      1.831093
+5   theta[1]       4       7      1.831017
+6   theta[1]       1       7      1.830969
+7   theta[1]       3       7      1.830958
+8   theta[2]       5       6      1.827969
+9   theta[2]       3       5      1.827536
+10  theta[2]       5       7      1.827494
+
+3. Parameter summary
+--------------------
+  parameter n_clusters n_isolated isolated_chains                    clusters
+1  theta[1]          2          1               7    (1, 2, 4, 5, 8) | (3, 6)
+2  theta[2]          2          0                 (1, 2, 4, 5, 8) | (3, 6, 7)
+  pairwise_rhat_value
+1            1.002848
+2            1.003808
+Finished in 0.04 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/pairwise_rhat/funnel.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+Warning message:
+Fewer colours (6) than chains (8); recycling the palette. 
+Pairwise R-hat result (rho = 1.015)
+
+1. Pairwise R-hat matrices
+--------------------------
+
+$`v`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0374  1.0765  1.0368  1.6799  1.0100  1.0314  1.0113
+chain:2  1.0374  1.0000  1.0197  1.0518  1.6080  1.0242  1.0242  1.0059
+chain:3  1.0765  1.0197  1.0000  1.0950  1.2649  1.0640  1.0566  1.0427
+chain:4  1.0368  1.0518  1.0950  1.0000  1.7345  1.0360  1.0490  1.0289
+chain:5  1.6799  1.6080  1.2649  1.7345  1.0000  1.6687  1.6742  1.6287
+chain:6  1.0100  1.0242  1.0640  1.0360  1.6687  1.0000  1.0251  1.0194
+chain:7  1.0314  1.0242  1.0566  1.0490  1.6742  1.0251  1.0000  1.0151
+chain:8  1.0113  1.0059  1.0427  1.0289  1.6287  1.0194  1.0151  1.0000
+
+$`x[1]`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0074  1.0354  1.0217  1.5620  1.0036  1.0130  1.0028
+chain:2  1.0074  1.0000  1.0134  1.0278  1.5094  1.0029  1.0124  1.0005
+chain:3  1.0354  1.0134  1.0000  1.0556  1.3670  1.0252  1.0342  1.0215
+chain:4  1.0217  1.0278  1.0556  1.0000  1.5934  1.0219  1.0310  1.0203
+chain:5  1.5620  1.5094  1.3670  1.5934  1.0000  1.4779  1.5459  1.5107
+chain:6  1.0036  1.0029  1.0252  1.0219  1.4779  1.0000  1.0110  1.0003
+chain:7  1.0130  1.0124  1.0342  1.0310  1.5459  1.0110  1.0000  1.0093
+chain:8  1.0028  1.0005  1.0215  1.0203  1.5107  1.0003  1.0093  1.0000
+
+$`x[2]`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0185  1.0340  1.0310  1.3735  1.0131  1.0158  1.0086
+chain:2  1.0185  1.0000  1.0058  1.0434  1.3038  1.0154  1.0196  1.0089
+chain:3  1.0340  1.0058  1.0000  1.0656  1.5347  1.0310  1.0383  1.0245
+chain:4  1.0310  1.0434  1.0656  1.0000  1.6803  1.0274  1.0331  1.0228
+chain:5  1.3735  1.3038  1.5347  1.6803  1.0000  1.6120  1.3672  1.3360
+chain:6  1.0131  1.0154  1.0310  1.0274  1.6120  1.0000  1.0145  1.0054
+chain:7  1.0158  1.0196  1.0383  1.0331  1.3672  1.0145  1.0000  1.0100
+chain:8  1.0086  1.0089  1.0245  1.0228  1.3360  1.0054  1.0100  1.0000
+
+2. Top 10 largest pairwise R-hat values
+------------------------------------
+   parameter chain_i chain_j pairwise_rhat
+1          v       4       5      1.734512
+2       x[2]       4       5      1.680309
+3          v       1       5      1.679949
+4          v       5       7      1.674202
+5          v       5       6      1.668696
+6          v       5       8      1.628694
+7       x[2]       5       6      1.612008
+8          v       2       5      1.608042
+9       x[1]       4       5      1.593357
+10      x[1]       1       5      1.562015
+
+3. Parameter summary
+--------------------
+  parameter n_clusters n_isolated isolated_chains           clusters
+1         v          1          4      3, 4, 5, 7       (1, 2, 6, 8)
+2      x[1]          1          2            4, 5 (1, 2, 3, 6, 7, 8)
+3      x[2]          1          2            4, 5 (1, 2, 3, 6, 7, 8)
+  pairwise_rhat_value
+1            1.037394
+2            1.035408
+3            1.038302
+Finished in 0.04 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/pairwise_rhat/linear_with_noise.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+Warning message:
+Fewer colours (6) than chains (8); recycling the palette. 
+Pairwise R-hat result (rho = 1.015)
+
+1. Pairwise R-hat matrices
+--------------------------
+
+$`a`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0006  0.9998  1.0003  1.0008  1.0011  1.0003  1.0000
+chain:2  1.0006  1.0000  1.0005  1.0009  1.0025  1.0019  1.0030  1.0021
+chain:3  0.9998  1.0005  1.0000  1.0001  1.0013  1.0016  1.0012  1.0009
+chain:4  1.0003  1.0009  1.0001  1.0000  1.0014  1.0015  1.0014  1.0005
+chain:5  1.0008  1.0025  1.0013  1.0014  1.0000  1.0034  1.0017  1.0020
+chain:6  1.0011  1.0019  1.0016  1.0015  1.0034  1.0000  1.0038  1.0029
+chain:7  1.0003  1.0030  1.0012  1.0014  1.0017  1.0038  1.0000  1.0008
+chain:8  1.0000  1.0021  1.0009  1.0005  1.0020  1.0029  1.0008  1.0000
+
+$`b`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0013  1.0003  0.9997  0.9999  1.0010  1.0003  1.0002
+chain:2  1.0013  1.0000  1.0017  1.0016  1.0024  1.0014  1.0012  1.0026
+chain:3  1.0003  1.0017  1.0000  0.9996  1.0008  1.0001  0.9997  1.0003
+chain:4  0.9997  1.0016  0.9996  1.0000  1.0002  0.9994  0.9996  1.0006
+chain:5  0.9999  1.0024  1.0008  1.0002  1.0000  1.0014  1.0008  1.0011
+chain:6  1.0010  1.0014  1.0001  0.9994  1.0014  1.0000  0.9993  1.0007
+chain:7  1.0003  1.0012  0.9997  0.9996  1.0008  0.9993  1.0000  1.0007
+chain:8  1.0002  1.0026  1.0003  1.0006  1.0011  1.0007  1.0007  1.0000
+
+$`sigma`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0013  1.0001  1.0016  1.0007  1.0017  1.0011  1.0026
+chain:2  1.0013  1.0000  1.0011  1.0006  1.0014  1.0032  1.0020  1.0023
+chain:3  1.0001  1.0011  1.0000  1.0021  1.0000  1.0014  1.0008  1.0034
+chain:4  1.0016  1.0006  1.0021  1.0000  1.0021  1.0038  1.0031  1.0038
+chain:5  1.0007  1.0014  1.0000  1.0021  1.0000  1.0010  1.0006  1.0033
+chain:6  1.0017  1.0032  1.0014  1.0038  1.0010  1.0000  1.0029  1.0060
+chain:7  1.0011  1.0020  1.0008  1.0031  1.0006  1.0029  1.0000  1.0045
+chain:8  1.0026  1.0023  1.0034  1.0038  1.0033  1.0060  1.0045  1.0000
+
+2. Top 10 largest pairwise R-hat values
+------------------------------------
+   parameter chain_i chain_j pairwise_rhat
+1      sigma       6       8      1.006020
+2      sigma       7       8      1.004516
+3      sigma       4       6      1.003842
+4      sigma       4       8      1.003801
+5          a       6       7      1.003767
+6          a       5       6      1.003403
+7      sigma       3       8      1.003355
+8      sigma       5       8      1.003327
+9      sigma       2       6      1.003228
+10     sigma       4       7      1.003069
+
+3. Parameter summary
+--------------------
+  parameter n_clusters n_isolated isolated_chains                 clusters
+1         a          1          0                 (1, 2, 3, 4, 5, 6, 7, 8)
+2         b          1          0                 (1, 2, 3, 4, 5, 6, 7, 8)
+3     sigma          1          0                 (1, 2, 3, 4, 5, 6, 7, 8)
+  pairwise_rhat_value
+1            1.003767
+2            1.002603
+3            1.006020
+Finished in 0.04 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/pairwise_rhat/same_slope_diff_intercept.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+Warning message:
+Fewer colours (6) than chains (8); recycling the palette. 
+Pairwise R-hat result (rho = 1.015)
+
+1. Pairwise R-hat matrices
+--------------------------
+
+$`a`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0021  1.0027  1.0025  1.0024  1.0041  1.0019  1.0012
+chain:2  1.0021  1.0000  1.0006  1.0006  1.0007  1.0018  1.0006  1.0000
+chain:3  1.0027  1.0006  1.0000  1.0001  1.0012  1.0017  1.0021  1.0005
+chain:4  1.0025  1.0006  1.0001  1.0000  1.0009  1.0016  1.0013  1.0002
+chain:5  1.0024  1.0007  1.0012  1.0009  1.0000  1.0020  1.0009  1.0004
+chain:6  1.0041  1.0018  1.0017  1.0016  1.0020  1.0000  1.0018  1.0014
+chain:7  1.0019  1.0006  1.0021  1.0013  1.0009  1.0018  1.0000  1.0000
+chain:8  1.0012  1.0000  1.0005  1.0002  1.0004  1.0014  1.0000  1.0000
+
+$`b1`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.8272  1.0017  1.8273  1.8275  1.0018  1.0008  1.0006
+chain:2  1.8272  1.0000  1.8267  1.0005  1.0026  1.8272  1.8285  1.8269
+chain:3  1.0017  1.8267  1.0000  1.8268  1.8270  1.0036  1.0012  1.0022
+chain:4  1.8273  1.0005  1.8268  1.0000  1.0000  1.8273  1.8286  1.8270
+chain:5  1.8275  1.0026  1.8270  1.0000  1.0000  1.8275  1.8288  1.8272
+chain:6  1.0018  1.8272  1.0036  1.8273  1.8275  1.0000  1.0014  1.0016
+chain:7  1.0008  1.8285  1.0012  1.8286  1.8288  1.0014  1.0000  1.0002
+chain:8  1.0006  1.8269  1.0022  1.8270  1.8272  1.0016  1.0002  1.0000
+
+$`b2`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.8269  1.0005  1.8271  1.8275  1.0007  1.0000  1.0008
+chain:2  1.8269  1.0000  1.8275  1.0016  1.0016  1.8287  1.8273  1.8267
+chain:3  1.0005  1.8275  1.0000  1.8277  1.8280  1.0015  1.0009  1.0022
+chain:4  1.8271  1.0016  1.8277  1.0000  0.9997  1.8289  1.8275  1.8269
+chain:5  1.8275  1.0016  1.8280  0.9997  1.0000  1.8293  1.8278  1.8273
+chain:6  1.0007  1.8287  1.0015  1.8289  1.8293  1.0000  1.0012  1.0031
+chain:7  1.0000  1.8273  1.0009  1.8275  1.8278  1.0012  1.0000  1.0006
+chain:8  1.0008  1.8267  1.0022  1.8269  1.8273  1.0031  1.0006  1.0000
+
+$`sigma`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0016  1.0006  1.0003  1.0002  1.0015  1.0013  1.0015
+chain:2  1.0016  1.0000  1.0022  1.0026  1.0014  1.0021  1.0023  1.0024
+chain:3  1.0006  1.0022  1.0000  1.0003  1.0000  1.0008  1.0002  1.0002
+chain:4  1.0003  1.0026  1.0003  1.0000  1.0001  1.0008  1.0012  1.0006
+chain:5  1.0002  1.0014  1.0000  1.0001  1.0000  1.0004  0.9997  0.9998
+chain:6  1.0015  1.0021  1.0008  1.0008  1.0004  1.0000  1.0012  1.0012
+chain:7  1.0013  1.0023  1.0002  1.0012  0.9997  1.0012  1.0000  1.0004
+chain:8  1.0015  1.0024  1.0002  1.0006  0.9998  1.0012  1.0004  1.0000
+
+2. Top 10 largest pairwise R-hat values
+------------------------------------
+   parameter chain_i chain_j pairwise_rhat
+1         b2       5       6      1.829290
+2         b2       4       6      1.828937
+3         b1       5       7      1.828750
+4         b2       2       6      1.828714
+5         b1       4       7      1.828609
+6         b1       2       7      1.828464
+7         b2       3       5      1.828036
+8         b2       5       7      1.827838
+9         b2       3       4      1.827684
+10        b2       4       7      1.827486
+
+3. Parameter summary
+--------------------
+  parameter n_clusters n_isolated isolated_chains                    clusters
+1         a          1          0                    (1, 2, 3, 4, 5, 6, 7, 8)
+2        b1          2          0                 (1, 3, 6, 7, 8) | (2, 4, 5)
+3        b2          2          0                 (1, 3, 6, 7, 8) | (2, 4, 5)
+4     sigma          1          0                    (1, 2, 3, 4, 5, 6, 7, 8)
+  pairwise_rhat_value
+1            1.004083
+2            1.003634
+3            1.003084
+4            1.002605
+Finished in 0.04 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/pairwise_rhat/diff_slope_same_intercept.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+Warning message:
+Fewer colours (6) than chains (8); recycling the palette. 
+Pairwise R-hat result (rho = 1.015)
+
+1. Pairwise R-hat matrices
+--------------------------
+
+$`a1`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.8301  1.8305  1.0032  1.0027  1.8301  1.0025  1.0036
+chain:2  1.8301  1.0000  1.0004  1.8277  1.8279  1.0007  1.8271  1.8271
+chain:3  1.8305  1.0004  1.0000  1.8281  1.8283  0.9999  1.8275  1.8275
+chain:4  1.0032  1.8277  1.8281  1.0000  1.0004  1.8277  1.0004  1.0000
+chain:5  1.0027  1.8279  1.8283  1.0004  1.0000  1.8278  0.9998  1.0005
+chain:6  1.8301  1.0007  0.9999  1.8277  1.8278  1.0000  1.8271  1.8271
+chain:7  1.0025  1.8271  1.8275  1.0004  0.9998  1.8271  1.0000  0.9999
+chain:8  1.0036  1.8271  1.8275  1.0000  1.0005  1.8271  0.9999  1.0000
+
+$`a2`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.8274  1.8270  1.0028  1.0002  1.8274  1.0013  1.0000
+chain:2  1.8274  1.0000  1.0027  1.8272  1.8287  0.9996  1.8293  1.8276
+chain:3  1.8270  1.0027  1.0000  1.8268  1.8283  1.0026  1.8289  1.8272
+chain:4  1.0028  1.8272  1.8268  1.0000  1.0004  1.8272  1.0037  1.0017
+chain:5  1.0002  1.8287  1.8283  1.0004  1.0000  1.8287  1.0018  1.0010
+chain:6  1.8274  0.9996  1.0026  1.8272  1.8287  1.0000  1.8293  1.8276
+chain:7  1.0013  1.8293  1.8289  1.0037  1.0018  1.8293  1.0000  1.0023
+chain:8  1.0000  1.8276  1.8272  1.0017  1.0010  1.8276  1.0023  1.0000
+
+$`b`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0019  1.0011  1.0005  1.0030  1.0011  1.0014  1.0036
+chain:2  1.0019  1.0000  1.0005  1.0019  1.0025  0.9994  1.0001  1.0021
+chain:3  1.0011  1.0005  1.0000  1.0012  1.0024  1.0004  1.0011  1.0021
+chain:4  1.0005  1.0019  1.0012  1.0000  1.0033  1.0010  1.0015  1.0033
+chain:5  1.0030  1.0025  1.0024  1.0033  1.0000  1.0020  1.0024  1.0044
+chain:6  1.0011  0.9994  1.0004  1.0010  1.0020  1.0000  0.9998  1.0020
+chain:7  1.0014  1.0001  1.0011  1.0015  1.0024  0.9998  1.0000  1.0016
+chain:8  1.0036  1.0021  1.0021  1.0033  1.0044  1.0020  1.0016  1.0000
+
+$`sigma`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0006  1.0006  0.9999  0.9999  1.0009  0.9996  1.0018
+chain:2  1.0006  1.0000  1.0003  1.0006  0.9999  1.0016  0.9997  1.0011
+chain:3  1.0006  1.0003  1.0000  1.0008  0.9998  0.9994  0.9995  1.0007
+chain:4  0.9999  1.0006  1.0008  1.0000  0.9999  1.0017  0.9996  1.0017
+chain:5  0.9999  0.9999  0.9998  0.9999  1.0000  1.0001  0.9993  1.0009
+chain:6  1.0009  1.0016  0.9994  1.0017  1.0001  1.0000  1.0005  1.0007
+chain:7  0.9996  0.9997  0.9995  0.9996  0.9993  1.0005  1.0000  1.0006
+chain:8  1.0018  1.0011  1.0007  1.0017  1.0009  1.0007  1.0006  1.0000
+
+2. Top 10 largest pairwise R-hat values
+------------------------------------
+   parameter chain_i chain_j pairwise_rhat
+1         a1       1       3      1.830547
+2         a1       1       2      1.830146
+3         a1       1       6      1.830131
+4         a2       6       7      1.829300
+5         a2       2       7      1.829286
+6         a2       3       7      1.828921
+7         a2       5       6      1.828713
+8         a2       2       5      1.828699
+9         a2       3       5      1.828335
+10        a1       3       5      1.828256
+
+3. Parameter summary
+--------------------
+  parameter n_clusters n_isolated isolated_chains                    clusters
+1        a1          2          0                 (1, 4, 5, 7, 8) | (2, 3, 6)
+2        a2          2          0                 (1, 4, 5, 7, 8) | (2, 3, 6)
+3         b          1          0                    (1, 2, 3, 4, 5, 6, 7, 8)
+4     sigma          1          0                    (1, 2, 3, 4, 5, 6, 7, 8)
+  pairwise_rhat_value
+1            1.003633
+2            1.003696
+3            1.004433
+4            1.001762
+Finished in 0.05 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/pairwise_rhat/diff_slope_diff_intercept.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+Warning message:
+Fewer colours (6) than chains (8); recycling the palette. 
+Pairwise R-hat result (rho = 1.015)
+
+1. Pairwise R-hat matrices
+--------------------------
+
+$`a1`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.8275  0.9992  1.0007  1.8268  1.8269  1.8271  1.8266
+chain:2  1.8275  1.0000  1.8278  1.8279  1.0007  1.0010  1.0035  1.0018
+chain:3  0.9992  1.8278  1.0000  1.0008  1.8271  1.8272  1.8274  1.8270
+chain:4  1.0007  1.8279  1.0008  1.0000  1.8272  1.8273  1.8275  1.8271
+chain:5  1.8268  1.0007  1.8271  1.8272  1.0000  0.9993  1.0022  1.0002
+chain:6  1.8269  1.0010  1.8272  1.8273  0.9993  1.0000  1.0022  0.9997
+chain:7  1.8271  1.0035  1.8274  1.8275  1.0022  1.0022  1.0000  1.0025
+chain:8  1.8266  1.0018  1.8270  1.8271  1.0002  0.9997  1.0025  1.0000
+
+$`a2`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.8269  1.0001  1.0009  1.8270  1.8269  1.8267  1.8272
+chain:2  1.8269  1.0000  1.8272  1.8269  0.9997  0.9999  1.0016  1.0006
+chain:3  1.0001  1.8272  1.0000  0.9999  1.8274  1.8273  1.8270  1.8275
+chain:4  1.0009  1.8269  0.9999  1.0000  1.8271  1.8270  1.8267  1.8272
+chain:5  1.8270  0.9997  1.8274  1.8271  1.0000  1.0001  1.0016  1.0013
+chain:6  1.8269  0.9999  1.8273  1.8270  1.0001  1.0000  1.0013  1.0008
+chain:7  1.8267  1.0016  1.8270  1.8267  1.0016  1.0013  1.0000  1.0005
+chain:8  1.8272  1.0006  1.8275  1.8272  1.0013  1.0008  1.0005  1.0000
+
+$`b1`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.8284  1.0008  1.0031  1.8268  1.8270  1.8267  1.8270
+chain:2  1.8284  1.0000  1.8297  1.8286  1.0017  1.0003  1.0011  1.0004
+chain:3  1.0008  1.8297  1.0000  1.0027  1.8281  1.8282  1.8280  1.8283
+chain:4  1.0031  1.8286  1.0027  1.0000  1.8270  1.8271  1.8269  1.8272
+chain:5  1.8268  1.0017  1.8281  1.8270  1.0000  1.0019  1.0015  1.0011
+chain:6  1.8270  1.0003  1.8282  1.8271  1.0019  1.0000  1.0006  0.9996
+chain:7  1.8267  1.0011  1.8280  1.8269  1.0015  1.0006  1.0000  1.0001
+chain:8  1.8270  1.0004  1.8283  1.8272  1.0011  0.9996  1.0001  1.0000
+
+$`b2`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.8266  0.9995  1.0009  1.8267  1.8274  1.8267  1.8266
+chain:2  1.8266  1.0000  1.8277  1.8273  1.0067  1.0020  1.0009  1.0002
+chain:3  0.9995  1.8277  1.0000  1.0014  1.8277  1.8285  1.8278  1.8277
+chain:4  1.0009  1.8273  1.0014  1.0000  1.8273  1.8281  1.8274  1.8273
+chain:5  1.8267  1.0067  1.8277  1.8273  1.0000  1.0032  1.0021  1.0023
+chain:6  1.8274  1.0020  1.8285  1.8281  1.0032  1.0000  1.0010  1.0005
+chain:7  1.8267  1.0009  1.8278  1.8274  1.0021  1.0010  1.0000  0.9994
+chain:8  1.8266  1.0002  1.8277  1.8273  1.0023  1.0005  0.9994  1.0000
+
+$`sigma`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0025  1.0010  1.0021  1.0005  1.0004  1.0012  1.0014
+chain:2  1.0025  1.0000  1.0018  1.0025  1.0018  1.0018  1.0018  1.0019
+chain:3  1.0010  1.0018  1.0000  1.0002  1.0006  1.0000  0.9990  0.9996
+chain:4  1.0021  1.0025  1.0002  1.0000  1.0013  1.0007  1.0002  1.0008
+chain:5  1.0005  1.0018  1.0006  1.0013  1.0000  0.9994  1.0007  1.0001
+chain:6  1.0004  1.0018  1.0000  1.0007  0.9994  1.0000  0.9999  0.9998
+chain:7  1.0012  1.0018  0.9990  1.0002  1.0007  0.9999  1.0000  0.9997
+chain:8  1.0014  1.0019  0.9996  1.0008  1.0001  0.9998  0.9997  1.0000
+
+2. Top 10 largest pairwise R-hat values
+------------------------------------
+   parameter chain_i chain_j pairwise_rhat
+1         b1       2       3      1.829734
+2         b1       2       4      1.828634
+3         b2       3       6      1.828467
+4         b1       1       2      1.828447
+5         b1       3       8      1.828255
+6         b1       3       6      1.828239
+7         b1       3       5      1.828115
+8         b2       4       6      1.828055
+9         b1       3       7      1.828012
+10        a1       2       4      1.827926
+
+3. Parameter summary
+--------------------
+  parameter n_clusters n_isolated isolated_chains                    clusters
+1        a1          2          0                 (1, 3, 4) | (2, 5, 6, 7, 8)
+2        a2          2          0                 (1, 3, 4) | (2, 5, 6, 7, 8)
+3        b1          2          0                 (1, 3, 4) | (2, 5, 6, 7, 8)
+4        b2          2          0                 (1, 3, 4) | (2, 5, 6, 7, 8)
+5     sigma          1          0                    (1, 2, 3, 4, 5, 6, 7, 8)
+  pairwise_rhat_value
+1            1.003513
+2            1.001637
+3            1.003063
+4            1.006717
+5            1.002493
+Finished in 0.04 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/pairwise_rhat/three_compartment_pk.R 
+########################################
+Loading required package: StanHeaders
+
+rstan version 2.32.7 (Stan version 2.32.2)
+
+For execution on a local, multicore CPU with excess RAM we recommend calling
+options(mc.cores = parallel::detectCores()).
+To avoid recompilation of unchanged Stan programs, we recommend calling
+rstan_options(auto_write = TRUE)
+For within-chain threading using `reduce_sum()` or `map_rect()` Stan functions,
+change `threads_per_chain` option:
+rstan_options(threads_per_chain = 1)
+
+Warning message:
+package ‘ggplot2’ was built under R version 4.5.2 
+Warning message:
+Fewer colours (6) than chains (8); recycling the palette. 
+Pairwise R-hat result (rho = 1.015)
+
+1. Pairwise R-hat matrices
+--------------------------
+
+$`k10`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.0000  1.0002  1.0009  1.0024  1.0010  1.0012  1.0000
+chain:2  1.0000  1.0000  0.9999  1.0011  1.0027  1.0014  1.0012  1.0002
+chain:3  1.0002  0.9999  1.0000  1.0013  1.0032  1.0014  1.0002  1.0001
+chain:4  1.0009  1.0011  1.0013  1.0000  1.0025  1.0007  1.0018  1.0008
+chain:5  1.0024  1.0027  1.0032  1.0025  1.0000  1.0036  1.0029  1.0022
+chain:6  1.0010  1.0014  1.0014  1.0007  1.0036  1.0000  1.0000  1.0004
+chain:7  1.0012  1.0012  1.0002  1.0018  1.0029  1.0000  1.0000  0.9995
+chain:8  1.0000  1.0002  1.0001  1.0008  1.0022  1.0004  0.9995  1.0000
+
+$`k12`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.8272  1.8273  1.8272  1.0004  1.8271  1.0033  1.8280
+chain:2  1.8272  1.0000  1.0025  1.0002  1.8268  0.9999  1.8269  1.0000
+chain:3  1.8273  1.0025  1.0000  1.0042  1.8269  0.9999  1.8271  1.0005
+chain:4  1.8272  1.0002  1.0042  1.0000  1.8268  1.0010  1.8269  1.0010
+chain:5  1.0004  1.8268  1.8269  1.8268  1.0000  1.8267  1.0004  1.8276
+chain:6  1.8271  0.9999  0.9999  1.0010  1.8267  1.0000  1.8269  1.0002
+chain:7  1.0033  1.8269  1.8271  1.8269  1.0004  1.8269  1.0000  1.8278
+chain:8  1.8280  1.0000  1.0005  1.0010  1.8276  1.0002  1.8278  1.0000
+
+$`k21`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.8296  1.8296  1.8306  1.0050  1.8278  1.0037  1.8276
+chain:2  1.8296  1.0000  1.0016  1.0028  1.8288  1.0015  1.8287  1.0007
+chain:3  1.8296  1.0016  1.0000  1.0024  1.8288  1.0013  1.8288  0.9998
+chain:4  1.8306  1.0028  1.0024  1.0000  1.8298  1.0013  1.8298  1.0013
+chain:5  1.0050  1.8288  1.8288  1.8298  1.0000  1.8270  1.0024  1.8268
+chain:6  1.8278  1.0015  1.0013  1.0013  1.8270  1.0000  1.8270  1.0001
+chain:7  1.0037  1.8287  1.8288  1.8298  1.0024  1.8270  1.0000  1.8268
+chain:8  1.8276  1.0007  0.9998  1.0013  1.8268  1.0001  1.8268  1.0000
+
+$`k13`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.8272  1.8273  1.8297  1.0025  1.8268  1.0042  1.8268
+chain:2  1.8272  1.0000  1.0000  1.0020  1.8272  1.0000  1.8294  0.9998
+chain:3  1.8273  1.0000  1.0000  1.0016  1.8272  1.0012  1.8295  0.9996
+chain:4  1.8297  1.0020  1.0016  1.0000  1.8296  1.0012  1.8319  1.0018
+chain:5  1.0025  1.8272  1.8272  1.8296  1.0000  1.8267  1.0020  1.8267
+chain:6  1.8268  1.0000  1.0012  1.0012  1.8267  1.0000  1.8290  1.0001
+chain:7  1.0042  1.8294  1.8295  1.8319  1.0020  1.8290  1.0000  1.8290
+chain:8  1.8268  0.9998  0.9996  1.0018  1.8267  1.0001  1.8290  1.0000
+
+$`k31`
+        chain:1 chain:2 chain:3 chain:4 chain:5 chain:6 chain:7 chain:8
+chain:1  1.0000  1.8296  1.8279  1.8319  1.0010  1.8280  1.0015  1.8278
+chain:2  1.8296  1.0000  1.0005  1.0035  1.8286  1.0006  1.8297  1.0004
+chain:3  1.8279  1.0005  1.0000  1.0017  1.8268  1.0016  1.8280  1.0005
+chain:4  1.8319  1.0035  1.0017  1.0000  1.8309  1.0023  1.8321  1.0019
+chain:5  1.0010  1.8286  1.8268  1.8309  1.0000  1.8270  0.9997  1.8267
+chain:6  1.8280  1.0006  1.0016  1.0023  1.8270  1.0000  1.8282  1.0007
+chain:7  1.0015  1.8297  1.8280  1.8321  0.9997  1.8282  1.0000  1.8279
+chain:8  1.8278  1.0004  1.0005  1.0019  1.8267  1.0007  1.8279  1.0000
+
+2. Top 10 largest pairwise R-hat values
+------------------------------------
+   parameter chain_i chain_j pairwise_rhat
+1        k31       4       7      1.832084
+2        k31       1       4      1.831944
+3        k13       4       7      1.831872
+4        k31       4       5      1.830906
+5        k21       1       4      1.830592
+6        k21       4       5      1.829774
+7        k21       4       7      1.829765
+8        k31       2       7      1.829724
+9        k13       1       4      1.829689
+10       k21       1       3      1.829626
+
+3. Parameter summary
+--------------------
+  parameter n_clusters n_isolated isolated_chains                    clusters
+1       k10          1          0                    (1, 2, 3, 4, 5, 6, 7, 8)
+2       k12          2          0                 (1, 5, 7) | (2, 3, 4, 6, 8)
+3       k21          2          0                 (1, 5, 7) | (2, 3, 4, 6, 8)
+4       k13          2          0                 (1, 5, 7) | (2, 3, 4, 6, 8)
+5       k31          2          0                 (1, 5, 7) | (2, 3, 4, 6, 8)
+  pairwise_rhat_value
+1            1.003607
+2            1.004198
+3            1.004978
+4            1.004161
+5            1.003520
+Warning messages:
+1: Fewer colours (6) than chains (8); recycling the palette. 
+2: Fewer colours (6) than chains (8); recycling the palette. 
+3: Fewer colours (6) than chains (8); recycling the palette. 
+4: Fewer colours (6) than chains (8); recycling the palette. 
+5: Fewer colours (6) than chains (8); recycling the palette. 
+6: Fewer colours (6) than chains (8); recycling the palette. 
+7: Fewer colours (6) than chains (8); recycling the palette. 
+8: Fewer colours (6) than chains (8); recycling the palette. 
+9: Fewer colours (6) than chains (8); recycling the palette. 
+10: Fewer colours (6) than chains (8); recycling the palette. 
+null device 
+          1 
+wrote posterior_draws_all_pairs.pdf with 10 pages
+Finished in 0.07 minutes
+
+########################################
+Running: /Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments/comparison_tables/make_comparison_tables.R 
+########################################
+=== uniform ===
+ parameter classical_rhat pairwise_rhat_value n_clusters n_isolated
+  theta[1]       1.065123            1.012286          1          1
+  theta[2]       1.084439            1.009224          1          1
+                    chain_groups
+ (1, 3, 4, 5, 6, 7, 8) | \\{2\\}
+ (1, 3, 4, 5, 6, 7, 8) | \\{2\\}
+
+=== gaussian_ball ===
+ parameter classical_rhat pairwise_rhat_value n_clusters n_isolated
+  theta[1]       1.000627            1.004889          1          0
+  theta[2]       0.999783            1.010796          1          0
+             chain_groups
+ (1, 2, 3, 4, 5, 6, 7, 8)
+ (1, 2, 3, 4, 5, 6, 7, 8)
+
+=== three_cluster ===
+ parameter classical_rhat pairwise_rhat_value n_clusters n_isolated
+  theta[1]       6.058695            1.002848          2          1
+  theta[2]       5.008926            1.003808          2          0
+                       chain_groups
+ (1, 2, 4, 5, 8) | (3, 6) | \\{7\\}
+        (1, 2, 4, 5, 8) | (3, 6, 7)
+
+=== funnel ===
+ parameter classical_rhat pairwise_rhat_value n_clusters n_isolated
+         v       1.147103            1.037394          1          4
+      x[1]       1.002239            1.035408          1          2
+      x[2]       1.000779            1.038302          1          2
+                                         chain_groups
+ (1, 2, 6, 8) | \\{3\\} | \\{4\\} | \\{5\\} | \\{7\\}
+               (1, 2, 3, 6, 7, 8) | \\{4\\} | \\{5\\}
+               (1, 2, 3, 6, 7, 8) | \\{4\\} | \\{5\\}
+
+=== linear_with_noise ===
+ parameter classical_rhat pairwise_rhat_value n_clusters n_isolated
+         a      0.9999426            1.003767          1          0
+         b      1.0001794            1.002603          1          0
+     sigma      1.0002967            1.006020          1          0
+             chain_groups
+ (1, 2, 3, 4, 5, 6, 7, 8)
+ (1, 2, 3, 4, 5, 6, 7, 8)
+ (1, 2, 3, 4, 5, 6, 7, 8)
+
+=== same_slope_diff_intercept ===
+ parameter classical_rhat pairwise_rhat_value n_clusters n_isolated
+         a       1.000006            1.004083          1          0
+        b1      44.115288            1.003634          2          0
+        b2      44.394283            1.003084          2          0
+     sigma       1.000641            1.002605          1          0
+                chain_groups
+    (1, 2, 3, 4, 5, 6, 7, 8)
+ (1, 3, 6, 7, 8) | (2, 4, 5)
+ (1, 3, 6, 7, 8) | (2, 4, 5)
+    (1, 2, 3, 4, 5, 6, 7, 8)
+
+=== diff_slope_same_intercept ===
+ parameter classical_rhat pairwise_rhat_value n_clusters n_isolated
+        a1      27.201789            1.003633          2          0
+        a2      28.031561            1.003696          2          0
+         b       0.999875            1.004433          1          0
+     sigma       1.000429            1.001762          1          0
+                chain_groups
+ (1, 4, 5, 7, 8) | (2, 3, 6)
+ (1, 4, 5, 7, 8) | (2, 3, 6)
+    (1, 2, 3, 4, 5, 6, 7, 8)
+    (1, 2, 3, 4, 5, 6, 7, 8)
+
+=== diff_slope_diff_intercept ===
+ parameter classical_rhat pairwise_rhat_value n_clusters n_isolated
+        a1      26.817765            1.003513          2          0
+        a2      26.615506            1.001637          2          0
+        b1      55.053532            1.003063          2          0
+        b2      53.771591            1.006717          2          0
+     sigma       1.000098            1.002493          1          0
+                chain_groups
+ (1, 3, 4) | (2, 5, 6, 7, 8)
+ (1, 3, 4) | (2, 5, 6, 7, 8)
+ (1, 3, 4) | (2, 5, 6, 7, 8)
+ (1, 3, 4) | (2, 5, 6, 7, 8)
+    (1, 2, 3, 4, 5, 6, 7, 8)
+
+=== three_compartment_pk ===
+ parameter classical_rhat pairwise_rhat_value n_clusters n_isolated
+       k10       1.000083            1.003607          1          0
+       k12      18.514014            1.004198          2          0
+       k21      21.104181            1.004978          2          0
+       k13      14.772851            1.004161          2          0
+       k31      18.122759            1.003520          2          0
+                chain_groups
+    (1, 2, 3, 4, 5, 6, 7, 8)
+ (1, 5, 7) | (2, 3, 4, 6, 8)
+ (1, 5, 7) | (2, 3, 4, 6, 8)
+ (1, 5, 7) | (2, 3, 4, 6, 8)
+ (1, 5, 7) | (2, 3, 4, 6, 8)
+
+wrote: /Users/chegu121/Documents/Phd-cici/r_package/result_pairwise_rhat/comparison_tables.tex 
+Finished in 0 minutes
+
+=== All experiments completed ===

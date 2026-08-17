@@ -7,16 +7,27 @@
 pairwise_rhat_clusters(graph)
 }
 \arguments{
-\item{graph}{An 'igraph' object}
+\item{graph}{An \code{igraph} object.}
 }
 \value{
-A list containing multi-chain clusters. the number of multi-chain
+A list containing multi-chain clusters, the number of multi-chain
 clusters, isolated chains, the number of isolated chains, all connected
 components, the total number of connected components, and the component
 membership vector.
 }
 \description{
-Finds connected components in a pairwise R-hat graph adn separates them into
-multi-chain clusters and isolated chains. In this diagnostic, single chain
+Finds connected components in a pairwise R-hat graph and separates them into
+multi-chain clusters and isolated chains. In this diagnostic, single-chain
 components are counted as isolated chains rather than as clusters.
+}
+\examples{
+graph <- igraph::make_graph(
+  edges = c(
+    "chain1", "chain2",
+    "chain3", "chain4"
+  ),
+  directed = FALSE
+)
+
+pairwise_rhat_clusters(graph)
 }
