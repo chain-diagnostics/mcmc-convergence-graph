@@ -1,4 +1,16 @@
-test_that("check_draws_array accepts a valid 3D draws arra",{
+# Main purpose:
+#   Check whether an object is a valid 3D draws array.
+
+# Expected valid format:
+#   iterations x chains x parameters
+#
+# We test:
+#   1. Valid 3D draws arrays are accepted.
+#   2. Non-array inputs are rejected.
+#   3. 2D matrices are rejected.
+#   4. Arrays with too few iterations, chains, or parameters are rejected.
+
+test_that("check_draws_array accepts a valid 3D draws arra", {
   draws <- make_test_draws()
   result <- check_draws_array(draws)
   expect_null(result)
@@ -57,4 +69,3 @@ test_that("check_draws_array rejects arrays with fewer than 1 parameter", {
     "at least 1 parameter"
   )
 })
-

@@ -12,11 +12,10 @@
 
 
 make_test_draws <- function(
-    n_iter = 100,
-    n_chains = 4,
-    parameters = c("alpha", "beta")
+  n_iter = 100,
+  n_chains = 4,
+  parameters = c("alpha", "beta")
 ) {
-
   draws <- array(
     rnorm(n_iter * n_chains * length(parameters)),
     dim = c(n_iter, n_chains, length(parameters))
@@ -33,9 +32,8 @@ make_test_draws <- function(
 
 
 make_separated_draws <- function(
-    n_iter = 100
+  n_iter = 100
 ) {
-
   draws <- array(
     NA_real_,
     dim = c(n_iter, 4, 1)
@@ -56,21 +54,44 @@ make_separated_draws <- function(
 }
 
 
-get_test_chain <- function(
-    draws,
-    chain = "chain1",
-    parameter = "alpha"
+# Three chains at one mode, one isolated chain at a distant mode.
+make_isolated_draws <- function(
+  n_iter = 100
 ) {
+  draws <- array(
+    NA_real_,
+    dim = c(n_iter, 4, 1)
+  )
 
+  dimnames(draws) <- list(
+    NULL,
+    paste0("chain", 1:4),
+    "alpha"
+  )
+
+  draws[, "chain1", "alpha"] <- rnorm(n_iter, mean = 0)
+  draws[, "chain2", "alpha"] <- rnorm(n_iter, mean = 0)
+  draws[, "chain3", "alpha"] <- rnorm(n_iter, mean = 0)
+  draws[, "chain4", "alpha"] <- rnorm(n_iter, mean = 10)
+
+  draws
+}
+
+
+get_test_chain <- function(
+  draws,
+  chain = "chain1",
+  parameter = "alpha"
+) {
   draws[, chain, parameter]
 }
 
 
 make_test_split_draws <- function(
-    draws = make_test_draws(n_iter = 100, n_chains = 2, parameters = "alpha"),
-    parameter = "alpha",
-    chain_1 = "chain1",
-    chain_2 = "chain2"
+  draws = make_test_draws(n_iter = 100, n_chains = 2, parameters = "alpha"),
+  parameter = "alpha",
+  chain_1 = "chain1",
+  chain_2 = "chain2"
 ) {
   split_1 <- split_chain(draws[, chain_1, parameter])
   split_2 <- split_chain(draws[, chain_2, parameter])
