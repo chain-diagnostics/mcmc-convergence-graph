@@ -1,4 +1,4 @@
-# Tests for pairwise_rhat_parameter_summary().
+# Tests for mcmc_graph_summary().
 #
 # Main purpose:
 #   Produce the main parameter-level summary output for the pairwise R-hat diagnostic.
@@ -20,7 +20,7 @@
 #   6. CSV files are saved when save_csv = TRUE.
 
 
-test_that("pairwise_rhat_parameter_summary returns a list", {
+test_that("mcmc_graph_summary returns a list", {
   set.seed(1)
 
   draws <- make_test_draws(
@@ -29,7 +29,7 @@ test_that("pairwise_rhat_parameter_summary returns a list", {
     parameters = c("alpha", "beta")
   )
 
-  result <- pairwise_rhat_parameter_summary(
+  result <- mcmc_graph_summary(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.015,
@@ -40,7 +40,7 @@ test_that("pairwise_rhat_parameter_summary returns a list", {
 })
 
 
-test_that("pairwise_rhat_parameter_summary returns expected components", {
+test_that("mcmc_graph_summary returns expected components", {
   set.seed(1)
 
   draws <- make_test_draws(
@@ -49,7 +49,7 @@ test_that("pairwise_rhat_parameter_summary returns expected components", {
     parameters = c("alpha", "beta")
   )
 
-  result <- pairwise_rhat_parameter_summary(
+  result <- mcmc_graph_summary(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.015,
@@ -62,12 +62,15 @@ test_that("pairwise_rhat_parameter_summary returns expected components", {
   expect_true("clusters" %in% names(result))
   expect_true("graphs" %in% names(result))
   expect_true("combined_graph" %in% names(result))
+  expect_true("combined_graph_intersection" %in% names(result))
+  expect_true("combined_graph_difference" %in% names(result))
+  expect_true("intersection_summary" %in% names(result))
   expect_true("rhat_matrices" %in% names(result))
   expect_true("rho" %in% names(result))
 })
 
 
-test_that("pairwise_rhat_parameter_summary returns an object of class pairwiserhat", {
+test_that("mcmc_graph_summary returns an object of class mcmcgraph", {
   set.seed(1)
 
   draws <- make_test_draws(
@@ -76,18 +79,18 @@ test_that("pairwise_rhat_parameter_summary returns an object of class pairwiserh
     parameters = c("alpha", "beta")
   )
 
-  result <- pairwise_rhat_parameter_summary(
+  result <- mcmc_graph_summary(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.015,
     save_csv = FALSE
   )
 
-  expect_s3_class(result, "pairwiserhat")
+  expect_s3_class(result, "mcmcgraph")
 })
 
 
-test_that("print(pairwiserhat) shows the three requested sections in order", {
+test_that("print_summary() shows the four requested sections in order", {
   set.seed(1)
 
   draws <- make_test_draws(
@@ -96,7 +99,7 @@ test_that("print(pairwiserhat) shows the three requested sections in order", {
     parameters = c("alpha", "beta")
   )
 
-  result <- pairwise_rhat_parameter_summary(
+  result <- mcmc_graph_summary(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.015,
@@ -110,11 +113,13 @@ test_that("print(pairwiserhat) shows the three requested sections in order", {
   expect_match(combined, "1\\. Pairwise R-hat matrices")
   expect_match(combined, "2\\. Top 5 largest pairwise R-hat values")
   expect_match(combined, "3\\. Parameter summary")
+  expect_match(combined, "4\\. Intersection summary \\(G_intersection\\)")
 
   section_positions <- c(
     regexpr("1\\. Pairwise R-hat matrices", combined),
     regexpr("2\\. Top 5 largest pairwise R-hat values", combined),
-    regexpr("3\\. Parameter summary", combined)
+    regexpr("3\\. Parameter summary", combined),
+    regexpr("4\\. Intersection summary \\(G_intersection\\)", combined)
   )
 
   expect_true(all(diff(section_positions) > 0))
@@ -125,7 +130,7 @@ test_that("print(pairwiserhat) shows the three requested sections in order", {
 })
 
 
-test_that("pairwise_rhat_parameter_summary returns an igraph combined_graph", {
+test_that("mcmc_graph_summary returns an igraph combined_graph", {
   set.seed(1)
 
   draws <- make_test_draws(
@@ -134,7 +139,7 @@ test_that("pairwise_rhat_parameter_summary returns an igraph combined_graph", {
     parameters = c("alpha", "beta")
   )
 
-  result <- pairwise_rhat_parameter_summary(
+  result <- mcmc_graph_summary(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.015,
@@ -154,7 +159,7 @@ test_that("summary table has one row per selected parameter", {
     parameters = c("alpha", "beta")
   )
 
-  result <- pairwise_rhat_parameter_summary(
+  result <- mcmc_graph_summary(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.015,
@@ -175,7 +180,7 @@ test_that("pairwise display table is capped by pairwise_display_n", {
     parameters = "alpha"
   )
 
-  result <- pairwise_rhat_parameter_summary(
+  result <- mcmc_graph_summary(
     draws = draws,
     parameters = "alpha",
     rho = 1.015,
@@ -196,7 +201,7 @@ test_that("full pairwise values table is kept", {
     parameters = "alpha"
   )
 
-  result <- pairwise_rhat_parameter_summary(
+  result <- mcmc_graph_summary(
     draws = draws,
     parameters = "alpha",
     rho = 1.015,
@@ -214,7 +219,7 @@ test_that("clean multimodality keeps pairwise_rhat_value low", {
 
   draws <- make_separated_draws(n_iter = 200)
 
-  result <- pairwise_rhat_parameter_summary(
+  result <- mcmc_graph_summary(
     draws = draws,
     parameters = "alpha",
     rho = 1.015,
@@ -240,7 +245,7 @@ test_that("isolated chains raise pairwise_rhat_value", {
 
   draws <- make_isolated_draws(n_iter = 200)
 
-  result <- pairwise_rhat_parameter_summary(
+  result <- mcmc_graph_summary(
     draws = draws,
     parameters = "alpha",
     rho = 1.015,
@@ -277,7 +282,7 @@ test_that("CSV files are saved when save_csv is TRUE", {
   output_dir <- tempfile("pairwise_summary_test_")
   dir.create(output_dir)
 
-  pairwise_rhat_parameter_summary(
+  mcmc_graph_summary(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.015,
@@ -288,7 +293,13 @@ test_that("CSV files are saved when save_csv is TRUE", {
 
   expect_true(
     file.exists(
-      file.path(output_dir, "pairwise_rhat_parameter_summary.csv")
+      file.path(output_dir, "mcmc_graph_summary.csv")
+    )
+  )
+
+  expect_true(
+    file.exists(
+      file.path(output_dir, "pairwise_rhat_intersection_summary.csv")
     )
   )
 

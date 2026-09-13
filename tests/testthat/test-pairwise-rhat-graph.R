@@ -1,4 +1,4 @@
-# Tests for pairwise_rhat_graph().
+# Tests for mcmc_graph_uni().
 #
 # Main purpose:
 #   Convert one pairwise R-hat matrix into an undirected graph.
@@ -11,7 +11,7 @@
 #   5. Edges are not created when pairwise R-hat is above rho.
 
 
-test_that("pairwise_rhat_graph returns an igraph object", {
+test_that("mcmc_graph_uni returns an igraph object", {
   rhat_matrix <- matrix(
     c(
       1.00, 1.01, 1.20,
@@ -25,7 +25,7 @@ test_that("pairwise_rhat_graph returns an igraph object", {
   rownames(rhat_matrix) <- paste0("chain", 1:3)
   colnames(rhat_matrix) <- paste0("chain", 1:3)
 
-  graph <- pairwise_rhat_graph(
+  graph <- mcmc_graph_uni(
     rhat_matrix = rhat_matrix,
     rho = 1.015
   )
@@ -34,7 +34,7 @@ test_that("pairwise_rhat_graph returns an igraph object", {
 })
 
 
-test_that("pairwise_rhat_graph has one vertex per chain", {
+test_that("mcmc_graph_uni has one vertex per chain", {
   rhat_matrix <- matrix(
     c(
       1.00, 1.01, 1.20,
@@ -48,7 +48,7 @@ test_that("pairwise_rhat_graph has one vertex per chain", {
   rownames(rhat_matrix) <- paste0("chain", 1:3)
   colnames(rhat_matrix) <- paste0("chain", 1:3)
 
-  graph <- pairwise_rhat_graph(
+  graph <- mcmc_graph_uni(
     rhat_matrix = rhat_matrix,
     rho = 1.015
   )
@@ -57,7 +57,7 @@ test_that("pairwise_rhat_graph has one vertex per chain", {
 })
 
 
-test_that("pairwise_rhat_graph keeps chain names as vertex names", {
+test_that("mcmc_graph_uni keeps chain names as vertex names", {
   rhat_matrix <- matrix(
     c(
       1.00, 1.01, 1.20,
@@ -71,7 +71,7 @@ test_that("pairwise_rhat_graph keeps chain names as vertex names", {
   rownames(rhat_matrix) <- paste0("chain", 1:3)
   colnames(rhat_matrix) <- paste0("chain", 1:3)
 
-  graph <- pairwise_rhat_graph(
+  graph <- mcmc_graph_uni(
     rhat_matrix = rhat_matrix,
     rho = 1.015
   )
@@ -83,7 +83,7 @@ test_that("pairwise_rhat_graph keeps chain names as vertex names", {
 })
 
 
-test_that("pairwise_rhat_graph creates edges below the threshold", {
+test_that("mcmc_graph_uni creates edges below the threshold", {
   rhat_matrix <- matrix(
     c(
       1.00, 1.01, 1.20,
@@ -97,7 +97,7 @@ test_that("pairwise_rhat_graph creates edges below the threshold", {
   rownames(rhat_matrix) <- paste0("chain", 1:3)
   colnames(rhat_matrix) <- paste0("chain", 1:3)
 
-  graph <- pairwise_rhat_graph(
+  graph <- mcmc_graph_uni(
     rhat_matrix = rhat_matrix,
     rho = 1.015
   )
@@ -113,7 +113,30 @@ test_that("pairwise_rhat_graph creates edges below the threshold", {
 })
 
 
-test_that("pairwise_rhat_graph does not create edges above the threshold", {
+test_that("mcmc_graph_uni omits only the pairs above rho with Stan chain names", {
+  rhat_matrix <- matrix(
+    1.00,
+    nrow = 4,
+    ncol = 4
+  )
+  rhat_matrix[1, 4] <- 1.078
+  rhat_matrix[4, 1] <- 1.078
+  rhat_matrix[4, 3] <- 1.055
+  rhat_matrix[3, 4] <- 1.055
+  diag(rhat_matrix) <- 1
+  rownames(rhat_matrix) <- paste0("chain:", 1:4)
+  colnames(rhat_matrix) <- paste0("chain:", 1:4)
+
+  graph <- mcmc_graph_uni(rhat_matrix, rho = 1.05)
+
+  expect_false(igraph::are_adjacent(graph, "chain:1", "chain:4"))
+  expect_false(igraph::are_adjacent(graph, "chain:4", "chain:3"))
+  expect_true(igraph::are_adjacent(graph, "chain:1", "chain:2"))
+  expect_equal(igraph::ecount(graph), choose(4, 2) - 2L)
+})
+
+
+test_that("mcmc_graph_uni does not create edges above the threshold", {
   rhat_matrix <- matrix(
     c(
       1.00, 1.20, 1.30,
@@ -127,7 +150,7 @@ test_that("pairwise_rhat_graph does not create edges above the threshold", {
   rownames(rhat_matrix) <- paste0("chain", 1:3)
   colnames(rhat_matrix) <- paste0("chain", 1:3)
 
-  graph <- pairwise_rhat_graph(
+  graph <- mcmc_graph_uni(
     rhat_matrix = rhat_matrix,
     rho = 1.015
   )

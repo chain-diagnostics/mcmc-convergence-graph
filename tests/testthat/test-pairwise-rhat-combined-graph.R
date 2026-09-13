@@ -1,4 +1,4 @@
-# Tests for pairwise_rhat_combined_graph().
+# Tests for mcmc_graph_multi().
 #
 # Main purpose:
 #   Combine pairwise R-hat graph information across multiple parameters.
@@ -17,7 +17,7 @@ test_that("combined graph keeps parameter information on edges", {
     parameters = c("alpha", "beta")
   )
 
-  graph <- pairwise_rhat_combined_graph(
+  graph <- mcmc_graph_multi(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 10
@@ -39,7 +39,7 @@ test_that("combined graph uses all parameters when parameters is NULL", {
     parameters = c("alpha", "beta", "theta")
   )
 
-  graph <- pairwise_rhat_combined_graph(
+  graph <- mcmc_graph_multi(
     draws = draws,
     parameters = NULL,
     rho = 10
@@ -77,14 +77,14 @@ test_that("intersection mode yields a subgraph of the union graph", {
 
   draws[, , "beta"] <- rnorm(n_iter * 4)
 
-  graph_union <- pairwise_rhat_combined_graph(
+  graph_union <- mcmc_graph_multi(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.05,
     mode = "union"
   )
 
-  graph_intersection <- pairwise_rhat_combined_graph(
+  graph_intersection <- mcmc_graph_multi(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.05,
@@ -108,3 +108,79 @@ test_that("intersection mode yields a subgraph of the union graph", {
     )
   }
 })
+
+
+test_that("intersection summary counts modes on G_intersection, not per dimension", {
+  set.seed(2)
+
+  n_iter <- 200
+
+  draws <- array(
+    NA_real_,
+    dim = c(n_iter, 4, 2)
+  )
+
+  dimnames(draws) <- list(
+    NULL,
+    paste0("chain", 1:4),
+    c("alpha", "beta")
+  )
+
+  draws[, "chain1", "alpha"] <- rnorm(n_iter, mean = 0)
+  draws[, "chain2", "alpha"] <- rnorm(n_iter, mean = 0)
+  draws[, "chain3", "alpha"] <- rnorm(n_iter, mean = 5)
+  draws[, "chain4", "alpha"] <- rnorm(n_iter, mean = 5)
+
+  draws[, , "beta"] <- rnorm(n_iter * 4)
+
+  result <- mcmc_graph_summary(
+    draws = draws,
+    parameters = c("alpha", "beta"),
+    rho = 1.05,
+    save_csv = FALSE
+  )
+
+  expect_equal(nrow(result$intersection_summary), 1L)
+  expect_equal(result$intersection_summary$graph, "G_intersection")
+  expect_equal(result$intersection_summary$n_clusters, 2L)
+  expect_equal(result$intersection_summary$n_isolated, 0L)
+
+  expect_equal(igraph::graph_attr(result$combined_graph_difference, "mode"), "difference")
+  expect_gt(igraph::ecount(result$combined_graph_difference), 0)
+  expect_true(
+    all(igraph::E(result$combined_graph_difference)$n_parameters < 2)
+  )
+})
+
+
+test_that("a one-parameter graph uses black edges and omits pairs above rho", {
+  rhat_matrix <- matrix(
+    1.00,
+    nrow = 3,
+    ncol = 3
+  )
+  rhat_matrix[1, 3] <- 1.08
+  rhat_matrix[3, 1] <- 1.08
+  diag(rhat_matrix) <- 1
+  rownames(rhat_matrix) <- paste0("chain:", 1:3)
+  colnames(rhat_matrix) <- paste0("chain:", 1:3)
+
+  parameter_graphs <- list(b = mcmc_graph_uni(rhat_matrix, rho = 1.05))
+  graph <- build_combined_graph(
+    parameter_graphs,
+    rho = 1.05,
+    mode = "union"
+  )
+
+  expect_false(igraph::are_adjacent(graph, "chain:1", "chain:3"))
+  expect_equal(n_monitored_parameters(graph), 1L)
+  expect_equal(
+    edge_color_from_graph(graph),
+    rep("black", igraph::ecount(graph))
+  )
+  expect_equal(
+    edge_lty_from_graph(graph),
+    rep(1L, igraph::ecount(graph))
+  )
+})
+

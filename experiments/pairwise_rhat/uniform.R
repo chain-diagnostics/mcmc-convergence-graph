@@ -1,5 +1,5 @@
 library(rstan)
-library(pairwiserhat)
+library(mcmcConvergenceGraph)
 
 rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
@@ -11,10 +11,10 @@ if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
 
 fit <- readRDS(fit_path)
 
-result <- pairwiserhat(
+result <- mcmcgraph(
   fit,
-  parameters         = c("theta[1]", "theta[2]"),
-  rho                = 1.015,
+  parameters         = c("x[1]", "x[2]"),
+  rho                = 1.05,
   plot               = TRUE,
   save_csv           = TRUE,
   save_plot          = TRUE,

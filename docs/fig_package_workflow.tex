@@ -243,22 +243,26 @@ intersection so that an edge is retained in $G_{\rho}$ only if it is
 present for every parameter.
 %
 (c)~\emph{Numerical and graphical output.} Three numerical objects and one
-graphical object are returned by \texttt{pairwiserhat()}. (1)~A
-per-parameter pairwise $\hat{R}$ matrix (top block): shaded cells mark
-chain pairs~$(i,j)$ with $\hat{R}_{ij}\le\rho$ and empty cells mark pairs
-with $\hat{R}_{ij}>\rho$, so that the block structure of shaded cells
-exposes the chain groupings for that parameter at a glance. (2)~A table
-of the ten largest pairwise $\hat{R}_{ij}$ values (middle block), sorted
-in descending order, listing the most notable chain-pair disagreements
-across all monitored parameters. (3)~A parameter-level summary (lower
-block) reporting, for each monitored parameter~$\theta$, the number of
-chain clusters~$n_{\mathrm{clusters}}$, the number of isolated
-chains~$n_{\mathrm{isolated}}$, the cluster membership by chain index,
-and the classical $\hat{R}$ for direct comparison. The graphical output
-is $G_{\rho}$ itself (bottom right), drawn here with six chains that
-partition into two connected components---light-shaded chains~$\{1,2\}$
-and dark-shaded chains~$\{3,4,5,6\}$---indicating a bimodal posterior in
-which two groups of chains have concentrated on different regions.
+graphical object are returned by \texttt{pairwiserhat()}. The values shown
+are those obtained for the Different intercepts variant of Experiment~2.
+For reasons of space, the pairwise $\hat{R}$ matrix in~(1) is displayed
+for a single parameter, the intercept $b_1$. (1)~A pairwise $\hat{R}$
+matrix (top block): shaded cells mark chain pairs~$(i,j)$ with
+$\hat{R}_{ij}\le\rho$ and empty cells mark pairs with
+$\hat{R}_{ij}>\rho$, so that the block structure of shaded cells exposes
+the chain groupings for that parameter at a glance. (2)~A table of the
+largest pairwise $\hat{R}_{ij}$ values (middle block), sorted in
+descending order, listing the most notable chain-pair disagreements
+across all monitored parameters; the five largest rows are shown. (3)~A
+parameter-level summary (lower block) reporting, for each monitored
+parameter~$\theta$, the number of connected components~$K$, the number of
+isolated chains, the chain groups, and the largest within-group pairwise
+$\hat{R}_{ij}$. The graphical output is the MCMC convergence graph
+$G_{\rho}$ (bottom right), drawn here with eight chains that partition
+into two connected components---light-shaded chains~$\{1,2,5\}$ and
+dark-shaded chains~$\{3,4,6,7,8\}$---indicating a bimodal posterior in
+which two groups of chains have concentrated on different regions of
+$b_1$.
 }
 \label{fig:package-workflow}
 \end{figure}

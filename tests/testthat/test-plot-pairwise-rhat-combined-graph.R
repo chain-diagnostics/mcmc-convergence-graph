@@ -1,4 +1,4 @@
-# Tests for plot_pairwise_rhat_combined_graph().
+# Tests for plot_mcmc_graph().
 #
 # Main purpose:
 #   Plot the combined pairwise R-hat graph.
@@ -10,7 +10,7 @@
 #   4. A graph with no edges can still be plotted.
 
 
-test_that("plot_pairwise_rhat_combined_graph runs without error", {
+test_that("plot_mcmc_graph runs without error", {
   set.seed(1)
 
   draws <- make_test_draws(
@@ -19,19 +19,19 @@ test_that("plot_pairwise_rhat_combined_graph runs without error", {
     parameters = c("alpha", "beta")
   )
 
-  graph <- pairwise_rhat_combined_graph(
+  graph <- mcmc_graph_multi(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.2
   )
 
   expect_no_error(
-    plot_pairwise_rhat_combined_graph(graph)
+    plot_mcmc_graph(graph)
   )
 })
 
 
-test_that("plot_pairwise_rhat_combined_graph works with grid layout", {
+test_that("plot_mcmc_graph works with grid layout", {
   set.seed(1)
 
   draws <- make_test_draws(
@@ -40,14 +40,14 @@ test_that("plot_pairwise_rhat_combined_graph works with grid layout", {
     parameters = c("alpha", "beta")
   )
 
-  graph <- pairwise_rhat_combined_graph(
+  graph <- mcmc_graph_multi(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.2
   )
 
   expect_no_error(
-    plot_pairwise_rhat_combined_graph(
+    plot_mcmc_graph(
       graph,
       layout_type = "grid"
     )
@@ -55,7 +55,7 @@ test_that("plot_pairwise_rhat_combined_graph works with grid layout", {
 })
 
 
-test_that("plot_pairwise_rhat_combined_graph works with circle layout", {
+test_that("plot_mcmc_graph works with circle layout", {
   set.seed(1)
 
   draws <- make_test_draws(
@@ -64,14 +64,14 @@ test_that("plot_pairwise_rhat_combined_graph works with circle layout", {
     parameters = c("alpha", "beta")
   )
 
-  graph <- pairwise_rhat_combined_graph(
+  graph <- mcmc_graph_multi(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.2
   )
 
   expect_no_error(
-    plot_pairwise_rhat_combined_graph(
+    plot_mcmc_graph(
       graph,
       layout_type = "circle"
     )
@@ -79,7 +79,7 @@ test_that("plot_pairwise_rhat_combined_graph works with circle layout", {
 })
 
 
-test_that("plot_pairwise_rhat_combined_graph works for a graph with no edges", {
+test_that("plot_mcmc_graph works for a graph with no edges", {
   set.seed(1)
 
   draws <- make_test_draws(
@@ -88,7 +88,7 @@ test_that("plot_pairwise_rhat_combined_graph works for a graph with no edges", {
     parameters = c("alpha", "beta")
   )
 
-  graph <- pairwise_rhat_combined_graph(
+  graph <- mcmc_graph_multi(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 0.5
@@ -97,6 +97,6 @@ test_that("plot_pairwise_rhat_combined_graph works for a graph with no edges", {
   expect_equal(igraph::ecount(graph), 0)
 
   expect_no_error(
-    plot_pairwise_rhat_combined_graph(graph)
+    plot_mcmc_graph(graph)
   )
 })

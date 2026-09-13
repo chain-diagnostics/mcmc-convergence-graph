@@ -1,0 +1,405 @@
+% =========================================================
+% PANEL (a): four simulated distributions
+% Points are the saved Experiment 1 datasets in
+% result_baseline_rhat/*/data_generating_samples.csv
+% (seed 2026).
+% =========================================================
+
+\tikzset{
+  dataPoint/.style={
+    circle,
+    fill=gray!88,
+    draw=none,
+    inner sep=0pt,
+    minimum size=0.72mm
+  },
+  trueLine/.style={
+    draw=gray!55,
+    line width=0.70pt
+  }
+}
+
+\def\pw{2.18}
+\def\ph{2.30}
+\def\py{3.66}
+\def\titley{2.48}
+
+
+% =========================================================
+% 1. UNIFORM
+% y ~ Uniform(-2,2)^2   (80 of 1000 saved draws)
+% =========================================================
+\begin{scope}[shift={(0.36,\py)}]
+
+  \node[
+    font=\scriptsize\bfseries,
+    anchor=south
+  ] at ({0.5*\pw},\titley)
+  {
+    Uniform
+  };
+
+    \node[dataPoint] at (1.854,0.372) {};
+    \node[dataPoint] at (1.250,1.537) {};
+    \node[dataPoint] at (0.541,1.346) {};
+    \node[dataPoint] at (0.385,1.681) {};
+    \node[dataPoint] at (0.487,1.477) {};
+    \node[dataPoint] at (1.289,1.503) {};
+    \node[dataPoint] at (1.258,1.049) {};
+    \node[dataPoint] at (0.227,0.868) {};
+    \node[dataPoint] at (0.840,1.579) {};
+    \node[dataPoint] at (0.370,1.984) {};
+    \node[dataPoint] at (1.082,0.725) {};
+    \node[dataPoint] at (1.222,0.359) {};
+    \node[dataPoint] at (0.899,0.975) {};
+    \node[dataPoint] at (1.812,1.708) {};
+    \node[dataPoint] at (0.291,1.522) {};
+    \node[dataPoint] at (0.604,0.870) {};
+    \node[dataPoint] at (1.795,0.497) {};
+    \node[dataPoint] at (1.502,0.620) {};
+    \node[dataPoint] at (0.845,0.987) {};
+    \node[dataPoint] at (1.740,0.750) {};
+    \node[dataPoint] at (0.345,0.571) {};
+    \node[dataPoint] at (1.586,1.618) {};
+    \node[dataPoint] at (1.778,0.967) {};
+    \node[dataPoint] at (0.360,1.586) {};
+    \node[dataPoint] at (1.544,1.258) {};
+    \node[dataPoint] at (1.611,0.342) {};
+    \node[dataPoint] at (1.084,1.660) {};
+    \node[dataPoint] at (1.295,1.449) {};
+    \node[dataPoint] at (0.515,1.088) {};
+    \node[dataPoint] at (1.166,1.399) {};
+    \node[dataPoint] at (1.141,0.464) {};
+    \node[dataPoint] at (1.191,1.430) {};
+    \node[dataPoint] at (1.896,0.401) {};
+    \node[dataPoint] at (0.555,1.560) {};
+    \node[dataPoint] at (0.760,1.579) {};
+    \node[dataPoint] at (0.919,1.814) {};
+    \node[dataPoint] at (1.948,1.097) {};
+    \node[dataPoint] at (0.707,1.819) {};
+    \node[dataPoint] at (1.172,1.550) {};
+    \node[dataPoint] at (1.192,0.923) {};
+    \node[dataPoint] at (0.783,1.771) {};
+    \node[dataPoint] at (0.802,1.333) {};
+    \node[dataPoint] at (1.620,1.244) {};
+    \node[dataPoint] at (0.229,0.939) {};
+    \node[dataPoint] at (0.736,0.523) {};
+    \node[dataPoint] at (1.834,0.372) {};
+    \node[dataPoint] at (1.315,1.880) {};
+    \node[dataPoint] at (1.793,0.328) {};
+    \node[dataPoint] at (1.130,0.945) {};
+    \node[dataPoint] at (1.355,1.777) {};
+    \node[dataPoint] at (0.815,1.329) {};
+    \node[dataPoint] at (0.319,1.292) {};
+    \node[dataPoint] at (1.098,1.120) {};
+    \node[dataPoint] at (0.872,0.254) {};
+    \node[dataPoint] at (0.555,0.707) {};
+    \node[dataPoint] at (0.531,0.333) {};
+    \node[dataPoint] at (1.328,0.436) {};
+    \node[dataPoint] at (0.624,0.834) {};
+    \node[dataPoint] at (0.177,1.446) {};
+    \node[dataPoint] at (1.713,1.117) {};
+    \node[dataPoint] at (1.631,0.321) {};
+    \node[dataPoint] at (1.288,1.461) {};
+    \node[dataPoint] at (0.998,1.705) {};
+    \node[dataPoint] at (1.510,0.463) {};
+    \node[dataPoint] at (0.672,1.873) {};
+    \node[dataPoint] at (1.230,0.674) {};
+    \node[dataPoint] at (1.157,0.830) {};
+    \node[dataPoint] at (1.569,1.022) {};
+    \node[dataPoint] at (0.741,1.812) {};
+    \node[dataPoint] at (0.387,1.158) {};
+    \node[dataPoint] at (1.754,1.253) {};
+    \node[dataPoint] at (1.344,0.208) {};
+    \node[dataPoint] at (1.686,0.714) {};
+    \node[dataPoint] at (1.969,0.586) {};
+    \node[dataPoint] at (0.959,0.464) {};
+    \node[dataPoint] at (0.376,0.939) {};
+    \node[dataPoint] at (0.471,1.148) {};
+    \node[dataPoint] at (1.750,1.399) {};
+    \node[dataPoint] at (0.662,0.463) {};
+    \node[dataPoint] at (1.409,0.633) {};
+
+\end{scope}
+
+
+% =========================================================
+% 2. GAUSSIAN BALL
+% y ~ N(0, I_2)   (80 of 1000 saved draws)
+% =========================================================
+\begin{scope}[shift={(3.42,\py)}]
+
+  \node[
+    font=\scriptsize\bfseries,
+    anchor=south
+  ] at ({0.5*\pw},\titley)
+  {
+    One cluster
+  };
+
+    \node[dataPoint] at (1.068,0.999) {};
+    \node[dataPoint] at (1.024,1.232) {};
+    \node[dataPoint] at (1.125,0.754) {};
+    \node[dataPoint] at (1.076,0.713) {};
+    \node[dataPoint] at (0.962,1.317) {};
+    \node[dataPoint] at (1.236,1.194) {};
+    \node[dataPoint] at (1.474,1.300) {};
+    \node[dataPoint] at (1.228,1.065) {};
+    \node[dataPoint] at (0.639,0.967) {};
+    \node[dataPoint] at (1.310,0.957) {};
+    \node[dataPoint] at (1.291,1.200) {};
+    \node[dataPoint] at (0.902,0.907) {};
+    \node[dataPoint] at (1.317,1.107) {};
+    \node[dataPoint] at (1.479,1.300) {};
+    \node[dataPoint] at (0.889,0.980) {};
+    \node[dataPoint] at (1.108,1.585) {};
+    \node[dataPoint] at (1.388,0.963) {};
+    \node[dataPoint] at (1.218,0.913) {};
+    \node[dataPoint] at (1.185,1.260) {};
+    \node[dataPoint] at (1.031,1.246) {};
+    \node[dataPoint] at (1.001,0.746) {};
+    \node[dataPoint] at (1.054,1.421) {};
+    \node[dataPoint] at (1.048,1.045) {};
+    \node[dataPoint] at (1.316,0.582) {};
+    \node[dataPoint] at (1.330,0.739) {};
+    \node[dataPoint] at (1.209,0.723) {};
+    \node[dataPoint] at (1.230,1.041) {};
+    \node[dataPoint] at (1.064,1.220) {};
+    \node[dataPoint] at (1.520,1.022) {};
+    \node[dataPoint] at (1.234,1.271) {};
+    \node[dataPoint] at (1.390,1.458) {};
+    \node[dataPoint] at (0.569,0.701) {};
+    \node[dataPoint] at (1.184,1.347) {};
+    \node[dataPoint] at (0.915,1.319) {};
+    \node[dataPoint] at (0.901,1.475) {};
+    \node[dataPoint] at (0.755,0.854) {};
+    \node[dataPoint] at (0.722,0.506) {};
+    \node[dataPoint] at (0.834,1.236) {};
+    \node[dataPoint] at (1.058,0.988) {};
+    \node[dataPoint] at (0.643,0.811) {};
+    \node[dataPoint] at (1.455,1.209) {};
+    \node[dataPoint] at (1.328,0.859) {};
+    \node[dataPoint] at (0.886,1.231) {};
+    \node[dataPoint] at (1.203,1.028) {};
+    \node[dataPoint] at (1.181,1.149) {};
+    \node[dataPoint] at (1.295,1.171) {};
+    \node[dataPoint] at (0.983,1.445) {};
+    \node[dataPoint] at (1.320,0.953) {};
+    \node[dataPoint] at (1.050,1.314) {};
+    \node[dataPoint] at (1.339,0.883) {};
+    \node[dataPoint] at (0.972,0.918) {};
+    \node[dataPoint] at (0.818,1.183) {};
+    \node[dataPoint] at (0.701,1.066) {};
+    \node[dataPoint] at (1.204,1.034) {};
+    \node[dataPoint] at (0.911,0.957) {};
+    \node[dataPoint] at (1.162,1.058) {};
+    \node[dataPoint] at (1.116,1.377) {};
+    \node[dataPoint] at (1.254,0.929) {};
+    \node[dataPoint] at (1.538,1.016) {};
+    \node[dataPoint] at (1.385,1.228) {};
+    \node[dataPoint] at (1.522,1.004) {};
+    \node[dataPoint] at (0.988,1.046) {};
+    \node[dataPoint] at (0.947,1.478) {};
+    \node[dataPoint] at (1.093,1.276) {};
+    \node[dataPoint] at (0.777,1.065) {};
+    \node[dataPoint] at (0.521,0.920) {};
+    \node[dataPoint] at (0.674,0.685) {};
+    \node[dataPoint] at (0.780,1.066) {};
+    \node[dataPoint] at (1.976,1.250) {};
+    \node[dataPoint] at (1.161,0.660) {};
+    \node[dataPoint] at (1.177,1.016) {};
+    \node[dataPoint] at (1.134,0.831) {};
+    \node[dataPoint] at (1.226,1.170) {};
+    \node[dataPoint] at (1.279,1.177) {};
+    \node[dataPoint] at (1.150,1.139) {};
+    \node[dataPoint] at (1.124,1.068) {};
+    \node[dataPoint] at (0.983,0.401) {};
+    \node[dataPoint] at (0.974,0.821) {};
+    \node[dataPoint] at (1.141,1.387) {};
+    \node[dataPoint] at (1.159,1.456) {};
+
+\end{scope}
+
+
+% =========================================================
+% 3. LINEAR DATA WITH GAUSSIAN NOISE
+% x ~ Uniform(-2, 2),  y = 1.5 x + 0.5 + N(0, 0.5^2)
+% N = 60. Grey line is the true mean 1.5 x + 0.5.
+% =========================================================
+\begin{scope}[shift={(6.48,\py)}]
+
+  \node[
+    font=\scriptsize\bfseries,
+    anchor=south
+  ] at ({0.5*\pw},\titley)
+  {
+    Line with noise
+  };
+
+  % Underlying linear relation y = 1.5 x + 0.5
+  \draw[trueLine]
+    (0.160,0.358)
+    --
+    (2.020,1.767);
+
+    \node[dataPoint] at (1.453,1.280) {};
+    \node[dataPoint] at (1.210,1.171) {};
+    \node[dataPoint] at (0.497,0.586) {};
+    \node[dataPoint] at (0.746,0.838) {};
+    \node[dataPoint] at (1.208,1.172) {};
+    \node[dataPoint] at (0.301,0.591) {};
+    \node[dataPoint] at (1.055,1.100) {};
+    \node[dataPoint] at (1.731,1.452) {};
+    \node[dataPoint] at (0.690,0.822) {};
+    \node[dataPoint] at (1.251,1.096) {};
+    \node[dataPoint] at (0.268,0.315) {};
+    \node[dataPoint] at (1.441,1.413) {};
+    \node[dataPoint] at (0.653,0.602) {};
+    \node[dataPoint] at (1.709,1.565) {};
+    \node[dataPoint] at (0.521,0.542) {};
+    \node[dataPoint] at (0.868,1.048) {};
+    \node[dataPoint] at (1.190,1.216) {};
+    \node[dataPoint] at (0.260,0.390) {};
+    \node[dataPoint] at (0.801,0.930) {};
+    \node[dataPoint] at (0.287,0.501) {};
+    \node[dataPoint] at (0.842,0.749) {};
+    \node[dataPoint] at (0.845,0.855) {};
+    \node[dataPoint] at (0.656,0.633) {};
+    \node[dataPoint] at (0.363,0.560) {};
+    \node[dataPoint] at (0.963,0.897) {};
+    \node[dataPoint] at (0.575,0.648) {};
+    \node[dataPoint] at (0.960,0.831) {};
+    \node[dataPoint] at (0.497,0.510) {};
+    \node[dataPoint] at (0.267,0.454) {};
+    \node[dataPoint] at (1.287,1.104) {};
+    \node[dataPoint] at (1.816,1.597) {};
+    \node[dataPoint] at (0.558,0.678) {};
+    \node[dataPoint] at (1.509,1.358) {};
+    \node[dataPoint] at (0.285,0.422) {};
+    \node[dataPoint] at (1.260,1.004) {};
+    \node[dataPoint] at (0.986,0.955) {};
+    \node[dataPoint] at (0.618,0.511) {};
+    \node[dataPoint] at (1.074,1.175) {};
+    \node[dataPoint] at (1.549,1.302) {};
+    \node[dataPoint] at (1.022,1.027) {};
+    \node[dataPoint] at (0.893,0.969) {};
+    \node[dataPoint] at (1.754,1.566) {};
+    \node[dataPoint] at (1.001,1.141) {};
+    \node[dataPoint] at (1.011,0.911) {};
+    \node[dataPoint] at (0.398,0.586) {};
+    \node[dataPoint] at (0.317,0.372) {};
+    \node[dataPoint] at (1.847,1.865) {};
+    \node[dataPoint] at (0.762,0.888) {};
+    \node[dataPoint] at (1.146,1.068) {};
+    \node[dataPoint] at (0.662,0.823) {};
+    \node[dataPoint] at (1.920,1.567) {};
+    \node[dataPoint] at (1.340,1.415) {};
+    \node[dataPoint] at (1.897,1.549) {};
+    \node[dataPoint] at (1.774,1.413) {};
+    \node[dataPoint] at (1.153,1.104) {};
+    \node[dataPoint] at (1.483,1.452) {};
+    \node[dataPoint] at (1.525,1.391) {};
+    \node[dataPoint] at (0.336,0.410) {};
+    \node[dataPoint] at (1.896,1.800) {};
+    \node[dataPoint] at (0.602,0.954) {};
+
+\end{scope}
+
+
+% =========================================================
+% 4. THREE GAUSSIAN CLUSTERS
+% Mixture centres (-6,-5), (6,0), (0,6); variance 0.25
+% 80 of 1000 saved draws. Aspect ratio preserved.
+% =========================================================
+\begin{scope}[shift={(9.54,\py)}]
+
+  \node[
+    font=\scriptsize\bfseries,
+    anchor=south
+  ] at ({0.5*\pw},\titley)
+  {
+    Three clusters
+  };
+
+    \node[dataPoint] at (1.765,1.086) {};
+    \node[dataPoint] at (1.714,1.032) {};
+    \node[dataPoint] at (0.464,0.456) {};
+    \node[dataPoint] at (1.791,1.051) {};
+    \node[dataPoint] at (1.843,1.016) {};
+    \node[dataPoint] at (1.773,1.013) {};
+    \node[dataPoint] at (0.550,0.487) {};
+    \node[dataPoint] at (1.743,0.998) {};
+    \node[dataPoint] at (0.486,0.501) {};
+    \node[dataPoint] at (1.741,0.993) {};
+    \node[dataPoint] at (0.440,0.489) {};
+    \node[dataPoint] at (1.100,1.700) {};
+    \node[dataPoint] at (1.107,1.716) {};
+    \node[dataPoint] at (0.352,0.503) {};
+    \node[dataPoint] at (1.695,1.045) {};
+    \node[dataPoint] at (1.763,1.088) {};
+    \node[dataPoint] at (1.753,1.096) {};
+    \node[dataPoint] at (0.403,0.433) {};
+    \node[dataPoint] at (1.762,1.152) {};
+    \node[dataPoint] at (1.776,1.192) {};
+    \node[dataPoint] at (1.729,1.097) {};
+    \node[dataPoint] at (1.067,1.691) {};
+    \node[dataPoint] at (0.428,0.417) {};
+    \node[dataPoint] at (1.775,1.023) {};
+    \node[dataPoint] at (1.090,1.721) {};
+    \node[dataPoint] at (0.518,0.437) {};
+    \node[dataPoint] at (0.400,0.462) {};
+    \node[dataPoint] at (1.147,1.780) {};
+    \node[dataPoint] at (1.090,1.638) {};
+    \node[dataPoint] at (0.459,0.468) {};
+    \node[dataPoint] at (1.015,1.701) {};
+    \node[dataPoint] at (0.415,0.543) {};
+    \node[dataPoint] at (1.776,0.958) {};
+    \node[dataPoint] at (1.783,1.053) {};
+    \node[dataPoint] at (0.385,0.474) {};
+    \node[dataPoint] at (0.412,0.470) {};
+    \node[dataPoint] at (1.741,1.046) {};
+    \node[dataPoint] at (1.146,1.665) {};
+    \node[dataPoint] at (1.187,1.670) {};
+    \node[dataPoint] at (1.802,1.089) {};
+    \node[dataPoint] at (0.391,0.522) {};
+    \node[dataPoint] at (1.147,1.731) {};
+    \node[dataPoint] at (0.401,0.463) {};
+    \node[dataPoint] at (1.776,1.115) {};
+    \node[dataPoint] at (1.776,0.912) {};
+    \node[dataPoint] at (1.075,1.678) {};
+    \node[dataPoint] at (0.416,0.399) {};
+    \node[dataPoint] at (1.721,0.992) {};
+    \node[dataPoint] at (1.093,1.674) {};
+    \node[dataPoint] at (0.457,0.463) {};
+    \node[dataPoint] at (0.383,0.495) {};
+    \node[dataPoint] at (0.368,0.532) {};
+    \node[dataPoint] at (1.809,1.049) {};
+    \node[dataPoint] at (1.070,1.782) {};
+    \node[dataPoint] at (1.665,1.113) {};
+    \node[dataPoint] at (1.753,1.134) {};
+    \node[dataPoint] at (1.702,1.024) {};
+    \node[dataPoint] at (1.775,1.111) {};
+    \node[dataPoint] at (1.741,1.132) {};
+    \node[dataPoint] at (1.056,1.695) {};
+    \node[dataPoint] at (0.370,0.519) {};
+    \node[dataPoint] at (1.799,1.007) {};
+    \node[dataPoint] at (1.812,0.989) {};
+    \node[dataPoint] at (1.096,1.744) {};
+    \node[dataPoint] at (0.348,0.458) {};
+    \node[dataPoint] at (0.461,0.513) {};
+    \node[dataPoint] at (1.058,1.600) {};
+    \node[dataPoint] at (1.112,1.789) {};
+    \node[dataPoint] at (0.455,0.596) {};
+    \node[dataPoint] at (0.388,0.499) {};
+    \node[dataPoint] at (0.424,0.529) {};
+    \node[dataPoint] at (1.071,1.690) {};
+    \node[dataPoint] at (0.415,0.512) {};
+    \node[dataPoint] at (1.858,1.068) {};
+    \node[dataPoint] at (0.366,0.575) {};
+    \node[dataPoint] at (0.430,0.370) {};
+    \node[dataPoint] at (1.745,1.090) {};
+    \node[dataPoint] at (1.119,1.788) {};
+    \node[dataPoint] at (0.492,0.491) {};
+    \node[dataPoint] at (1.089,1.786) {};
+
+\end{scope}

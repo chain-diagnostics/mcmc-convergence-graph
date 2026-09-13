@@ -25,7 +25,7 @@ model_titles <- c(
   three_compartment_pk        = "Three-compartment PK"
 )
 
-rho <- 1.015
+rho <- 1.05
 
 latex_escape <- function(x) {
   x <- gsub("\\\\", "\\\\textbackslash{}", x)
@@ -90,7 +90,7 @@ safe_param_name <- function(name) {
 
 make_one_table <- function(model) {
   cls_path <- file.path(baseline_dir, model, "classical_rhat_summary.csv")
-  pw_path  <- file.path(pairwise_dir, model, "pairwise_rhat_parameter_summary.csv")
+  pw_path  <- file.path(pairwise_dir, model, "mcmc_graph_summary.csv")
 
   cls <- utils::read.csv(cls_path, row.names = 1, check.names = FALSE)
   pw  <- utils::read.csv(

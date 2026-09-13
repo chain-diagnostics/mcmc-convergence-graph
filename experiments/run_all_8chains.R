@@ -1,7 +1,7 @@
 # Re-run all experiments with 8 chains.
 # Order: install package -> baseline Stan fits -> pairwise diagnostics -> tables.
 
-base_dir <- "/Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments"
+base_dir <- "/Users/chegu121/Documents/Phd-cici/r_package/mcmcConvergenceGraph/experiments"
 
 models <- c(
   "uniform",
@@ -15,12 +15,12 @@ models <- c(
   "three_compartment_pk"
 )
 
-cat("=== Installing pairwiserhat from local source ===\n")
+cat("=== Installing mcmcConvergenceGraph from local source ===\n")
 if (!requireNamespace("devtools", quietly = TRUE)) {
   install.packages("devtools", repos = "https://cloud.r-project.org")
 }
 devtools::install(
-  "/Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat",
+  "/Users/chegu121/Documents/Phd-cici/r_package/mcmcConvergenceGraph",
   upgrade = FALSE,
   quiet = TRUE
 )

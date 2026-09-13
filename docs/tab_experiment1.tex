@@ -1,0 +1,40 @@
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l l c c c c l}
+  \toprule
+Target & Coordinate & $\hat{R}$ & $K$ & Component & $n_c$ & $\max \hat{R}_{ij}$ \quad Mean [95\% CI] \\
+\midrule
+\multirow{2}{*}{Uniform}
+  & $x_1$ & 1.001 & 1 & 1 & 8 & 1.005 \quad $-$0.003 [$-$0.947, $\phantom{-}$0.948] \\
+  \cmidrule{2-7}
+  & $x_2$ & 1.000 & 1 & 1 & 8 & 1.002 \quad $\phantom{-}$0.001 [$-$0.956, $\phantom{-}$0.952] \\
+\midrule
+\multirow{2}{*}{Unimodal Gaussian}
+  & $x_1$ & 1.000 & 1 & 1 & 8 & 1.006 \quad $\phantom{-}$0.004 [$-$0.727, $\phantom{-}$0.741] \\
+  \cmidrule{2-7}
+  & $x_2$ & 1.000 & 1 & 1 & 8 & 1.004 \quad $-$0.001 [$-$0.750, $\phantom{-}$0.732] \\
+\midrule
+\multirow{2}{*}{Anisotropic Gaussian}
+  & $x_1$ & 1.005 & 1 & 1 & 8 & 1.016 \quad $\phantom{-}$0.005 [$-$0.704, $\phantom{-}$0.703] \\
+  \cmidrule{2-7}
+  & $x_2$ & 1.005 & 1 & 1 & 8 & 1.017 \quad $\phantom{-}$0.004 [$-$0.695, $\phantom{-}$0.702] \\
+\midrule
+\multirow{5}{*}{Multimodal Gaussian}
+  & \multirow{3}{*}{$x_1$} & \multirow{3}{*}{4.870} & \multirow{3}{*}{3}
+    & 1 & 2 & 1.000 \quad $\phantom{-}$0.502 [$\phantom{-}$0.330, $\phantom{-}$0.673] \\
+  & & & & 2 & 2 & 1.001 \quad $-$0.002 [$-$0.179, $\phantom{-}$0.181] \\
+  & & & & 3 & 4 & 1.002 \quad $-$0.499 [$-$0.670, $-$0.324] \\
+  \cmidrule{2-7}
+  & \multirow{2}{*}{$x_2$} & \multirow{2}{*}{5.111} & \multirow{2}{*}{2}
+    & 1 & 6 & 1.004 \quad $\phantom{-}$0.501 [$\phantom{-}$0.325, $\phantom{-}$0.676] \\
+  & & & & 2 & 2 & 1.000 \quad $-$0.500 [$-$0.673, $-$0.331] \\
+\bottomrule
+\end{tabular*}
+\vspace{.1cm}
+\caption{
+{\bf Diagnostic outputs for the four controlled target distributions.}
+For each target and coordinate ($x_1, x_2$) we report the classical $\hat{R}$, the number of connected components $K$ in the MCMC convergence graph (with threshold $\rho = 1.05$), and per-component summaries: chain count $n_c$, maximum within-component pairwise value $\max \hat{R}_{ij}$, and the posterior mean with $95\%$ credible interval.
+}
+\label{tab:setting_i}
+\end{table}

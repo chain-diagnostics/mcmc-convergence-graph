@@ -1,5 +1,5 @@
-Package: pairwiserhat
-Title: Pairwise R-Hat Diagnostics for Multimodal MCMC Output
+Package: mcmcConvergenceGraph
+Title: MCMC Convergence Graph Diagnostics
 Version: 0.0.0.9000
 Authors@R: c(
     person("Cici Chen", "Gu",
@@ -14,15 +14,15 @@ Authors@R: c(
            role = "aut",
            comment = c(ORCID = "0000-0002-7221-6850"))
     )
-Description: Computes pairwise R-hat diagnostics from MCMC output by comparing
-    chains two at a time. The package takes posterior draws arranged by
-    iterations, chains, and parameters, computes pairwise R-hat values, and
-    returns both a pairwise diagnostic matrix and a graph-based summary of chain
-    agreement. Chains are represented as nodes, and edges are added between
-    chains whose pairwise R-hat values fall below a chosen threshold. The
-    resulting graph can be used to identify groups of chains that appear to
-    explore the same posterior region, as well as isolated chains and other
-    patterns of chain disagreement.
+Description: Computes the MCMC convergence graph diagnostic from MCMC output
+    by comparing chains two at a time. The package takes posterior draws
+    arranged by iterations, chains, and parameters, computes pairwise R-hat
+    values, and returns both a pairwise diagnostic matrix and a graph-based
+    summary of chain agreement. Chains are represented as nodes, and edges
+    are added between chains whose pairwise R-hat values fall below a chosen
+    threshold. The resulting graph can be used to identify groups of chains
+    that appear to explore the same posterior region, as well as isolated
+    chains and other patterns of chain disagreement.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -30,7 +30,6 @@ RoxygenNote: 8.0.0
 Imports: 
     igraph
 Suggests: 
-    ggplot2,
     rstan,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

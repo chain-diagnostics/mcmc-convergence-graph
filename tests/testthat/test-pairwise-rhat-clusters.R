@@ -1,4 +1,4 @@
-# Tests for pairwise_rhat_clusters().
+# Tests for mcmc_graph_components().
 #
 # Main purpose:
 #   Summarise the connected components of a pairwise R-hat graph.
@@ -9,7 +9,7 @@
 #   3. Single-chain components are reported as isolated chains, not clusters.
 
 
-test_that("pairwise_rhat_clusters detects one connected cluster", {
+test_that("mcmc_graph_components detects one connected cluster", {
   graph <- igraph::make_graph(
     edges = c(
       "chain1", "chain2",
@@ -19,14 +19,14 @@ test_that("pairwise_rhat_clusters detects one connected cluster", {
     directed = FALSE
   )
 
-  result <- pairwise_rhat_clusters(graph)
+  result <- mcmc_graph_components(graph)
 
   expect_equal(result$n_clusters, 1)
   expect_equal(result$n_isolated, 0)
 })
 
 
-test_that("pairwise_rhat_clusters detects two multi-chain components", {
+test_that("mcmc_graph_components detects two multi-chain components", {
   graph <- igraph::make_graph(
     edges = c(
       "chain1", "chain2",
@@ -35,14 +35,14 @@ test_that("pairwise_rhat_clusters detects two multi-chain components", {
     directed = FALSE
   )
 
-  result <- pairwise_rhat_clusters(graph)
+  result <- mcmc_graph_components(graph)
 
   expect_equal(result$n_clusters, 2)
   expect_equal(result$n_isolated, 0)
 })
 
 
-test_that("pairwise_rhat_clusters detects isolated chains", {
+test_that("mcmc_graph_components detects isolated chains", {
   graph <- igraph::make_empty_graph(
     n = 4,
     directed = FALSE
@@ -55,7 +55,7 @@ test_that("pairwise_rhat_clusters detects isolated chains", {
     c("chain1", "chain2")
   )
 
-  result <- pairwise_rhat_clusters(graph)
+  result <- mcmc_graph_components(graph)
 
   expect_equal(result$n_clusters, 1)
   expect_equal(result$n_isolated, 2)

@@ -1,5 +1,5 @@
 library(rstan)
-library(pairwiserhat)
+library(mcmcConvergenceGraph)
 
 rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
@@ -30,7 +30,7 @@ draws <- as_draws_array(fit)
 ## Pairwise R-hat summary
 ############################################################
 
-result <- pairwise_rhat_parameter_summary(
+result <- mcmc_graph_summary(
   draws = draws,
   rho = 1.015,
   save_csv = TRUE,
@@ -41,18 +41,18 @@ result <- pairwise_rhat_parameter_summary(
 ## Combined graph
 ############################################################
 
-combined_graph <- pairwise_rhat_combined_graph(
+combined_graph <- mcmc_graph_multi(
   draws = draws,
   rho = 1.015
 )
 
 pdf(
-  file.path(output_dir, "combined_pairwise_rhat_graph.pdf"),
+  file.path(output_dir, "combined_mcmc_graph_uni.pdf"),
   width = 8,
   height = 8
 )
 
-plot_pairwise_rhat_combined_graph(
+plot_mcmc_graph(
   combined_graph,
   layout_type = "fr",
   show_edge_labels = TRUE,
@@ -96,5 +96,5 @@ for (parameter in names(result$rhat_matrices)) {
 
 cat("\n=========================================\n")
 cat("Combined graph saved to:\n")
-cat(file.path(output_dir, "combined_pairwise_rhat_graph.pdf"))
+cat(file.path(output_dir, "combined_mcmc_graph_uni.pdf"))
 cat("\n=========================================\n")

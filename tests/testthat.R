@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(pairwiserhat)
+library(mcmcConvergenceGraph)
 
-test_check("pairwiserhat")
+test_check("mcmcConvergenceGraph")

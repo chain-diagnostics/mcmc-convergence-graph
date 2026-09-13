@@ -1,5 +1,5 @@
 library(rstan)
-library(pairwiserhat)
+library(mcmcConvergenceGraph)
 
 rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
@@ -11,15 +11,17 @@ if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
 
 fit <- readRDS(fit_path)
 
-result <- pairwiserhat(
+# Cauchy fit to two-line data. Monitor a and b.
+result <- mcmcgraph(
   fit,
-  rho                        = 1.015,
+  parameters                 = c("a", "b"),
+  rho                        = 1.05,
   plot                       = TRUE,
   save_csv                   = TRUE,
   save_plot                  = TRUE,
   output_dir                 = output_dir,
   pairwise_display_n         = 10,
-  posterior_draws_parameters = c("a1", "b1")
+  posterior_draws_parameters = c("a", "b")
 )
 
 print(result)

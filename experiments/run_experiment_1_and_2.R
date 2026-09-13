@@ -1,36 +1,35 @@
 # run_experiment_1_and_2.R
 #
-# Re-runs Experiment 1 and Experiment 2 with Stan default random
-# initialisation (init = "random"):
-#   Exp 1: uniform, gaussian_ball, three_cluster, funnel, linear_with_noise
+# Re-runs Experiment 1 and Experiment 2:
+#   Exp 1: uniform, unimodal_gaussian, anisotropic_gaussian,
+#          multimodal_gaussian (init_fn on [-1, 1]^2)
 #   Exp 2: same_slope_diff_intercept, diff_slope_same_intercept,
-#          diff_slope_diff_intercept
+#          diff_slope_diff_intercept (init_fn on [-1, 1])
 #
 # Order: install package -> baseline Stan fits -> pairwise diagnostics
 #        -> comparison tables.
 
-base_dir <- "/Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat/experiments"
+base_dir <- "/Users/chegu121/Documents/Phd-cici/r_package/mcmcConvergenceGraph/experiments"
 log_file <- file.path(base_dir, "run_experiment_1_and_2.log")
 
 models <- c(
   # Experiment 1
   "uniform",
-  "gaussian_ball",
-  "three_cluster",
-  "funnel",
-  "linear_with_noise",
+  "unimodal_gaussian",
+  "anisotropic_gaussian",
+  "multimodal_gaussian",
   # Experiment 2
   "same_slope_diff_intercept",
   "diff_slope_same_intercept",
   "diff_slope_diff_intercept"
 )
 
-cat("=== Installing pairwiserhat from local source ===\n")
+cat("=== Installing mcmcConvergenceGraph from local source ===\n")
 if (!requireNamespace("devtools", quietly = TRUE)) {
   install.packages("devtools", repos = "https://cloud.r-project.org")
 }
 devtools::install(
-  "/Users/chegu121/Documents/Phd-cici/r_package/pairwiserhat",
+  "/Users/chegu121/Documents/Phd-cici/r_package/mcmcConvergenceGraph",
   upgrade = FALSE,
   quiet   = TRUE
 )

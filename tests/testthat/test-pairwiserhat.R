@@ -1,4 +1,4 @@
-# Tests for pairwiserhat().
+# Tests for mcmcgraph().
 #
 # Main purpose:
 #   End-to-end wrapper that computes pairwise R-hat matrices, per-parameter
@@ -13,7 +13,7 @@
 #      test is skipped when rstan is not installed).
 
 
-test_that("pairwiserhat returns a list with all expected components", {
+test_that("mcmcgraph returns a list with all expected components", {
   set.seed(1)
 
   draws <- make_test_draws(
@@ -22,7 +22,7 @@ test_that("pairwiserhat returns a list with all expected components", {
     parameters = c("alpha", "beta")
   )
 
-  result <- pairwiserhat(
+  result <- mcmcgraph(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.015,
@@ -37,12 +37,15 @@ test_that("pairwiserhat returns a list with all expected components", {
   expect_true("clusters" %in% names(result))
   expect_true("graphs" %in% names(result))
   expect_true("combined_graph" %in% names(result))
+  expect_true("combined_graph_intersection" %in% names(result))
+  expect_true("combined_graph_difference" %in% names(result))
+  expect_true("intersection_summary" %in% names(result))
   expect_true("rhat_matrices" %in% names(result))
   expect_true("rho" %in% names(result))
 })
 
 
-test_that("pairwiserhat returns an igraph combined_graph", {
+test_that("mcmcgraph returns an igraph combined_graph", {
   set.seed(1)
 
   draws <- make_test_draws(
@@ -51,7 +54,7 @@ test_that("pairwiserhat returns an igraph combined_graph", {
     parameters = c("alpha", "beta")
   )
 
-  result <- pairwiserhat(
+  result <- mcmcgraph(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.015,
@@ -62,7 +65,7 @@ test_that("pairwiserhat returns an igraph combined_graph", {
 })
 
 
-test_that("pairwiserhat plots when plot = TRUE", {
+test_that("mcmcgraph plots when plot = TRUE", {
   set.seed(1)
 
   draws <- make_test_draws(
@@ -74,7 +77,7 @@ test_that("pairwiserhat plots when plot = TRUE", {
   grDevices::pdf(file = tempfile(fileext = ".pdf"))
   on.exit(grDevices::dev.off(), add = TRUE)
 
-  result <- pairwiserhat(
+  result <- mcmcgraph(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.015,
@@ -85,7 +88,7 @@ test_that("pairwiserhat plots when plot = TRUE", {
 })
 
 
-test_that("pairwiserhat writes combined_graph.pdf when save_plot = TRUE", {
+test_that("mcmcgraph writes combined_graph.pdf when save_plot = TRUE", {
   set.seed(1)
 
   draws <- make_test_draws(
@@ -97,7 +100,7 @@ test_that("pairwiserhat writes combined_graph.pdf when save_plot = TRUE", {
   output_dir <- tempfile("pairwiserhat_save_plot_")
   dir.create(output_dir)
 
-  pairwiserhat(
+  mcmcgraph(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.015,
@@ -114,7 +117,7 @@ test_that("pairwiserhat writes combined_graph.pdf when save_plot = TRUE", {
 })
 
 
-test_that("pairwiserhat errors when save_plot = TRUE without output_dir", {
+test_that("mcmcgraph errors when save_plot = TRUE without output_dir", {
   set.seed(1)
 
   draws <- make_test_draws(
@@ -124,7 +127,7 @@ test_that("pairwiserhat errors when save_plot = TRUE without output_dir", {
   )
 
   expect_error(
-    pairwiserhat(
+    mcmcgraph(
       draws = draws,
       parameters = c("alpha", "beta"),
       rho = 1.015,
@@ -137,7 +140,7 @@ test_that("pairwiserhat errors when save_plot = TRUE without output_dir", {
 })
 
 
-test_that("pairwiserhat accepts a stanfit-like object via rstan::extract", {
+test_that("mcmcgraph accepts a stanfit-like object via rstan::extract", {
   testthat::skip_if_not_installed("rstan")
 
   fake_fit <- structure(list(), class = "stanfit")
@@ -157,7 +160,7 @@ test_that("pairwiserhat accepts a stanfit-like object via rstan::extract", {
     .package = "rstan"
   )
 
-  result <- pairwiserhat(fake_fit, plot = FALSE)
+  result <- mcmcgraph(fake_fit, plot = FALSE)
 
   expect_type(result, "list")
   expect_equal(names(result$rhat_matrices), c("alpha", "beta"))

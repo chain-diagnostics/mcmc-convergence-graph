@@ -1,0 +1,40 @@
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l l c c c c l}
+  \toprule
+Model & Parameter & $\hat{R}$ & $K$ & Component & $n_c$ & $\max \hat{R}_{ij}$ \quad Mean [95\% CI] \\
+\midrule
+\multirow{12}{*}{\shortstack[l]{Three-compartment\\ PK}}
+  & $k_{10}$ & 1.006 & 1 & 1 & 8 & 1.016 \quad $\phantom{-}$0.384 [$\phantom{-}$0.363, $\phantom{-}$0.408] \\
+  \cmidrule{2-7}
+  & \multirow{2}{*}{$k_{12}$} & \multirow{2}{*}{9.137} & \multirow{2}{*}{2}
+    & 1 & 4 & 1.009 \quad $\phantom{-}$0.014 [$\phantom{-}$0.012, $\phantom{-}$0.017] \\
+  & & & & 2 & 4 & 1.019 \quad $\phantom{-}$0.213 [$\phantom{-}$0.185, $\phantom{-}$0.247] \\
+  \cmidrule{2-7}
+  & \multirow{2}{*}{$k_{21}$} & \multirow{2}{*}{16.371} & \multirow{2}{*}{2}
+    & 1 & 4 & 1.006 \quad $\phantom{-}$0.016 [$\phantom{-}$0.012, $\phantom{-}$0.020] \\
+  & & & & 2 & 4 & 1.015 \quad $\phantom{-}$0.167 [$\phantom{-}$0.155, $\phantom{-}$0.180] \\
+  \cmidrule{2-7}
+  & \multirow{2}{*}{$k_{13}$} & \multirow{2}{*}{9.420} & \multirow{2}{*}{2}
+    & 1 & 4 & 1.010 \quad $\phantom{-}$0.213 [$\phantom{-}$0.185, $\phantom{-}$0.246] \\
+  & & & & 2 & 4 & 1.011 \quad $\phantom{-}$0.015 [$\phantom{-}$0.012, $\phantom{-}$0.017] \\
+  \cmidrule{2-7}
+  & \multirow{2}{*}{$k_{31}$} & \multirow{2}{*}{16.663} & \multirow{2}{*}{2}
+    & 1 & 4 & 1.011 \quad $\phantom{-}$0.167 [$\phantom{-}$0.155, $\phantom{-}$0.180] \\
+  & & & & 2 & 4 & 1.006 \quad $\phantom{-}$0.016 [$\phantom{-}$0.012, $\phantom{-}$0.020] \\
+  \cmidrule{2-7}
+  & $V_C$ & 1.005 & 1 & 1 & 8 & 1.015 \quad $\phantom{-}$6.667 [$\phantom{-}$6.257, $\phantom{-}$7.078] \\
+  \cmidrule{2-7}
+  & $\sigma_{\mathrm{add}}$ & 1.001 & 1 & 1 & 8 & 1.006 \quad $\phantom{-}$0.049 [$\phantom{-}$0.034, $\phantom{-}$0.066] \\
+  \cmidrule{2-7}
+  & $\sigma_{\mathrm{prop}}$ & 1.002 & 1 & 1 & 8 & 1.006 \quad $\phantom{-}$0.299 [$\phantom{-}$0.287, $\phantom{-}$0.311] \\
+\bottomrule
+\end{tabular*}
+\vspace{.1cm}
+\caption{
+{\bf Diagnostic outputs for the three-compartment pharmacokinetic model.}
+For each parameter we report the classical $\hat{R}$, the number of connected components $K$ in the MCMC convergence graph (with threshold $\rho = 1.05$), and per-component summaries: chain count $n_c$, maximum within-component pairwise value $\max \hat{R}_{ij}$, and the posterior mean with $95\%$ credible interval.
+}
+\label{tab:setting_iii}
+\end{table}
