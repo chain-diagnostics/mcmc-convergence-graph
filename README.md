@@ -33,11 +33,11 @@ You can install it with:
 ```r
 install.packages("devtools")
 
-devtools::install_github("InfectionMedicineProteomics/mcmc-convergence-graph")
+devtools::install_github("chain-diagnostics/mcmc-convergence-graph")
 ```
 
-The organisation is [https://github.com/InfectionMedicineProteomics](https://github.com/InfectionMedicineProteomics)
-and the repository is [https://github.com/InfectionMedicineProteomics/mcmc-convergence-graph](https://github.com/InfectionMedicineProteomics/mcmc-convergence-graph).
+The organisation is [https://github.com/chain-diagnostics](https://github.com/chain-diagnostics)
+and the repository is [https://github.com/chain-diagnostics/mcmc-convergence-graph](https://github.com/chain-diagnostics/mcmc-convergence-graph).
 
 
 ## License

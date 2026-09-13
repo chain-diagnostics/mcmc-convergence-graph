@@ -24,6 +24,8 @@ Description: Computes the MCMC convergence graph diagnostic from MCMC output
     that appear to explore the same posterior region, as well as isolated
     chains and other patterns of chain disagreement.
 License: MIT + file LICENSE
+URL: https://github.com/chain-diagnostics/mcmc-convergence-graph
+BugReports: https://github.com/chain-diagnostics/mcmc-convergence-graph/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0
