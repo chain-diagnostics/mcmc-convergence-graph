@@ -24,8 +24,7 @@
 #' @param vertex_label_cex Numeric value controlling chain-label size.
 #' @param edge_label_cex Numeric value controlling edge-label size.
 #' @param edge_curved Numeric value controlling edge curvature. The default is
-#'   `0` (straight edges) so that missing chords are not hidden by overlapping
-#'   curves.
+#'   `0.2` (slightly bowed edges). Use `0` for straight chords.
 #' @param legend_position Character string giving the legend position.
 #' @param legend_cex Numeric value controlling legend text size.
 #' @param show_node_note Logical. If `TRUE`, adds a note saying that node labels
@@ -66,10 +65,10 @@ plot_mcmc_graph <- function(
   layout_matrix = NULL,
   layout_type = c("grid", "fr", "kk", "nicely", "circle", "random", "tree", "drl"),
   main = "Combined pairwise R-hat graph",
-  vertex_size = 10,
-  vertex_label_cex = 0.8,
+  vertex_size = 20,
+  vertex_label_cex = 1.8,
   edge_label_cex = 0.8,
-  edge_curved = 0,
+  edge_curved = 0.2,
   legend_position = "top",
   legend_cex = 0.8,
   show_node_note = FALSE
@@ -109,7 +108,9 @@ plot_mcmc_graph <- function(
 
   graphics::par(
     mar = c(3, 1, 4, 1),
-    xpd = NA
+    xpd = NA,
+    lend = "round",
+    ljoin = "round"
   )
 
   plot(

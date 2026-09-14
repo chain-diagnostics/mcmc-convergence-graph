@@ -1,6 +1,10 @@
 library(rstan)
 library(mcmcConvergenceGraph)
 
+source(
+  "/Users/chegu121/Documents/Phd-cici/r_package/mcmcConvergenceGraph/experiments/pairwise_rhat/save_square_graph.R"
+)
+
 rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
 
@@ -11,17 +15,21 @@ if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
 
 fit <- readRDS(fit_path)
 
-# Cauchy fit to two-line data. Monitor a and b.
 result <- mcmcgraph(
   fit,
-  parameters                 = c("a", "b"),
-  rho                        = 1.05,
-  plot                       = TRUE,
-  save_csv                   = TRUE,
-  save_plot                  = TRUE,
-  output_dir                 = output_dir,
-  pairwise_display_n         = 10,
-  posterior_draws_parameters = c("a", "b")
+  parameters         = c("a", "b", "gamma"),
+  rho                = 1.05,
+  plot               = FALSE,
+  save_csv           = TRUE,
+  save_plot          = FALSE,
+  output_dir         = output_dir,
+  pairwise_display_n = 10
+)
+
+save_square_graph(
+  graph    = result$combined_graph_intersection,
+  title    = "Different slopes",
+  pdf_path = file.path(output_dir, "square_graph.pdf")
 )
 
 print(result)

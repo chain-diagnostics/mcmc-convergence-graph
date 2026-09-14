@@ -1,6 +1,10 @@
 library(rstan)
 library(mcmcConvergenceGraph)
 
+source(
+  "/Users/chegu121/Documents/Phd-cici/r_package/mcmcConvergenceGraph/experiments/pairwise_rhat/save_square_graph.R"
+)
+
 rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
 
@@ -15,11 +19,17 @@ result <- mcmcgraph(
   fit,
   parameters         = c("x[1]", "x[2]"),
   rho                = 1.05,
-  plot               = TRUE,
+  plot               = FALSE,
   save_csv           = TRUE,
-  save_plot          = TRUE,
+  save_plot          = FALSE,
   output_dir         = output_dir,
   pairwise_display_n = 10
+)
+
+save_square_graph(
+  graph    = result$combined_graph_intersection,
+  title    = "Anisotropic Gaussian",
+  pdf_path = file.path(output_dir, "square_graph.pdf")
 )
 
 print(result)

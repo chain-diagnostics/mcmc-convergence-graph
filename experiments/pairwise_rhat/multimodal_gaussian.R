@@ -1,8 +1,9 @@
 library(rstan)
 library(mcmcConvergenceGraph)
-library(bayesplot)
 
-library(ggplot2)
+source(
+  "/Users/chegu121/Documents/Phd-cici/r_package/mcmcConvergenceGraph/experiments/pairwise_rhat/save_square_graph.R"
+)
 
 
 rstan_options(auto_write = TRUE)
@@ -19,26 +20,18 @@ result <- mcmcgraph(
   fit,
   parameters         = c("x[1]", "x[2]"),
   rho                = 1.05,
-  plot               = TRUE,
+  plot               = FALSE,
   save_csv           = TRUE,
-  save_plot          = TRUE,
+  save_plot          = FALSE,
   output_dir         = output_dir,
   pairwise_display_n = 10
 )
 
+save_square_graph(
+  graph    = result$combined_graph_intersection,
+  title    = "Multimodal Gaussian",
+  pdf_path = file.path(output_dir, "square_graph.pdf")
+)
+
 print(result)
-posterior <- as.matrix(
-  fit,
-)
-
-posterior_plot <- mcmc_areas(posterior, prob = 0.8) +
-  ggtitle("Posterior distributions", "Medians and 80% intervals")
-
-print(posterior_plot)
-ggsave(
-  filename = file.path(output_dir, "posterior_areas.pdf"),
-  plot = posterior_plot,
-  width = 8,
-  height = 6
-)
 

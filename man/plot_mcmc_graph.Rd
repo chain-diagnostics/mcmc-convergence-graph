@@ -11,10 +11,10 @@ plot_mcmc_graph(
   layout_matrix = NULL,
   layout_type = c("grid", "fr", "kk", "nicely", "circle", "random", "tree", "drl"),
   main = "Combined pairwise R-hat graph",
-  vertex_size = 10,
-  vertex_label_cex = 0.8,
+  vertex_size = 20,
+  vertex_label_cex = 1.8,
   edge_label_cex = 0.8,
-  edge_curved = 0,
+  edge_curved = 0.2,
   legend_position = "top",
   legend_cex = 0.8,
   show_node_note = FALSE
@@ -48,8 +48,7 @@ when \code{layout_matrix} is \code{NULL}. Options are \code{"grid"}, \code{"fr"}
 \item{edge_label_cex}{Numeric value controlling edge-label size.}
 
 \item{edge_curved}{Numeric value controlling edge curvature. The default is
-\code{0} (straight edges) so that missing chords are not hidden by overlapping
-curves.}
+\code{0.2} (slightly bowed edges). Use \code{0} for straight chords.}
 
 \item{legend_position}{Character string giving the legend position.}
 
