@@ -1,8 +1,8 @@
 # mcmcConvergenceGraph
 
 `mcmcConvergenceGraph` is an R package for the MCMC convergence graph
-diagnostic. The diagnostic compares MCMC chains pair by pair using pairwise
-R-hat values and summarises the resulting chain-agreement structure as a graph.
+diagnostic. The graph-based diagnostic  computes pairwise R-hat values between chains and summarises them in a graph, revealing sets of chains that explore the same posterior mode. 
+
 
 
 ## Installation
