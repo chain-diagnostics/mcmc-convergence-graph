@@ -1,8 +1,8 @@
 #' Split a chain into two halves
 #'
 #' Split a numeric vector of MCMC draws into two equal halves. If the number of
-#' draws is odd, the final draw is discarded so that both halves have the same
-#' length.
+#' draws is odd, the middle draw is discarded so that both halves have the same
+#' length, matching Stan's split R-hat.
 #'
 #' @param x A numberical vector of draws from one chain for one parameter.
 #'
@@ -13,9 +13,9 @@
 
 split_chain <- function(x) {
   n <- length(x)
-  half_n <- floor(n / 2)
+  half <- n / 2
   list(
-    first = x[seq_len(half_n)],
-    second = x[(half_n + 1):(2 * half_n)]
+    first = x[seq_len(floor(half))],
+    second = x[ceiling(half + 1):n]
   )
 }
