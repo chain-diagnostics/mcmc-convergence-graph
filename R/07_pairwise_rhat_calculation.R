@@ -29,7 +29,7 @@ pairwise_rhat_calculation <- function(chain_i_draws, chain_j_draws) {
     )
   }
   #split chains
-  split_i <- split_chain(chain_i_draws).
+  split_i <- split_chain(chain_i_draws)
   split_j <- split_chain(chain_j_draws)
   split_draws <- cbind(
     split_i$first,
