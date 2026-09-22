@@ -1,16 +1,13 @@
-#' Compute split R-hat from split chains
+#' Compute split R-hat
 #'
-#' Computes the split R-hat statistic from a matrix of split-chain draws. Each
-#' column is treated as one split chain, and each tow corresponds to one draw
-#' within the split chain. This function calculates how different are the split
-#' chains from each other, compared with how variable each split chain is internally
+#' Stan split R-hat on an already split matrix: rows are draws, columns are
+#' split chains.
 #'
-#' @param split_draws A numeric matrix of split-chain draws. Rows correspond to
-#'  draws and columns correspond to split chains.
+#' @param split_draws A numeric matrix. Rows are draws, columns are split chains.
 #'
-#'  @returns A numeric value giving the split R-hat statistic.
+#' @return A single split R-hat value.
 #'
-#'  @keywords internal
+#' @keywords internal
 
 
 split_rhat <- function(split_draws) {
