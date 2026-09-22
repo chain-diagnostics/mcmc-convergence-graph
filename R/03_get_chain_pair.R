@@ -17,17 +17,17 @@
 
 get_chain_pairs <- function(draws, parameter) {
   check_draws_array(draws)
-  n_chains <- dim(draws)[2]
-  parameter_names <- dimnames(draws)[[3]]
+  n_chains <- dim(draws)[2] #get the number of chains
+  parameter_names <- dimnames(draws)[[3]] #get parameter names
 
   if (!parameter %in% parameter_names) {
     stop("`parameter` must be one of the parameter names in `draws`.", call. = FALSE)
   }
   pairs <- utils::combn(n_chains, 2) # create all unique pair of chains
   lapply(seq_len(ncol(pairs)), function(pair_id) {
-    chain_i <- pairs[1, pair_id]
+    chain_i <- pairs[1, pair_id] #first chain of the pair
 
-    chain_j <- pairs[2, pair_id]
+    chain_j <- pairs[2, pair_id] #second chain of the pair
 
     list(
       chain_i_index = chain_i,
