@@ -14,11 +14,11 @@
 #' @export
 #'
 #' @examples
-#' set.seed(1)
+#' set.seed(20)
 #'
 #' draws <- array(
-#'   rnorm(1000 * 4 * 2),
-#'   dim = c(1000, 4, 2)
+#'   rnorm(100 * 4 * 2),
+#'   dim = c(100, 4, 2)
 #' )
 #'
 #' dimnames(draws) <- list(
