@@ -43,6 +43,18 @@ as_draws_array <- function(x, parameter = NULL) {
 
   }
 
+  dn <- dimnames(draws)
+  if (is.null(dn)) {
+    dn <- vector("list", 3L)
+  }
+  if (is.null(dn[[2]])) {
+    dn[[2]] <- paste0("chain", seq_len(dim(draws)[2]))
+  }
+  if (is.null(dn[[3]])) {
+    dn[[3]] <- paste0("param", seq_len(dim(draws)[3]))
+  }
+  dimnames(draws) <- dn
+
   parameter_names <- dimnames(draws)[[3]]
 
   if (!is.null(parameter_names)) {
