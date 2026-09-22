@@ -17,14 +17,18 @@
 #' @param layout_matrix Optional numeric matrix giving node positions. If `NULL`,
 #'   the layout is computed automatically using `layout_type`.
 #' @param layout_type Character string specifying the automatic layout to use
-#'   when `layout_matrix` is `NULL`. Options are `"grid"`, `"fr"`, `"kk"`,
-#'   `"nicely"`, `"circle"`, `"random"`, `"tree"`, and `"drl"`.
+#'   when `layout_matrix` is `NULL`. The default is `"circle"` so every chain
+#'   sits on the ring and no node lies on an edge. Options are `"circle"`,
+#'   `"grid"`, `"fr"`, `"kk"`, `"nicely"`, `"random"`, `"tree"`, and `"drl"`.
 #' @param main Character string giving the plot title.
 #' @param vertex_size Numeric value controlling node size.
 #' @param vertex_label_cex Numeric value controlling chain-label size.
 #' @param edge_label_cex Numeric value controlling edge-label size.
-#' @param edge_curved Numeric value controlling edge curvature. The default is
-#'   `0.2` (slightly bowed edges). Use `0` for straight chords.
+#' @param edge_curved Numeric curvature passed to igraph, or `NULL` (the
+#'   default) for the paper style: a small same-sign bow
+#'   `0.03 + 0.02 * d_n` that is almost straight and does not twist.
+#'   Use `0` for perfectly straight chords, or a larger scalar (e.g. `0.2`)
+#'   for a uniform bow on every edge.
 #' @param legend_position Character string giving the legend position.
 #' @param legend_cex Numeric value controlling legend text size.
 #' @param show_node_note Logical. If `TRUE`, adds a note saying that node labels
@@ -56,19 +60,19 @@
 #'
 #' plot_mcmc_graph(
 #'   graph,
-#'   layout_type = "grid"
+#'   layout_type = "circle"
 #' )
 plot_mcmc_graph <- function(
   graph,
   show_edge_labels = FALSE,
   show_legend = TRUE,
   layout_matrix = NULL,
-  layout_type = c("grid", "fr", "kk", "nicely", "circle", "random", "tree", "drl"),
+  layout_type = c("circle", "grid", "fr", "kk", "nicely", "random", "tree", "drl"),
   main = "Combined pairwise R-hat graph",
   vertex_size = 20,
   vertex_label_cex = 1.8,
   edge_label_cex = 0.8,
-  edge_curved = 0.2,
+  edge_curved = NULL,
   legend_position = "top",
   legend_cex = 0.8,
   show_node_note = FALSE
@@ -97,6 +101,10 @@ plot_mcmc_graph <- function(
 
   vertex_labels <- vertex_labels_clean
 
+  if (is.null(edge_curved)) {
+    edge_curved <- almost_straight_edge_curvature(graph, layout_matrix)
+  }
+
   edge_labels <- NA
 
   if (show_edge_labels) {
@@ -107,7 +115,8 @@ plot_mcmc_graph <- function(
   on.exit(graphics::par(old_par), add = TRUE)
 
   graphics::par(
-    mar = c(3, 1, 4, 1),
+    mar = c(2.5, 1, 6.2, 1),
+    pty = "s",
     xpd = NA,
     lend = "round",
     ljoin = "round"
@@ -118,20 +127,20 @@ plot_mcmc_graph <- function(
     layout = layout_matrix,
     vertex.size = vertex_size,
     vertex.color = igraph::V(graph)$color,
-    vertex.frame.color = "grey30",
+    vertex.frame.color = NA,
     vertex.label = vertex_labels,
     vertex.label.color = "black",
     vertex.label.cex = vertex_label_cex,
     edge.color = edge_color_from_graph(graph),
-    edge.width = igraph::E(graph)$width,
+    edge.width = 1.6,
     edge.lty = edge_lty_from_graph(graph),
     edge.curved = edge_curved,
     edge.label = edge_labels,
     edge.label.cex = edge_label_cex,
     edge.label.color = "black",
     main = main,
-    ylim = c(-1.15, 1.15),
-    asp = 0
+    ylim = c(-1.2, 1.35),
+    asp = 1
   )
 
   if (show_node_note) {
@@ -177,7 +186,7 @@ plot_mcmc_graph <- function(
     if (legend_position == "top") {
       graphics::legend(
         "top",
-        inset  = c(0, -0.02),
+        inset  = c(0, -0.12),
         legend = legend_labels,
         col    = legend_colors,
         lty    = legend_lty,
@@ -201,6 +210,28 @@ plot_mcmc_graph <- function(
   }
 
   invisible(layout_matrix)
+}
+
+#' Almost-straight same-sign edge bows used by the paper figures
+#'
+#' @keywords internal
+almost_straight_edge_curvature <- function(graph, layout) {
+  el <- igraph::as_edgelist(graph, names = FALSE)
+  n_e <- nrow(el)
+  if (n_e == 0L) {
+    return(numeric())
+  }
+
+  from_xy <- layout[el[, 1L], , drop = FALSE]
+  to_xy <- layout[el[, 2L], , drop = FALSE]
+  d <- sqrt(rowSums((from_xy - to_xy)^2))
+  d_n <- if (diff(range(d)) > 1e-8) {
+    (d - min(d)) / diff(range(d))
+  } else {
+    rep(0.5, n_e)
+  }
+
+  0.03 + 0.02 * d_n
 }
 
 #' Number of monitored dimensions stored on a combined graph
@@ -262,26 +293,45 @@ edge_color_from_graph <- function(graph) {
 
 #' Node layout from the intersection graph, aligned to another graph
 #'
-#' Positions are computed on `graph_intersection` so connected components of
-#' `G_intersection` stay visually separated. The matrix is then reordered to
+#' Default positions are a circle on `graph_intersection`: every chain sits
+#' on the ring, so no node lies on a chord. Vertices from the same
+#' `G_intersection` component occupy a contiguous arc. Other `layout_type`
+#' values use the matching igraph algorithm. The matrix is then reordered to
 #' match the vertex order of `graph_union`.
 #'
 #' @keywords internal
 layout_from_intersection <- function(graph_intersection,
                                      graph_union,
-                                     layout_type = "fr") {
-  layout_matrix <- switch(
-    layout_type,
-    grid = igraph::layout_on_grid(graph_intersection),
-    fr = igraph::layout_with_fr(graph_intersection),
-    kk = igraph::layout_with_kk(graph_intersection),
-    nicely = igraph::layout_nicely(graph_intersection),
-    circle = igraph::layout_in_circle(graph_intersection),
-    random = igraph::layout_randomly(graph_intersection),
-    tree = igraph::layout_as_tree(graph_intersection),
-    drl = igraph::layout_with_drl(graph_intersection),
-    igraph::layout_with_fr(graph_intersection)
-  )
+                                     layout_type = "circle") {
+  if (identical(layout_type, "circle")) {
+    comps <- igraph::components(graph_intersection)
+    names_int <- igraph::V(graph_intersection)$name
+    order_ids <- order(comps$csize, decreasing = TRUE)
+    grouped <- unlist(lapply(order_ids, function(id) {
+      nm <- names_int[comps$membership == id]
+      digits <- gsub("[^0-9]", "", nm)
+      num <- suppressWarnings(as.integer(digits))
+      if (anyNA(num) || any(digits == "")) {
+        nm[order(nm)]
+      } else {
+        nm[order(num)]
+      }
+    }), use.names = FALSE)
+    ord <- match(grouped, names_int)
+    layout_matrix <- igraph::layout_in_circle(graph_intersection, order = ord)
+  } else {
+    layout_matrix <- switch(
+      layout_type,
+      grid = igraph::layout_on_grid(graph_intersection),
+      fr = igraph::layout_with_fr(graph_intersection),
+      kk = igraph::layout_with_kk(graph_intersection),
+      nicely = igraph::layout_nicely(graph_intersection),
+      random = igraph::layout_randomly(graph_intersection),
+      tree = igraph::layout_as_tree(graph_intersection),
+      drl = igraph::layout_with_drl(graph_intersection),
+      igraph::layout_in_circle(graph_intersection)
+    )
+  }
 
   from_names <- igraph::V(graph_intersection)$name
   to_names <- igraph::V(graph_union)$name
