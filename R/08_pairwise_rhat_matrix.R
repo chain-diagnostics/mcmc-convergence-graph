@@ -33,6 +33,7 @@
 #'   draws = draws,
 #'   parameter = "alpha"
 #' )
+#'
 pairwise_rhat_matrix <- function(draws, parameter) {
   n_chains <- dim(draws)[2]
   chain_pairs <- get_chain_pairs(draws, parameter)
