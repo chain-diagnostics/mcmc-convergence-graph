@@ -1,10 +1,11 @@
 #' Run the MCMC convergence graph workflow
 #'
 #' Convenience wrapper around the MCMC convergence graph pipeline. Computes
-#' parameter-specific pairwise R-hat matrices, per-parameter graphs, component
-#' summaries, the combined graphs `G_union`, `G_intersection`, and
-#' `G_union` minus `G_intersection`, and (by default) draws one graph:
-#' the intersection layout with additional `G_union` minus `G_intersection`
+#' parameter-specific pairwise R-hat matrices, per-dimension graphs
+#' \eqn{G_{\rho,s}}, component summaries, the combined graphs
+#' \eqn{G_{\cup}}, \eqn{G_{\cap}}, and
+#' \eqn{G_{\cup} \setminus G_{\cap}}, and (by default) draws one graph:
+#' a circle layout with additional \eqn{G_{\cup} \setminus G_{\cap}}
 #' edges overlaid. Optionally also writes the plot to a PDF file.
 #'
 #' @param draws A three-dimensional array of posterior draws with dimensions
@@ -13,14 +14,15 @@
 #'   all parameters in `draws` are used.
 #' @param rho Numeric threshold used to decide whether two chains are connected.
 #' @param plot Logical. If `TRUE` (default), one combined graph is drawn:
-#'   node positions come from `G_intersection`, black solid edges are
-#'   `G_intersection`, and coloured dashed edges are the additional edges
-#'   `G_union` minus `G_intersection`.
+#'   nodes sit on a circle (no node on an edge), black solid edges are
+#'   \eqn{G_{\cap}}, and coloured dashed edges are
+#'   \eqn{G_{\cup} \setminus G_{\cap}}.
 #' @param save_csv Logical. If `TRUE`, numerical outputs are saved as CSV files.
 #'   The default is `FALSE`.
 #' @param save_plot Logical. If `TRUE`, the combined intersection-plus-
 #'   additional-edge graph is written to `combined_graph.pdf` inside
-#'   `output_dir` (8 x 6 inches). Requires `output_dir`. The default is `FALSE`.
+#'   `output_dir` (5 x 5 inches). Requires `output_dir`. The default is
+#'   `FALSE`.
 #' @param output_dir Optional character string giving the directory where CSV
 #'   files and/or the PDF plot should be saved. Required when `save_csv = TRUE`
 #'   or `save_plot = TRUE`.
@@ -31,9 +33,9 @@
 #' @returns Invisibly returns the list produced by
 #'   [mcmc_graph_summary()]. The fields are `summary`,
 #'   `pairwise_values_display`, `pairwise_values`, `clusters`, `graphs`,
-#'   `combined_graph` (the union graph `G_union`),
-#'   `combined_graph_intersection` (the intersection graph `G_intersection`),
-#'   `combined_graph_difference` (`G_union` minus `G_intersection`),
+#'   `combined_graph` (the union graph \eqn{G_{\cup}}),
+#'   `combined_graph_intersection` (the intersection graph \eqn{G_{\cap}}),
+#'   `combined_graph_difference` (\eqn{G_{\cup} \setminus G_{\cap}}),
 #'   `intersection_summary`, `rhat_matrices`, and `rho`.
 #'
 #' @export
@@ -60,7 +62,7 @@
 #' )
 #'
 #' result$summary
-launch_mcmc_graph <- function(
+mcmcgraph <- function(
     draws,
     parameters = NULL,
     rho = 1.05,
@@ -87,27 +89,10 @@ launch_mcmc_graph <- function(
     pairwise_display_n = pairwise_display_n
   )
 
-  monitored_parameters <- names(result$rhat_matrices)
-
-  intersection_layout <- NULL
-  if (isTRUE(plot) || isTRUE(save_plot)) {
-    intersection_layout <- layout_from_intersection(
-      result$combined_graph_intersection,
-      result$combined_graph
-    )
-  }
-
-  graph_main <- if (length(monitored_parameters) > 1L) {
-    "Multivariate MCMC convergence graph"
-  } else {
-    "MCMC convergence graph"
-  }
-
   if (isTRUE(plot)) {
     plot_mcmc_graph(
       result$combined_graph,
-      layout_matrix = intersection_layout,
-      main = graph_main,
+      graph_intersection = result$combined_graph_intersection,
       ...
     )
   }
@@ -119,13 +104,12 @@ launch_mcmc_graph <- function(
 
     grDevices::pdf(
       file   = file.path(output_dir, "combined_graph.pdf"),
-      width  = 8,
-      height = 6
+      width  = 5,
+      height = 5
     )
     plot_mcmc_graph(
       result$combined_graph,
-      layout_matrix = intersection_layout,
-      main = graph_main,
+      graph_intersection = result$combined_graph_intersection,
       ...
     )
     grDevices::dev.off()
@@ -133,7 +117,3 @@ launch_mcmc_graph <- function(
 
   invisible(result)
 }
-
-#' @rdname launch_mcmc_graph
-#' @export
-mcmcgraph <- launch_mcmc_graph
