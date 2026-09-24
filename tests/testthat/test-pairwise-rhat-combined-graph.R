@@ -1,4 +1,4 @@
-# Tests for mcmc_graph_multi().
+# Tests for the combined graph from mcmcgraph() / mcmc_graph_summary().
 #
 # Main purpose:
 #   Combine pairwise R-hat graph information across multiple parameters.
@@ -17,11 +17,12 @@ test_that("combined graph keeps parameter information on edges", {
     parameters = c("alpha", "beta")
   )
 
-  graph <- mcmc_graph_multi(
+  graph <- mcmcgraph(
     draws = draws,
     parameters = c("alpha", "beta"),
-    rho = 10
-  )
+    rho = 10,
+    plot = FALSE
+  )$combined_graph
 
   expect_true(igraph::ecount(graph) > 0)
 
@@ -39,16 +40,15 @@ test_that("combined graph uses all parameters when parameters is NULL", {
     parameters = c("alpha", "beta", "theta")
   )
 
-  graph <- mcmc_graph_multi(
+  graph <- mcmcgraph(
     draws = draws,
     parameters = NULL,
-    rho = 10
-  )
-
-  parameter_colors <- igraph::graph_attr(graph, "parameter_colors")
+    rho = 10,
+    plot = FALSE
+  )$combined_graph
 
   expect_equal(
-    names(parameter_colors),
+    igraph::graph_attr(graph, "parameter_names"),
     c("alpha", "beta", "theta")
   )
 })
@@ -77,19 +77,14 @@ test_that("intersection mode yields a subgraph of the union graph", {
 
   draws[, , "beta"] <- rnorm(n_iter * 4)
 
-  graph_union <- mcmc_graph_multi(
+  result <- mcmcgraph(
     draws = draws,
     parameters = c("alpha", "beta"),
     rho = 1.05,
-    mode = "union"
+    plot = FALSE
   )
-
-  graph_intersection <- mcmc_graph_multi(
-    draws = draws,
-    parameters = c("alpha", "beta"),
-    rho = 1.05,
-    mode = "intersection"
-  )
+  graph_union <- result$combined_graph
+  graph_intersection <- result$combined_graph_intersection
 
   expect_equal(igraph::graph_attr(graph_union, "mode"), "union")
   expect_equal(igraph::graph_attr(graph_intersection, "mode"), "intersection")
@@ -166,7 +161,7 @@ test_that("a one-parameter graph uses black edges and omits pairs above rho", {
   colnames(rhat_matrix) <- paste0("chain:", 1:3)
 
   parameter_graphs <- list(b = mcmc_graph_uni(rhat_matrix, rho = 1.05))
-  graph <- build_combined_graph(
+  graph <- mcmc_graph_multi(
     parameter_graphs,
     rho = 1.05,
     mode = "union"

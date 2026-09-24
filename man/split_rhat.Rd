@@ -2,21 +2,18 @@
 % Please edit documentation in R/06_split_rhat.R
 \name{split_rhat}
 \alias{split_rhat}
-\title{Compute split R-hat from split chains}
+\title{Compute split R-hat}
 \usage{
 split_rhat(split_draws)
 }
 \arguments{
-\item{split_draws}{A numeric matrix of split-chain draws. Rows correspond to
-draws and columns correspond to split chains.
-
-@returns A numeric value giving the split R-hat statistic.
-
-@keywords internal}
+\item{split_draws}{A numeric matrix. Rows are draws, columns are split chains.}
+}
+\value{
+A single split R-hat value.
 }
 \description{
-Computes the split R-hat statistic from a matrix of split-chain draws. Each
-column is treated as one split chain, and each tow corresponds to one draw
-within the split chain. This function calculates how different are the split
-chains from each other, compared with how variable each split chain is internally
+Stan split R-hat on an already split matrix: rows are draws, columns are
+split chains.
 }
+\keyword{internal}

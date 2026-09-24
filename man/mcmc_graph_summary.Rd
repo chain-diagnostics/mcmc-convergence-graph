@@ -21,8 +21,8 @@ iterations by chains by parameters, or an rstan \code{stanfit} object.}
 all parameters in \code{draws} are used.}
 
 \item{rho}{Numeric threshold used to decide whether two chains are connected.
-For each parameter, an edge is added when the pairwise R-hat value is less
-than or equal to \code{rho}.}
+For each dimension \eqn{s}, an edge is added in \eqn{G_{\rho,s}} when
+\eqn{\hat{R}_{ij,s} < \rho}.}
 
 \item{save_csv}{Logical. If \code{TRUE}, numerical outputs are saved as CSV files.
 The default is \code{FALSE}.}
@@ -35,18 +35,18 @@ values to include in \code{pairwise_values_display}. The default is 10. Values
 larger than 20 are capped at 20.}
 }
 \value{
-A list with eight elements:
+A list with the following elements:
 \describe{
-\item{summary}{A data frame with one row per parameter, giving the number of multi-chain clusters (\code{n_clusters}), the number of isolated chains (\code{n_isolated}), the cluster composition (\code{clusters}), the isolated chain identifiers (\code{isolated_chains}), and the largest pairwise R-hat over within-cluster pairs and pairs involving isolated chains (\code{pairwise_rhat_value}; \code{NA} when fewer than two chains are available).}
+\item{summary}{A data frame with one row per parameter, giving \(K\) (\code{n_clusters}), \(I\) (\code{n_isolated}), the chains in each multi-chain connected component (\code{clusters}), the isolated chain identifiers (\code{isolated_chains}), and \code{pairwise_rhat_value}.}
 \item{pairwise_values_display}{A shortened data frame containing the largest pairwise R-hat values for display.}
 \item{pairwise_values}{A full data frame containing one pairwise R-hat value for each parameter and chain pair.}
-\item{clusters}{A named list of detailed cluster results for each parameter.}
+\item{clusters}{A named list of \code{\link[=mcmc_graph_components]{mcmc_graph_components()}} results for each parameter.}
 \item{graphs}{A named list of parameter-specific \code{igraph} objects.}
-\item{combined_graph}{The union combined \code{igraph} object across parameters (\code{G_union}). An edge is present whenever the chain pair is connected in at least one parameter-specific graph. Pass to \code{\link[=plot_mcmc_graph]{plot_mcmc_graph()}} to visualise \code{G_union}.}
-\item{combined_graph_intersection}{The intersection combined \code{igraph} object across parameters (\code{G_intersection}). An edge is present only when the chain pair is connected in every parameter-specific graph. This is the graph whose connected components carry the multivariate mode count.}
-\item{combined_graph_difference}{The set difference \code{G_union} minus \code{G_intersection}. Edges are chain pairs that agree on some monitored dimensions and disagree on others.}
-\item{intersection_summary}{A one-row data frame giving the multi-chain clusters and isolated chains of \code{G_intersection}. This is the multivariate replacement for the per-dimension \code{summary} when counting modes.}
-\item{intersection_clusters}{The detailed cluster list from \code{\link[=mcmc_graph_components]{mcmc_graph_components()}} applied to \code{G_intersection}.}
+\item{combined_graph}{The union graph \eqn{G_{\cup}}. An edge is present when the pair agrees on at least one dimension. Pass to \code{\link[=plot_mcmc_graph]{plot_mcmc_graph()}} to visualise \eqn{G_{\cup}}.}
+\item{combined_graph_intersection}{The intersection graph \eqn{G_{\cap}}. An edge is present only when the pair agrees on every dimension. Mode identification in the multivariate setting uses the connected components of \eqn{G_{\cap}}.}
+\item{combined_graph_difference}{The set difference \eqn{G_{\cup} \setminus G_{\cap}}. Edges are chain pairs that agree on some marginals while disagreeing on others.}
+\item{intersection_summary}{A one-row data frame giving \(K\) and \(I\) of \eqn{G_{\cap}}.}
+\item{intersection_clusters}{The \code{\link[=mcmc_graph_components]{mcmc_graph_components()}} result for \eqn{G_{\cap}}.}
 \item{rhat_matrices}{A named list of pairwise R-hat matrices.}
 \item{rho}{The threshold used to define graph edges.}
 }
@@ -54,20 +54,13 @@ A list with eight elements:
 \description{
 Computes parameter-specific pairwise R-hat matrices, converts each matrix into
 a graph, and summarizes the graph structure for each parameter. The summary
-reports the number of multi-chain clusters, the number of isolated chains,
-the cluster composition, and the pairwise R-hat value for each parameter.
+reports the number of multi-chain connected components \(K\), the number of
+isolated chains \(I\), the chains in each component, and
+\code{pairwise_rhat_value} for each parameter.
 }
 \details{
-The reported \code{pairwise_rhat_value} is the largest pairwise R-hat over
-(i) pairs that lie in the same multi-chain cluster of the parameter-specific
-graph at threshold \code{rho}, and (ii) pairs that involve at least one isolated
-chain. Pairs between two different multi-chain clusters are excluded, so a
-cleanly separated multimodal posterior in which each mode is internally
-coherent still yields a small \code{pairwise_rhat_value}, even though the
-classical R-hat across all chains would be large. Isolated chains, by
-contrast, are treated as a mixing problem and are included in the maximum,
-so \code{pairwise_rhat_value} rises when \code{n_isolated > 0}. When a parameter has
-fewer than two chains, \code{pairwise_rhat_value} is \code{NA}.
+\code{pairwise_rhat_value} is the largest pairwise \(\hat{R}\) among chain pairs
+that sit in the same multi-chain connected component of \(G_{\rho,s}\).
 
 The function also returns a full table of pairwise R-hat values for every
 parameter and chain pair. For convenient display, it additionally returns a

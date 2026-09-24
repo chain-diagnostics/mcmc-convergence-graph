@@ -5,7 +5,7 @@
 #
 # We test:
 #   1. Even-length chains are split exactly in half.
-#   2. Odd-length chains drop the final draw before splitting.
+#   2. Odd-length chains drop the middle draw before splitting.
 #   3. The function works on a chain extracted from test draws.
 
 
@@ -20,13 +20,13 @@ test_that("split_chain splits an even-length chain into two equal halves", {
 })
 
 
-test_that("split_chain drops the final draw for an odd-length chain", {
+test_that("split_chain drops the middle draw for an odd-length chain", {
   chain <- 1:11
 
   result <- split_chain(chain)
 
   expect_equal(result$first, 1:5)
-  expect_equal(result$second, 6:10)
+  expect_equal(result$second, 7:11)
 })
 
 

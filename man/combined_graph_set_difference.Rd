@@ -7,16 +7,18 @@
 combined_graph_set_difference(graph_union, n_all_parameters)
 }
 \arguments{
-\item{graph_union}{An \code{igraph} object built with \code{mode = "union"}.}
+\item{graph_union}{An \code{igraph} object built with \code{mode = "union"}
+(\eqn{G_{\cup}}).}
 
 \item{n_all_parameters}{Integer number of monitored dimensions.}
 }
 \value{
-The union graph with shared (intersection) edges removed, and
-graph attribute \code{mode} set to \code{"difference"}.
+The union graph with shared (intersection) edges removed, giving
+\eqn{G_{\cup} \setminus G_{\cap}}, and graph attribute \code{mode} set to
+\code{"difference"}.
 }
 \description{
-Corresponds to \code{G_union} minus \code{G_intersection}: chain pairs that agree on at
-least one monitored dimension but not on every dimension.
+Corresponds to the set difference \eqn{G_{\cup} \setminus G_{\cap}}:
+chain pairs that agree on some marginals while disagreeing on others.
 }
 \keyword{internal}

@@ -24,7 +24,7 @@ parameter. The result is a square matrix whose rows and columns correspond to
 chains.
 }
 \examples{
-set.seed(1)
+set.seed(20)
 
 draws <- array(
   rnorm(100 * 4 * 1),
@@ -41,4 +41,5 @@ pairwise_rhat_matrix(
   draws = draws,
   parameter = "alpha"
 )
+
 }

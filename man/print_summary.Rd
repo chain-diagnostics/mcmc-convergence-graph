@@ -31,7 +31,7 @@ and \code{\link[=mcmcgraph]{mcmcgraph()}}. Shows, in order:
 the analysis call).
 \item The parameter-level summary table (one row per per-dimension graph).
 \item The intersection-graph summary (multivariate mode count from
-\code{G_intersection}).
+\eqn{G_{\cap}}).
 }
 
 All other fields (\code{graphs}, \code{combined_graph}, \code{clusters}, \code{pairwise_values},

@@ -15,9 +15,9 @@ pairwise_rhat_calculation(chain_i_draws, chain_j_draws)
 A single numeric value giving the pairwise R-hat between two chains.
 }
 \description{
-Computes the pairwise rank-normalized split R-hat statistic for two chains of
-posterior draws from one parameter. The function also computes the folded
-split R-hat and returns the larger of the rank-normalized and folded values.
+Computes the pairwise rank-normalized split R-hat and rank-normalised
+split-R-hat statistic for two chains of posterior draws from one parameter,
+and returns the larger of the rank-normalized and folded values.
 }
 \examples{
 set.seed(1)
@@ -26,4 +26,5 @@ chain_1 <- rnorm(100)
 chain_2 <- rnorm(100)
 
 pairwise_rhat_calculation(chain_1, chain_2)
+
 }

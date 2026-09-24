@@ -2,69 +2,35 @@
 % Please edit documentation in R/11_mcmc_graph_multi.R
 \name{mcmc_graph_multi}
 \alias{mcmc_graph_multi}
-\title{Build a combined pairwise R-hat graph across parameters}
+\title{Build a combined pairwise R-hat graph from per-dimension graphs}
 \usage{
-mcmc_graph_multi(
-  draws,
-  parameters = NULL,
-  rho = 1.05,
-  mode = c("union", "intersection")
-)
+mcmc_graph_multi(parameter_graphs, rho, mode)
 }
 \arguments{
-\item{draws}{A three-dimensional array of posterior draws with dimensions
-iterations by chains by parameter, or an rstan \code{stanfit} object.}
+\item{parameter_graphs}{A named list of \code{igraph} objects, one per dimension,
+each built with \code{\link[=mcmc_graph_uni]{mcmc_graph_uni()}} as \eqn{G_{\rho,s}}.}
 
-\item{parameters}{Optional character vector of parameter names. If \code{NULL},
-all parameters in \code{draws} are used.}
+\item{rho}{Numeric threshold used to build the per-dimension graphs. Stored on
+the returned graph as a graph attribute. An edge in \eqn{G_{\rho,s}}
+requires \eqn{\hat{R}_{ij,s} < \rho}.}
 
-\item{rho}{Numeric threshold used to decide whether two chains are connected.}
-
-\item{mode}{Character string. Either \code{"union"} (default) or \code{"intersection"},
-selecting how the parameter graphs are combined.}
+\item{mode}{Character string. Either \code{"union"} or \code{"intersection"}.}
 }
 \value{
-An undirected \code{igraph} object. Nodes represent chains. Edges
-represent chain pairs connected in at least one (\code{mode = "union"}) or every
-(\code{mode = "intersection"}) parameter-specific graph.
+An undirected \code{igraph} object with edge attributes \code{parameters},
+\code{n_parameters}, and \code{label}, vertex attribute \code{color}, and graph
+attributes \code{parameter_names}, \code{rho}, and \code{mode}.
 }
 \description{
-Builds a combined graph from parameter-specific pairwise R-hat graphs. Each
-chain is represented as a node. The way edges are combined across parameters
-is controlled by \code{mode}. With \code{mode = "union"} (default), an edge is added
-between two chains if at least one parameter has a pairwise R-hat value less
-than or equal to \code{rho} for that chain pair, corresponding to \code{G_union} in
-the multivariate MCMC convergence graph formulation. With
-\code{mode = "intersection"}, an edge is added only if every parameter has a
-pairwise R-hat value less than or equal to \code{rho} for that chain pair,
-corresponding to \code{G_intersection}. Edge labels record which parameters
-support each edge, and edge widths increase with the number of supporting
-parameters.
+Internal helper that constructs a combined graph from a named list of
+per-dimension pairwise \eqn{\hat{R}} graphs \eqn{G_{\rho,s}}. Used by
+\code{\link[=mcmc_graph_summary]{mcmc_graph_summary()}}.
 }
-\examples{
-set.seed(1)
-
-draws <- array(
-  rnorm(100 * 4 * 2),
-  dim = c(100, 4, 2)
-)
-
-dimnames(draws) <- list(
-  NULL,
-  paste0("chain", 1:4),
-  c("alpha", "beta")
-)
-
-graph_union <- mcmc_graph_multi(
-  draws = draws,
-  parameters = c("alpha", "beta"),
-  rho = 1.05
-)
-
-graph_intersection <- mcmc_graph_multi(
-  draws = draws,
-  parameters = c("alpha", "beta"),
-  rho = 1.05,
-  mode = "intersection"
-)
+\details{
+Two combined graphs are supported. With \code{mode = "union"}, an edge is
+included whenever the pair agrees on at least one dimension, giving the
+union graph \eqn{G_{\cup}}. With \code{mode = "intersection"}, an edge is
+included only when the pair agrees on every dimension, giving the
+intersection graph \eqn{G_{\cap}}.
 }
+\keyword{internal}

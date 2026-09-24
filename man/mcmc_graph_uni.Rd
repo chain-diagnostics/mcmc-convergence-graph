@@ -7,18 +7,19 @@
 mcmc_graph_uni(rhat_matrix, rho = 1.05)
 }
 \arguments{
-\item{rhat_matrix}{A square numeric matrix of pairwise R-hat values.}
+\item{rhat_matrix}{A square numeric matrix of pairwise \eqn{\hat{R}} values.}
 
-\item{rho}{Numeric threshold used to decide whether two chains are connected.}
+\item{rho}{Numeric threshold used to decide whether two chains are connected.
+An edge is added when \eqn{\hat{R}_{ij} < \rho}.}
 }
 \value{
-An undirected 'igraph' object whose nodes represent chains and whose
-edges represent chain pairs with pairwise R-hat value below the threshold.
+An undirected \code{igraph} object whose nodes represent chains and whose
+edges represent chain pairs with pairwise \eqn{\hat{R}} strictly below \code{rho}.
 }
 \description{
-Converts a pairwsie R-hat matrix into an undirected graph. Each chain is a
-node and an edge is added between two chains where their pairwise R-hat valuep
-is less than or equal to 'rho'.
+Converts a pairwise \eqn{\hat{R}} matrix into an undirected MCMC
+convergence graph \eqn{G_\rho}. Each chain is a node, and two nodes
+\eqn{i, j} are connected if and only if \eqn{\hat{R}_{ij} < \rho}.
 }
 \examples{
 rhat_matrix <- matrix(

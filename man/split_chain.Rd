@@ -15,7 +15,7 @@ and the 'second', the second half of the chain.
 }
 \description{
 Split a numeric vector of MCMC draws into two equal halves. If the number of
-draws is odd, the final draw is discarded so that both halves have the same
-length.
+draws is odd, the middle draw is discarded so that both halves have the same
+length, matching Stan's split R-hat.
 }
 \keyword{internal}
