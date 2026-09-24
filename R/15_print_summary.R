@@ -8,7 +8,7 @@
 #'    the analysis call).
 #' 3. The parameter-level summary table (one row per per-dimension graph).
 #' 4. The intersection-graph summary (multivariate mode count from
-#'    `G_intersection`).
+#'    \eqn{G_{\cap}}).
 #'
 #' All other fields (`graphs`, `combined_graph`, `clusters`, `pairwise_values`,
 #' `rho`, etc.) remain accessible via `$`; they are simply omitted from this
