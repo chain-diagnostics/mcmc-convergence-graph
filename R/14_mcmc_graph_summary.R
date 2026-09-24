@@ -2,12 +2,12 @@
 #'
 #' Computes parameter-specific pairwise R-hat matrices, converts each matrix into
 #' a graph, and summarizes the graph structure for each parameter. The summary
-#' reports the number of multi-chain connected components \(K\), the number of
-#' isolated chains \(I\), the chains in each component, and
+#' reports the number of multi-chain connected components \eqn{K}, the number of
+#' isolated chains \eqn{I}, the chains in each component, and
 #' `pairwise_rhat_value` for each parameter.
 #'
-#' `pairwise_rhat_value` is the largest pairwise \(\hat{R}\) among chain pairs
-#' that sit in the same multi-chain connected component of \(G_{\rho,s}\).
+#' `pairwise_rhat_value` is the largest pairwise \eqn{\hat{R}} among chain pairs
+#' that sit in the same multi-chain connected component of \eqn{G_{\rho,s}}.
 #'
 #' The function also returns a full table of pairwise R-hat values for every
 #' parameter and chain pair. For convenient display, it additionally returns a
@@ -32,7 +32,7 @@
 #'
 #' @returns A list with the following elements:
 #' \describe{
-#'   \item{summary}{A data frame with one row per parameter, giving \(K\) (`n_clusters`), \(I\) (`n_isolated`), the chains in each multi-chain connected component (`clusters`), the isolated chain identifiers (`isolated_chains`), and `pairwise_rhat_value`.}
+#'   \item{summary}{A data frame with one row per parameter, giving \eqn{K} (`n_clusters`), \eqn{I} (`n_isolated`), the chains in each multi-chain connected component (`clusters`), the isolated chain identifiers (`isolated_chains`), and `pairwise_rhat_value`.}
 #'   \item{pairwise_values_display}{A shortened data frame containing the largest pairwise R-hat values for display.}
 #'   \item{pairwise_values}{A full data frame containing one pairwise R-hat value for each parameter and chain pair.}
 #'   \item{clusters}{A named list of [mcmc_graph_components()] results for each parameter.}
@@ -40,7 +40,7 @@
 #'   \item{combined_graph}{The union graph \eqn{G_{\cup}}. An edge is present when the pair agrees on at least one dimension. Pass to [plot_mcmc_graph()] to visualise \eqn{G_{\cup}}.}
 #'   \item{combined_graph_intersection}{The intersection graph \eqn{G_{\cap}}. An edge is present only when the pair agrees on every dimension. Mode identification in the multivariate setting uses the connected components of \eqn{G_{\cap}}.}
 #'   \item{combined_graph_difference}{The set difference \eqn{G_{\cup} \setminus G_{\cap}}. Edges are chain pairs that agree on some marginals while disagreeing on others.}
-#'   \item{intersection_summary}{A one-row data frame giving \(K\) and \(I\) of \eqn{G_{\cap}}.}
+#'   \item{intersection_summary}{A one-row data frame giving \eqn{K} and \eqn{I} of \eqn{G_{\cap}}.}
 #'   \item{intersection_clusters}{The [mcmc_graph_components()] result for \eqn{G_{\cap}}.}
 #'   \item{rhat_matrices}{A named list of pairwise R-hat matrices.}
 #'   \item{rho}{The threshold used to define graph edges.}
