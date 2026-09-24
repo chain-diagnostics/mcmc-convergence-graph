@@ -8,3 +8,4 @@ experiments/
 *.pdf
 
 docs/
+.cursor/
