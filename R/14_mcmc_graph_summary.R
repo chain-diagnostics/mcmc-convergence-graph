@@ -32,7 +32,7 @@
 #'
 #' @returns A list with the following elements:
 #' \describe{
-#'   \item{summary}{A data frame with one row per parameter, giving \eqn{K} (`n_clusters`), \eqn{I} (`n_isolated`), the chains in each multi-chain connected component (`clusters`), the isolated chain identifiers (`isolated_chains`), and `pairwise_rhat_value`.}
+#'   \item{summary}{A data frame with one row per parameter, giving \eqn{K}, \eqn{I}, the isolated chain identifiers (`isolated_chains`), the multi-chain connected components \eqn{\mathcal{Q}} (`Q`), and `pairwise_rhat_value`.}
 #'   \item{pairwise_values_display}{A shortened data frame containing the largest pairwise R-hat values for display.}
 #'   \item{pairwise_values}{A full data frame containing one pairwise R-hat value for each parameter and chain pair.}
 #'   \item{clusters}{A named list of [mcmc_graph_components()] results for each parameter.}
@@ -130,10 +130,10 @@ mcmc_graph_summary <- function(
 
   summary_table <- data.frame(
     parameter = character(),
-    n_clusters = integer(),
-    n_isolated = integer(),
+    K = integer(),
+    I = integer(),
     isolated_chains = character(),
-    clusters = character(),
+    Q = character(),
     pairwise_rhat_value = numeric(),
     stringsAsFactors = FALSE
   )
@@ -175,11 +175,11 @@ mcmc_graph_summary <- function(
       chain_names
     )
 
-    if (length(cluster_result$clusters) == 0) {
+    if (length(cluster_result$Q) == 0) {
       cluster_text <- ""
     } else {
       cluster_text <- vapply(
-        cluster_result$clusters,
+        cluster_result$Q,
         function(cluster) {
           paste(chain_label_map[cluster], collapse = ", ")
         },
@@ -208,8 +208,8 @@ mcmc_graph_summary <- function(
       rep(NA_integer_, length(chain_names)),
       chain_names
     )
-    for (cluster_idx in seq_along(cluster_result$clusters)) {
-      multi_cluster_id[cluster_result$clusters[[cluster_idx]]] <- cluster_idx
+    for (cluster_idx in seq_along(cluster_result$Q)) {
+      multi_cluster_id[cluster_result$Q[[cluster_idx]]] <- cluster_idx
     }
     isolated_set <- cluster_result$isolated_chains
 
@@ -270,10 +270,10 @@ mcmc_graph_summary <- function(
       summary_table,
       data.frame(
         parameter = parameter,
-        n_clusters = cluster_result$n_clusters,
-        n_isolated = cluster_result$n_isolated,
+        K = cluster_result$K,
+        I = cluster_result$I,
         isolated_chains = isolated_text,
-        clusters = cluster_text,
+        Q = cluster_text,
         pairwise_rhat_value = pairwise_rhat_value,
         stringsAsFactors = FALSE
       )
@@ -398,11 +398,11 @@ format_cluster_summary_row <- function(cluster_result,
     chain_names
   )
 
-  if (length(cluster_result$clusters) == 0) {
+  if (length(cluster_result$Q) == 0) {
     cluster_text <- ""
   } else {
     cluster_text <- vapply(
-      cluster_result$clusters,
+      cluster_result$Q,
       function(cluster) {
         paste(chain_label_map[cluster], collapse = ", ")
       },
@@ -426,10 +426,10 @@ format_cluster_summary_row <- function(cluster_result,
 
   data.frame(
     graph = graph_name,
-    n_clusters = cluster_result$n_clusters,
-    n_isolated = cluster_result$n_isolated,
+    K = cluster_result$K,
+    I = cluster_result$I,
     isolated_chains = isolated_text,
-    clusters = cluster_text,
+    Q = cluster_text,
     stringsAsFactors = FALSE
   )
 }

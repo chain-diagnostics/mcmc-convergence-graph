@@ -1,14 +1,15 @@
-#' Summarize clusters in a pairwise R-hat graph
+#' Summarize connected components in a pairwise R-hat graph
 #'
 #' Finds connected components in a pairwise R-hat graph and separates them into
-#' multi-chain clusters and isolated chains. In this diagnostic, single-chain
-#' components are counted as isolated chains rather than as clusters.
+#' the multi-chain components \eqn{\mathcal{Q}} and the isolated chains
+#' \eqn{\mathcal{I}}. Single-chain components are counted in \eqn{I}, not in
+#' \eqn{K}.
 #'
 #' @param graph An `igraph` object.
 #'
-#' @return A list containing multi-chain clusters, the number of multi-chain
-#'   clusters, isolated chains, the number of isolated chains, all connected
-#'   components, and the component membership vector.
+#' @return A list with \eqn{\mathcal{Q}} (`Q`), \eqn{K = |\mathcal{Q}|} (`K`),
+#'   isolated chain identifiers (`isolated_chains`), \eqn{I = |\mathcal{I}|}
+#'   (`I`), all connected components, and the component membership vector.
 #'
 #' @export
 #'
@@ -51,10 +52,10 @@ mcmc_graph_components <- function(graph) {
   )
   #pack everything into the list above and return it
   list(
-    clusters = multi_chain_clusters,
-    n_clusters = length(multi_chain_clusters),
+    Q = multi_chain_clusters,
+    K = length(multi_chain_clusters),
     isolated_chains = isolated_chains,
-    n_isolated = length(isolated_chains),
+    I = length(isolated_chains),
     all_components = all_components,
     membership = membership
   )
