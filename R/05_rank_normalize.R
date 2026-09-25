@@ -12,7 +12,7 @@
 
 rank_normalize <- function(x) {
   n <- length(x)
-  ranks <- rank(x, ties.method = "average") #average: if two draws are equal, they share the mean of the ranks thy would have occupied.
+  ranks <- rank(x, ties.method = "average") # average: if two draws are equal, they share the mean of the ranks thy would have occupied.
   stats::qnorm(
     (ranks - 3 / 8) / (n + 1 / 4)
   )

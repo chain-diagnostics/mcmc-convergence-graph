@@ -15,9 +15,7 @@
 #'
 #' @keywords internal
 as_draws_array <- function(x, parameter = NULL) {
-
   if (inherits(x, "stanfit")) {
-
     if (!requireNamespace("rstan", quietly = TRUE)) {
       stop(
         "Package 'rstan' is required to convert a stanfit object.",
@@ -29,18 +27,13 @@ as_draws_array <- function(x, parameter = NULL) {
       x,
       permuted = FALSE
     )
-
   } else if (is.array(x) && length(dim(x)) == 3) {
-
     draws <- x
-
   } else {
-
     stop(
       "`x` must be either a 3-dimensional draws array or an rstan stanfit object.",
       call. = FALSE
     )
-
   }
 
   dn <- dimnames(draws)
@@ -58,7 +51,6 @@ as_draws_array <- function(x, parameter = NULL) {
   parameter_names <- dimnames(draws)[[3]]
 
   if (!is.null(parameter_names)) {
-
     ## Remove Stan log-posterior
     keep <- parameter_names != "lp__"
 
@@ -68,7 +60,6 @@ as_draws_array <- function(x, parameter = NULL) {
 
     ## Keep selected parameters if requested
     if (!is.null(parameter)) {
-
       missing_parameters <- setdiff(
         parameter,
         parameter_names
@@ -83,9 +74,7 @@ as_draws_array <- function(x, parameter = NULL) {
       }
 
       draws <- draws[, , parameter, drop = FALSE]
-
     }
-
   }
 
   check_draws_array(draws)
