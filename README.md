@@ -18,7 +18,7 @@ install.packages("devtools")
 devtools::install_github("chain-diagnostics/mcmc-convergence-graph")
 ```
 
-
+Paper scripts are in [`paper_experiment/`](paper_experiment/).
 
 ## License
 

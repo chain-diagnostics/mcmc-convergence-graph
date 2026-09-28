@@ -4,6 +4,7 @@
 ^LICENSE\.md$
 ^test_outputs$
 ^experiments$
+^paper_experiment$
 
 ^docs$
 ^\.cursor$
