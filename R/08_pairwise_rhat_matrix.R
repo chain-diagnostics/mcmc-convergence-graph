@@ -37,14 +37,14 @@
 pairwise_rhat_matrix <- function(draws, parameter) {
   n_chains <- dim(draws)[2]
   chain_pairs <- get_chain_pairs(draws, parameter)
-  #create a empty matrix, diagnoal 1
+  # create a empty matrix, diagnoal 1
   rhat_matrix <- matrix(
     NA_real_,
     nrow = n_chains,
     ncol = n_chains
   )
   diag(rhat_matrix) <- 1
-  #for each pair, calculate pairwise R hat value
+  # for each pair, calculate pairwise R hat value
   for (pair in chain_pairs) {
     chain_i <- pair$chain_i_index
     chain_j <- pair$chain_j_index

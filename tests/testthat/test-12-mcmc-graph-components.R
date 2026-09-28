@@ -21,8 +21,8 @@ test_that("mcmc_graph_components detects one connected cluster", {
 
   result <- mcmc_graph_components(graph)
 
-  expect_equal(result$n_clusters, 1)
-  expect_equal(result$n_isolated, 0)
+  expect_equal(result$K, 1)
+  expect_equal(result$I, 0)
 })
 
 
@@ -37,8 +37,8 @@ test_that("mcmc_graph_components detects two multi-chain components", {
 
   result <- mcmc_graph_components(graph)
 
-  expect_equal(result$n_clusters, 2)
-  expect_equal(result$n_isolated, 0)
+  expect_equal(result$K, 2)
+  expect_equal(result$I, 0)
 })
 
 
@@ -57,8 +57,8 @@ test_that("mcmc_graph_components detects isolated chains", {
 
   result <- mcmc_graph_components(graph)
 
-  expect_equal(result$n_clusters, 1)
-  expect_equal(result$n_isolated, 2)
+  expect_equal(result$K, 1)
+  expect_equal(result$I, 2)
   expect_equal(
     result$isolated_chains,
     c("chain3", "chain4")

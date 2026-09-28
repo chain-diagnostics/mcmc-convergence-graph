@@ -31,7 +31,7 @@ mcmc_graph_multi <- function(parameter_graphs,
   n_all_parameters <- length(parameter_names)
 
   first_graph <- parameter_graphs[[1]]
-  #all nodes of the graph
+  # all nodes of the graph
   chain_names <- igraph::V(first_graph)$name
 
   chain_pairs <- utils::combn(chain_names, 2)
@@ -43,17 +43,17 @@ mcmc_graph_multi <- function(parameter_graphs,
     n_parameters = integer(),
     stringsAsFactors = FALSE
   )
-  #outer loop: one chain pair
+  # outer loop: one chain pair
   for (pair_id in seq_len(ncol(chain_pairs))) {
     from_chain <- chain_pairs[1, pair_id]
     to_chain <- chain_pairs[2, pair_id]
 
     edge_parameters <- character()
-    #inner loop: which dimensions connect that pair
+    # inner loop: which dimensions connect that pair
     for (parameter in parameter_names) {
       graph <- parameter_graphs[[parameter]]
-      #igraph::are_adjacent: is there already an edge between nodes a and b in this graph
-      #output: one true or false
+      # igraph::are_adjacent: is there already an edge between nodes a and b in this graph
+      # output: one true or false
       is_connected <- igraph::are_adjacent(
         graph,
         from_chain,
@@ -64,11 +64,10 @@ mcmc_graph_multi <- function(parameter_graphs,
         edge_parameters <- c(edge_parameters, parameter)
       }
     }
-    #switch: picks one expression by the string in mode
-    #union: true if they agreed on at least one dimension
-    #intersection: true only if they agreed on every dimension
-    include_edge <- switch(
-      mode,
+    # switch: picks one expression by the string in mode
+    # union: true if they agreed on at least one dimension
+    # intersection: true only if they agreed on every dimension
+    include_edge <- switch(mode,
       union = length(edge_parameters) > 0,
       intersection = length(edge_parameters) == n_all_parameters
     )
@@ -86,7 +85,7 @@ mcmc_graph_multi <- function(parameter_graphs,
       )
     }
   }
-  #turns a table of edges into a graph
+  # turns a table of edges into a graph
   combined_graph <- igraph::graph_from_data_frame(
     d = edge_list,
     directed = FALSE,
@@ -129,14 +128,14 @@ mcmc_graph_multi <- function(parameter_graphs,
 #'
 #' @keywords internal
 
-#input: union igraph, output one graph that is \eqn{G_{\cup} \setminus G_{\cap}}(dash lines)
+# input: union igraph, output one graph that is \eqn{G_{\cup} \setminus G_{\cap}}(dash lines)
 combined_graph_set_difference <- function(graph_union, n_all_parameters) {
   difference_graph <- graph_union
-  #how many edges
+  # how many edges
   if (igraph::ecount(difference_graph) > 0) {
-    #which edges agreed on all dimensions
+    # which edges agreed on all dimensions
     is_shared <- igraph::E(difference_graph)$n_parameters == n_all_parameters
-    #remove those shared edges
+    # remove those shared edges
     difference_graph <- igraph::delete_edges(
       difference_graph,
       igraph::E(difference_graph)[is_shared]

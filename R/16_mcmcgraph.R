@@ -63,15 +63,15 @@
 #'
 #' result$summary
 mcmcgraph <- function(
-    draws,
-    parameters = NULL,
-    rho = 1.05,
-    plot = TRUE,
-    save_csv = FALSE,
-    save_plot = FALSE,
-    output_dir = NULL,
-    pairwise_display_n = 10,
-    ...
+  draws,
+  parameters = NULL,
+  rho = 1.05,
+  plot = TRUE,
+  save_csv = FALSE,
+  save_plot = FALSE,
+  output_dir = NULL,
+  pairwise_display_n = 10,
+  ...
 ) {
   if (isTRUE(save_plot) && is.null(output_dir)) {
     stop(

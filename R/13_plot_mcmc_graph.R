@@ -81,13 +81,13 @@ plot_mcmc_graph <- function(
 
   if (is.null(layout_matrix)) {
     if (identical(layout_type, "circle") && !is.null(graph_intersection)) {
-      #get a list from componets
+      # get a list from componets
       comps <- igraph::components(graph_intersection)
-      #a vector of chain name
+      # a vector of chain name
       names_int <- igraph::V(graph_intersection)$name
       order_ids <- order(comps$csize, decreasing = TRUE)
       grouped <- unlist(lapply(order_ids, function(id) {
-        #names in the component
+        # names in the component
         nm <- names_int[comps$membership == id]
         digits <- gsub("[^0-9]", "", nm)
         num <- suppressWarnings(as.integer(digits))
@@ -103,8 +103,7 @@ plot_mcmc_graph <- function(
       to_names <- igraph::V(graph)$name
       layout_matrix <- layout_matrix[match(to_names, from_names), , drop = FALSE]
     } else {
-      layout_matrix <- switch(
-        layout_type,
+      layout_matrix <- switch(layout_type,
         circle = igraph::layout_in_circle(graph),
         grid = igraph::layout_on_grid(graph),
         fr = igraph::layout_with_fr(graph),
@@ -143,9 +142,9 @@ plot_mcmc_graph <- function(
     mar = mar,
     pty = "s",
     xpd = NA,
-    family = "sans", #font
-    lend = "round", #line ends are rounded
-    ljoin = "round" #corners where lines meet are rounded
+    family = "sans", # font
+    lend = "round", # line ends are rounded
+    ljoin = "round" # corners where lines meet are rounded
   )
 
   plot_args <- list(

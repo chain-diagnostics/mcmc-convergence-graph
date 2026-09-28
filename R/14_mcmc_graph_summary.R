@@ -72,14 +72,13 @@
 #' result$summary
 #' result$pairwise_values_display
 mcmc_graph_summary <- function(
-    draws,
-    parameters = NULL,
-    rho = 1.05,
-    save_csv = FALSE,
-    output_dir = NULL,
-    pairwise_display_n = 10
+  draws,
+  parameters = NULL,
+  rho = 1.05,
+  save_csv = FALSE,
+  output_dir = NULL,
+  pairwise_display_n = 10
 ) {
-
   rhat_matrices <- pairwise_rhat_matrices(
     draws,
     parameters = parameters

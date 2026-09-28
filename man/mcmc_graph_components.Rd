@@ -2,7 +2,7 @@
 % Please edit documentation in R/12_mcmc_graph_components.R
 \name{mcmc_graph_components}
 \alias{mcmc_graph_components}
-\title{Summarize clusters in a pairwise R-hat graph}
+\title{Summarize connected components in a pairwise R-hat graph}
 \usage{
 mcmc_graph_components(graph)
 }
@@ -10,14 +10,15 @@ mcmc_graph_components(graph)
 \item{graph}{An \code{igraph} object.}
 }
 \value{
-A list containing multi-chain clusters, the number of multi-chain
-clusters, isolated chains, the number of isolated chains, all connected
-components, and the component membership vector.
+A list with \eqn{\mathcal{Q}} (\code{Q}), \eqn{K = |\mathcal{Q}|} (\code{K}),
+isolated chain identifiers (\code{isolated_chains}), \eqn{I = |\mathcal{I}|}
+(\code{I}), all connected components, and the component membership vector.
 }
 \description{
 Finds connected components in a pairwise R-hat graph and separates them into
-multi-chain clusters and isolated chains. In this diagnostic, single-chain
-components are counted as isolated chains rather than as clusters.
+the multi-chain components \eqn{\mathcal{Q}} and the isolated chains
+\eqn{\mathcal{I}}. Single-chain components are counted in \eqn{I}, not in
+\eqn{K}.
 }
 \examples{
 graph <- igraph::make_graph(

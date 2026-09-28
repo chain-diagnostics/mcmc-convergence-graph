@@ -90,7 +90,7 @@ test_that("mcmc_graph_summary returns an object of class mcmcgraph", {
 })
 
 
-test_that("print_summary() shows the four requested sections in order", {
+test_that("print_summary() shows the two requested sections in order", {
   set.seed(1)
 
   draws <- make_test_draws(
@@ -111,15 +111,14 @@ test_that("print_summary() shows the four requested sections in order", {
   combined <- paste(printed, collapse = "\n")
 
   expect_match(combined, "1\\. Pairwise R-hat matrices")
-  expect_match(combined, "2\\. Top 5 largest pairwise R-hat values")
-  expect_match(combined, "3\\. Parameter summary")
-  expect_match(combined, "4\\. Intersection summary \\(G_intersection\\)")
+  expect_match(combined, "2\\. Parameter summary")
+  expect_match(combined, "largest pairwise R-hat value")
+  expect_false(grepl("Top 5 largest pairwise R-hat values", combined))
+  expect_false(grepl("Intersection summary", combined))
 
   section_positions <- c(
     regexpr("1\\. Pairwise R-hat matrices", combined),
-    regexpr("2\\. Top 5 largest pairwise R-hat values", combined),
-    regexpr("3\\. Parameter summary", combined),
-    regexpr("4\\. Intersection summary \\(G_intersection\\)", combined)
+    regexpr("2\\. Parameter summary", combined)
   )
 
   expect_true(all(diff(section_positions) > 0))
@@ -226,8 +225,8 @@ test_that("clean multimodality keeps pairwise_rhat_value low", {
     save_csv = FALSE
   )
 
-  expect_equal(result$summary$n_clusters, 2)
-  expect_equal(result$summary$n_isolated, 0)
+  expect_equal(result$summary$K, 2)
+  expect_equal(result$summary$I, 0)
   expect_true(is.finite(result$summary$pairwise_rhat_value))
   expect_lt(result$summary$pairwise_rhat_value, 1.05)
 
@@ -252,8 +251,8 @@ test_that("isolated chains raise pairwise_rhat_value", {
     save_csv = FALSE
   )
 
-  expect_equal(result$summary$n_clusters, 1)
-  expect_equal(result$summary$n_isolated, 1)
+  expect_equal(result$summary$K, 1)
+  expect_equal(result$summary$I, 1)
   expect_true(is.finite(result$summary$pairwise_rhat_value))
   expect_gt(result$summary$pairwise_rhat_value, 1.2)
 

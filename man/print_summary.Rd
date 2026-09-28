@@ -27,14 +27,12 @@ and \code{\link[=mcmcgraph]{mcmcgraph()}}. Shows, in order:
 \details{
 \enumerate{
 \item The pairwise R-hat matrix for each parameter.
-\item The top-N largest pairwise R-hat values (\code{N} = \code{pairwise_display_n} from
-the analysis call).
 \item The parameter-level summary table (one row per per-dimension graph).
-\item The intersection-graph summary (multivariate mode count from
-\eqn{G_{\cap}}).
+The last column is the largest pairwise \eqn{\hat{R}} among pairs in the
+same component or involving an isolated chain.
 }
 
 All other fields (\code{graphs}, \code{combined_graph}, \code{clusters}, \code{pairwise_values},
-\code{rho}, etc.) remain accessible via \code{$}; they are simply omitted from this
-printed view.
+\code{intersection_summary}, \code{rho}, etc.) remain accessible via \code{$}; they are
+simply omitted from this printed view.
 }

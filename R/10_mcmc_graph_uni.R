@@ -34,10 +34,9 @@
 #'
 #' graph
 #' igraph::E(graph)
-
-#Input is one pairwise matrix from function pairwise_rhat_matrix
+# Input is one pairwise matrix from function pairwise_rhat_matrix
 mcmc_graph_uni <- function(rhat_matrix, rho = 1.05) {
-  #True/False matrix of the same size
+  # True/False matrix of the same size
   adjacency_matrix <- rhat_matrix < rho
   diag(adjacency_matrix) <- FALSE
   chain_names <- rownames(rhat_matrix)
@@ -49,7 +48,7 @@ mcmc_graph_uni <- function(rhat_matrix, rho = 1.05) {
   }
   rownames(adjacency_matrix) <- chain_names
   colnames(adjacency_matrix) <- chain_names
-  #Turn a TRUE/FALSE matrix into a graph object
+  # Turn a TRUE/FALSE matrix into a graph object
   graph <- igraph::graph_from_adjacency_matrix(
     adjacency_matrix,
     mode = "undirected"

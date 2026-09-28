@@ -37,7 +37,7 @@ larger than 20 are capped at 20.}
 \value{
 A list with the following elements:
 \describe{
-\item{summary}{A data frame with one row per parameter, giving \eqn{K} (\code{n_clusters}), \eqn{I} (\code{n_isolated}), the chains in each multi-chain connected component (\code{clusters}), the isolated chain identifiers (\code{isolated_chains}), and \code{pairwise_rhat_value}.}
+\item{summary}{A data frame with one row per parameter, giving \eqn{K}, \eqn{I}, the isolated chain identifiers (\code{isolated_chains}), the multi-chain connected components \eqn{\mathcal{Q}} (\code{Q}), and \code{pairwise_rhat_value}.}
 \item{pairwise_values_display}{A shortened data frame containing the largest pairwise R-hat values for display.}
 \item{pairwise_values}{A full data frame containing one pairwise R-hat value for each parameter and chain pair.}
 \item{clusters}{A named list of \code{\link[=mcmc_graph_components]{mcmc_graph_components()}} results for each parameter.}

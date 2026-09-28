@@ -137,8 +137,8 @@ test_that("intersection summary counts modes on G_intersection, not per dimensio
 
   expect_equal(nrow(result$intersection_summary), 1L)
   expect_equal(result$intersection_summary$graph, "G_intersection")
-  expect_equal(result$intersection_summary$n_clusters, 2L)
-  expect_equal(result$intersection_summary$n_isolated, 0L)
+  expect_equal(result$intersection_summary$K, 2L)
+  expect_equal(result$intersection_summary$I, 0L)
 
   expect_equal(igraph::graph_attr(result$combined_graph_difference, "mode"), "difference")
   expect_gt(igraph::ecount(result$combined_graph_difference), 0)
@@ -178,4 +178,3 @@ test_that("a one-parameter graph uses black edges and omits pairs above rho", {
     rep(1L, igraph::ecount(graph))
   )
 })
-
