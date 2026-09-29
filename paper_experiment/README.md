@@ -7,7 +7,7 @@ Fit the model first, then run the `*_pairwise.R` script.
 install.packages(c("devtools", "rstan"))
 devtools::install_github("chain-diagnostics/mcmc-convergence-graph")
 
-setwd("paper_experiment/Controlled target distributions/uniform")
+setwd("paper_experiment/01_Controlled_target_distributions/uniform")
 source("uniform_base.R")
 source("uniform_pairwise.R")
 ```

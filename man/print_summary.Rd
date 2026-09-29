@@ -28,11 +28,5 @@ and \code{\link[=mcmcgraph]{mcmcgraph()}}. Shows, in order:
 \enumerate{
 \item The pairwise R-hat matrix for each parameter.
 \item The parameter-level summary table (one row per per-dimension graph).
-The last column is the largest pairwise \eqn{\hat{R}} among pairs in the
-same component or involving an isolated chain.
 }
-
-All other fields (\code{graphs}, \code{combined_graph}, \code{clusters}, \code{pairwise_values},
-\code{intersection_summary}, \code{rho}, etc.) remain accessible via \code{$}; they are
-simply omitted from this printed view.
 }

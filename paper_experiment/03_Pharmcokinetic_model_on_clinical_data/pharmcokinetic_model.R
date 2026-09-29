@@ -5,19 +5,19 @@ library(ggplot2)
 rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
 
-stan_file  <- "Pharmcokinetic.stan"
-data_file  <- "PK_reminfentanil.csv"
+stan_file <- "pharmcokinetic.stan"
+data_file <- "PK_reminfentanil.csv"
 output_dir <- "output"
 
 if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
 
-dat  <- read.csv(data_file)
+dat <- read.csv(data_file)
 dose <- dat[dat$DV == ".", ]
-obs  <- dat[dat$DV != ".", ]
+obs <- dat[dat$DV != ".", ]
 
 n_obs <- as.integer(table(obs$ID))
-rate  <- as.numeric(dose$RATE)
-tinf  <- as.numeric(dose$TINFCAT)
+rate <- as.numeric(dose$RATE)
+tinf <- as.numeric(dose$TINFCAT)
 
 stan_data <- list(
   N_subj = nrow(dose),

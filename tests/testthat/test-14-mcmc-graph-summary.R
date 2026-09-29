@@ -90,7 +90,7 @@ test_that("mcmc_graph_summary returns an object of class mcmcgraph", {
 })
 
 
-test_that("print_summary() shows the two requested sections in order", {
+test_that("print() shows the two requested sections in order", {
   set.seed(1)
 
   draws <- make_test_draws(

@@ -3,7 +3,7 @@ library(rstan)
 rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
 
-stan_file  <- "multimodal_gaussian.stan"
+stan_file <- "uniform.stan"
 output_dir <- "output"
 
 if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
@@ -16,7 +16,7 @@ fit <- stan(
   chains  = 8,
   warmup  = 1000,
   iter    = 2000,
-  seed    = 123,
+  seed    = 1234,
   init    = init_fn
 )
 
@@ -26,5 +26,5 @@ write.csv(
   file = file.path(output_dir, "classical_rhat_summary.csv"),
   row.names = TRUE
 )
-saveRDS(fit, file.path(output_dir, "multimodal_gaussian.rds"))
+saveRDS(fit, file.path(output_dir, "uniform.rds"))
 print(round(summary_matrix, 4))

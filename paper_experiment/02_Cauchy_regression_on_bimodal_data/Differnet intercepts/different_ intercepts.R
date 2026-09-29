@@ -3,7 +3,7 @@ library(rstan)
 rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
 
-stan_file  <- "cauchy_regression.stan"
+stan_file <- "cauchy_regression.stan"
 output_dir <- "output"
 
 if (!dir.exists(output_dir)) {
@@ -20,7 +20,7 @@ a1 <- 0
 a2 <- 0
 
 
-b1 <-  2
+b1 <- 2
 b2 <- -2
 
 sigma <- 0.05
@@ -55,14 +55,12 @@ saveRDS(
 )
 
 
-
-
 init_fn <- function() {
   list(
     a     = runif(1, -3, 3),
     b     = runif(1, -3, 3),
-    gamma = runif(1, 0, 1))
-
+    gamma = runif(1, 0, 1)
+  )
 }
 
 
@@ -75,9 +73,8 @@ fit <- stan(
   iter    = 2000,
   warmup  = 1000,
   seed    = 1234,
-  control = list(adapt_delta=0.99),
+  control = list(adapt_delta = 0.99),
   init    = init_fn
-
 )
 
 
@@ -118,11 +115,14 @@ library("ggplot2")
 
 posterior <- as.matrix(fit)
 
-plot_title <- ggtitle("Posterior distributions",
-                      "with medians and 80% intervals")
+plot_title <- ggtitle(
+  "Posterior distributions",
+  "with medians and 80% intervals"
+)
 mcmc_areas(posterior,
-           pars = c("a","b"),
-           prob = 0.8) + plot_title
+  pars = c("a", "b"),
+  prob = 0.8
+) + plot_title
 
 color_scheme_set("darkgray")
 mcmc_scatter(

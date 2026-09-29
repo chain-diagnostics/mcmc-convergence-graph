@@ -5,12 +5,6 @@
 #'
 #' 1. The pairwise R-hat matrix for each parameter.
 #' 2. The parameter-level summary table (one row per per-dimension graph).
-#'    The last column is the largest pairwise \eqn{\hat{R}} among pairs in the
-#'    same component or involving an isolated chain.
-#'
-#' All other fields (`graphs`, `combined_graph`, `clusters`, `pairwise_values`,
-#' `intersection_summary`, `rho`, etc.) remain accessible via `$`; they are
-#' simply omitted from this printed view.
 #'
 #' @param x An `mcmcgraph` object.
 #' @param digits Number of decimal digits used to display the pairwise R-hat

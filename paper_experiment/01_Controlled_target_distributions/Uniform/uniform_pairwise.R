@@ -4,7 +4,7 @@ library(mcmcConvergenceGraph)
 rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
 
-fit_path   <- "output/unimodal_gaussian.rds"
+fit_path <- "output/uniform.rds"
 output_dir <- "output"
 
 if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
@@ -15,12 +15,10 @@ result <- mcmcgraph(
   fit,
   parameters         = c("x[1]", "x[2]"),
   rho                = 1.05,
-  plot               = FALSE,
+  plot               = TRUE,
   save_csv           = TRUE,
   save_plot          = FALSE,
-  output_dir         = output_dir,
-  pairwise_display_n = 10
+  output_dir         = output_dir
 )
-
 
 print(result)
